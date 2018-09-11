@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 4-5</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ASTR101 Ch 4-5</h1>
+<div id="outline-container-org647aeb9" class="outline-2">
+<h2 id="org647aeb9">Ch 1 - Science and the Universe: A Brief Tour</h2>
+<div class="outline-text-2" id="text-org647aeb9">
+<p>
+<a href="https://link.springer.com/article/10.1007/BF00874727">https://link.springer.com/article/10.1007/BF00874727</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org4cc2967" class="outline-2">
+<h2 id="org4cc2967">Ch 6 - Astronomical Instruments</h2>
+<div class="outline-text-2" id="text-org4cc2967">
+</div>
+<div id="outline-container-org3d3d330" class="outline-3">
+<h3 id="org3d3d330">Telescopes</h3>
+<div class="outline-text-3" id="text-org3d3d330">
+<ul class="org-ul">
+<li>Only about 9000 stars visible to human eye.</li>
+<li>A <i>telescope</i> is a "bucket" for catching more light than your pupils normally would.</li>
+<li>Size matters.</li>
+<li>Light from the telescope can be spectrally separated.</li>
+<li>Then the amount of light is detected by a <i>detector</i>, a sensor.</li>
+</ul>
+</div>
+<div id="outline-container-org67fb44d" class="outline-4">
+<h4 id="org67fb44d">How Telescopes Work</h4>
+<div class="outline-text-4" id="text-org67fb44d">
+<ul class="org-ul">
+<li>A telescope <i>collects</i> light from a source, and <i>focuses</i> it into a point or image.</li>
+<li>Collecting can be done with a lens or curved mirror.</li>
+<li>Telescope light-gathering power is compared with <i>apertures</i>; diameters of the telescope opening.</li>
+<li>How much more light can a telescope with twice the aperture collect?</li>
+<li>Can use an additional lens, the <i>eyepiece</i>, to magnify the image.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb700ff6" class="outline-4">
+<h4 id="orgb700ff6">Lenses</h4>
+<div class="outline-text-4" id="text-orgb700ff6">
+<ul class="org-ul">
+<li>Lenses are typically curved glass that <i>refract</i>, or bend, light rays.  This example converges light towards the <i>focus</i> of the lens, a <i>focal length</i> away from its center.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_4.png" alt="6_4.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li><i>Refracting telescopes</i> use a lens to focus light, while <i>reflecting telescopes</i> use a mirror.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_5.png" alt="6_5.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Light travels through a lens in refracting telescopes; imperfections anywhere in the lens or in the cut cause distortions.</li>
+<li>Different frequencies travel differently in lenses (remember prisms?), leading to <i>chromatic aberration</i> in refracting telescopes.</li>
+<li>Glass sags!</li>
+<li>Reflecting telescopes avoid these problems with a concave <i>primary mirror</i>, for which only a single surface needs good manufacturing.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_6.png" alt="6_6.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org589d5e9" class="outline-3">
+<h3 id="org589d5e9">Telescopes Today</h3>
+<div class="outline-text-3" id="text-org589d5e9">
+<ul class="org-ul">
+<li>Millions/billions of dollars to build.</li>
+<li>Motorized drives.</li>
+<li>Huge steel supports for heavy mirrors (around 15 tons!).</li>
+<li>Largest diameter 10.4 m.</li>
+<li>Correct mechanically for sag (among other things).</li>
+<li>Can use multiple mirrors together, like 36 hexagonal mirrors in Keck telescopes.</li>
+</ul>
+</div>
+<div id="outline-container-org8f109f1" class="outline-4">
+<h4 id="org8f109f1">Picking the Best Observing Sites</h4>
+<div class="outline-text-4" id="text-org8f109f1">
+<ul class="org-ul">
+<li>Gemini and Keck telescopes cost $100 million, so we want prime real estate.</li>
+<li>Mountains, far from light pollution is good.</li>
+<li>Other factors include clear weather, atmospheric water vapor, air turbulence  (which leads to bad <i>seeing</i>).  We want low turbulence, stable air (like air that's flowed over water a long distance).</li>
+<li>So we want high, dark, and dry.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org85a92f1" class="outline-4">
+<h4 id="org85a92f1">The Resolution of a Telescope</h4>
+<div class="outline-text-4" id="text-org85a92f1">
+<ul class="org-ul">
+<li>Resolution refers to precision of detail in an image.</li>
+<li>Resolution measured in arcseconds (how big a quarter would look, 5 km away!).</li>
+<li>Good resolution can come from high aperture.</li>
+<li>Resolution is weakened by gases of different temperature which act as lenses, distorting the image.  This is why the stars "twinkle"!</li>
+<li>It's also why we have telescopes on satellites in space.</li>
+<li>Another option is <i>adaptive optics</i>, where we undistort atmospheric distortion with a flexible mirror.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgef68142" class="outline-3">
+<h3 id="orgef68142">Visible-Light Detectors and Instruments</h3>
+<div class="outline-text-3" id="text-orgef68142">
+<ul class="org-ul">
+<li>The human eye has short <i>integration time</i>; the time to accumulate light energy before sending a signal (to the brain).  A fraction of a second.  Also, the brain doesn't have a usb cable to save our data, so we use detectors.</li>
+<li>Before the detector, we typically use a spectrometer.</li>
+</ul>
+</div>
+<div id="outline-container-orgec9ddf8" class="outline-4">
+<h4 id="orgec9ddf8">Photographic and Electronic Detectors</h4>
+<div class="outline-text-4" id="text-orgec9ddf8">
+<ul class="org-ul">
+<li>Used to take photographs, now use <i>charge-coupled devices (CCDs)</i> like those in cellphone cameras, where light radiation is measured in a grid of <i>pixels</i>.  This is 90 times more sensitive to light than the old photograph method.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfd8fd49" class="outline-4">
+<h4 id="orgfd8fd49">Infrared Observations</h4>
+<div class="outline-text-4" id="text-orgfd8fd49">
+<ul class="org-ul">
+<li><a href="http://coolcosmos.ipac.caltech.edu/infrared_gallery/1">Infrared Zoo</a></li>
+<li>These are difficult because at an average surface temperature of 300 K, the Earth emits radiation at a peak wavelength of 10&mu;m (Wien's Law).</li>
+<li>Detectors are shielded from nearby radiation and cooled near absolute zero (1-3 K) through immersion in liquid Helium.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc085800" class="outline-4">
+<h4 id="orgc085800">Spectroscopy</h4>
+<div class="outline-text-4" id="text-orgc085800">
+<ul class="org-ul">
+<li>Gives information about chemical composition, temperature, motion, and more.</li>
+<li>Spread out light by color (using prism or more commonly, a <i>grating</i>) and put detectors in each color's path to measure just that color.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_16.png" alt="6_16.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org808e073" class="outline-3">
+<h3 id="org808e073">Radio Telescopes</h3>
+<div class="outline-text-3" id="text-org808e073">
+<ul class="org-ul">
+<li>1930s, Karl G. Jansky measures radio signals from an unknown source, strongest about 4 minutes earlier on each successive day.  What does he conclude?</li>
+</ul>
+</div>
+<div id="outline-container-org8cb53ea" class="outline-4">
+<h4 id="org8cb53ea">Detection of Radio Energy from Space</h4>
+<div class="outline-text-4" id="text-org8cb53ea">
+<ul class="org-ul">
+<li>Note: radio waves are not Ke$ha's latest hits, they categorize a band of waves 10<sup>4</sup>-10<sup>12</sup> Hz.  We can't hear/see radio waves.</li>
+<li>Moving charged particles can create waves, so can waves move charged particles!</li>
+<li>How to create a radio wave-mirror?  Radio waves are reflected by conducting surfaces.  Radio telescopes resemble giant satellite dishes.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcd980e9" class="outline-4">
+<h4 id="orgcd980e9">Radio Interferometry</h4>
+<div class="outline-text-4" id="text-orgcd980e9">
+<ul class="org-ul">
+<li>Longer wavelengths are harder to resolve; the largest radio telescope has lower resolution than an amateur telescope.</li>
+<li>Radio astronomers take advantage of <i>interference</i> in radio waves by linking two or more telescopes into an <i>interferometer</i>, or better yet, into an <i>interferometer array</i>, such as the National Radio Astronomy Observatory's Very Large Array (VLA) near Socorro, NM, consisting of 27 25-m aperture telescopes on railroads over 36 km.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_VLA.jpg" alt="6_VLA.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If we combine the interferometry data later, we can separate the telescopes further; as in the Very Long Baseline Array (VLBA);</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_21.png" alt="6_21.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0fb78c8" class="outline-4">
+<h4 id="org0fb78c8">Radar Astronomy</h4>
+<div class="outline-text-4" id="text-org0fb78c8">
+<ul class="org-ul">
+<li><i>Radar</i> is bouncing radio waves off of objects in our solar system and analyzing the reflection.  Timing gives us the distance to, say, a mountain on Jupiter's surface.</li>
+<li>Using the Doppler effect, radar observations can determine the speed of objects!</li>
+<li>Best facility was 305-m telescope in Arecibo, Puerto Rico, in a bowl shape with hills, wherein the detector is moved.  Now surpassed by Five-hundred-meter Aperture Radio Telescope (FAST) in Pingtang Cty, China, which moves plates in the dish to focus on different objects.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_22.png" alt="6_22.png" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/6_FAST.jpg" alt="6_FAST.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb937a02" class="outline-3">
+<h3 id="orgb937a02">Observations Outside Earth's Atmosphere</h3>
+<div class="outline-text-3" id="text-orgb937a02">
+</div>
+<div id="outline-container-org9cc10e0" class="outline-4">
+<h4 id="org9cc10e0">Airborne and Space Infrared Telescopes</h4>
+<div class="outline-text-4" id="text-org9cc10e0">
+<ul class="org-ul">
+<li>Water vapor is the main source of atmospheric interference, and it's concentrated in the lower part of Earth's atmosphere.  Even 100 m elevation helps!</li>
+<li>Airplane observations have been made since 1960s, and are still being made.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd4c5977" class="outline-4">
+<h4 id="orgd4c5977">Hubble Space Telescope (HST)</h4>
+<div class="outline-text-4" id="text-orgd4c5977">
+<ul class="org-ul">
+<li>Named for Edwin Hubble, who discovered the expansion of the universe in the 1920s (more on that later).</li>
+<li>Mirror so precise that if it were scaled to the size of the entire continental US, there would be no hill or valley larger than ~6 cm.</li>
+<li>Scientists saved money by not testing it before launch.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_HUDF.jpg" alt="6_HUDF.jpg" height="300cm" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Turns out the mirror's <i>shape</i> was off by the width of a human hair, enough to make things blurry.</li>
+<li>December 1993, astronauts captured the orbiting telescope and fixed it (even put a new camera on!).</li>
+<li>The HST has been upgraded and repaired multiple times since.</li>
+</ul>
+<p target="_blank">
+<a href="https://upload.wikimedia.org/wikipedia/commons/0/0d/Hubble_ultra_deep_field_high_rez_edit1.jpg" target="_blank">HUDF</a>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3b65a8d" class="outline-3">
+<h3 id="org3b65a8d">High-Energy Observatories</h3>
+<div class="outline-text-3" id="text-org3b65a8d">
+<ul class="org-ul">
+<li>Mirrors are harder for X- and &gamma;- (gamma-)rays, which go through matter, but this is rectified in satellites (somehow).</li>
+<li>Gamma-ray detection can be done indirectly by observing byproducts of their collisions with charged particles on Earth.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9f78ec7" class="outline-3">
+<h3 id="org9f78ec7">The Future of Large Telescopes</h3>
+<div class="outline-text-3" id="text-org9f78ec7">
+<ul class="org-ul">
+<li>Large Synoptic Survey Telescope (LSST, 2021): Telescope with large field of view, scans sky for <i>transients</i> or events that happen quickly, such as exploding stars.</li>
+<li>Cherenkov Telescope Array (CTA, 2021-2025): Measures gamma rays from ground.</li>
+<li>Others working on larger-mirror telescopes (a third the size of a footbal field, composed of smaller mirrors).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
