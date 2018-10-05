@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-10-05 Fri 13:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Astronomy 101</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Astronomy 101</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1cdc566">1. ASTR 101</a></li>
+<li><a href="#org1af05d0">2. ASTR 101L</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1cdc566" class="outline-2">
+<h2 id="org1cdc566"><span class="section-number-2">1</span> ASTR 101</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="./Syllabus/Syllabus.pdf">Syllabus</a></li>
+<li><a href="https://openstax.org/details/books/astronomy">Textbook</a></li>
+<li><a href="./Reference.pdf">Reference sheet</a></li>
+<li>Upcoming deadlines (late work is not accepted):</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Due date</th>
+<th scope="col" class="org-left">Homework</th>
+<th scope="col" class="org-left">Q&amp;A</th>
+<th scope="col" class="org-left">Misc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><i>Monday, 9/3, 11:59 pm</i></td>
+<td class="org-left"><i>Homework 1</i></td>
+<td class="org-left"><i>1,2</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Wednesday, 9/5, 11:00 am</i></td>
+<td class="org-left"><i>Homework 2</i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Monday, 9/10, 11:59 pm</i></td>
+<td class="org-left"><i><a href="./Assignments/Assignment 3.pdf">Homework 3</a></i></td>
+<td class="org-left"><i>3</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Monday, 9/17, 11:59 pm</i></td>
+<td class="org-left"><i><a href="./Assignments/Assignment 4.pdf">Homework 4</a></i></td>
+<td class="org-left"><i>4</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Wednesday, 9/26, 11:59 pm</i></td>
+<td class="org-left"><i><a href="./Assignments/Assignment 5.pdf">Homework 5</a></i></td>
+<td class="org-left"><i>5</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Tuesday, 10/2, 11:59 pm</i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><i><a href="./Projects/Project1.pdf">Project 1</a></i></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Wednesday, 10/03, 11:59 pm</i></td>
+<td class="org-left"><i><a href="./Assignments/Assignment 6.pdf">Homework 6</a></i></td>
+<td class="org-left"><i>6</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Wednesday, 10/10, 11:59 pm</td>
+<td class="org-left">Homework 7</td>
+<td class="org-left">7</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Tuesday, 10/16, in class</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><b>Midterm</b></td>
+</tr>
+</tbody>
+</table>
+<ul class="org-ul">
+<li>Notes <i>(recordings not guaranteed, may disappear without notice)</i>:</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Week</th>
+<th scope="col" class="org-left">Chapter</th>
+<th scope="col" class="org-left">Notes</th>
+<th scope="col" class="org-left">Recordings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">08/21</td>
+<td class="org-left">1</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left"><a href="https://youtu.be/X2JC-YjHYR8">Recording 1</a></td>
+</tr>
+
+<tr>
+<td class="org-left">08/28</td>
+<td class="org-left">2,3</td>
+<td class="org-left"><a href="./Notes/ch1-3_Notes.html">Notes</a>, <a href="./Notes/ch1-3_Slides.html">Slides</a></td>
+<td class="org-left"><a href="https://www.twitch.tv/videos/303893317">Recording 2</a></td>
+</tr>
+
+<tr>
+<td class="org-left">09/04</td>
+<td class="org-left">4,5</td>
+<td class="org-left"><a href="./Notes/ch4-5_Notes.html">Notes</a>, <a href="./Notes/ch4-5_Slides.html">Slides</a></td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=m4rGCJOQQ-k">Recording 3</a></td>
+</tr>
+
+<tr>
+<td class="org-left">09/11</td>
+<td class="org-left">6</td>
+<td class="org-left"><a href="./Notes/ch6_Notes.html">Notes</a>, <a href="./Notes/ch6_Slides.html">Slides</a></td>
+<td class="org-left"><a href="https://youtu.be/pGjHtlC_ohE">Recording 4</a></td>
+</tr>
+
+<tr>
+<td class="org-left">09/18</td>
+<td class="org-left">7,8</td>
+<td class="org-left"><a href="./Notes/ch7-8_Notes.html">Notes</a>, <a href="./Notes/ch7-8_Slides.html">Slides</a></td>
+<td class="org-left"><a href="https://youtu.be/172anZmiJ80">Recording 5</a></td>
+</tr>
+
+<tr>
+<td class="org-left">09/25</td>
+<td class="org-left">9,10</td>
+<td class="org-left"><a href="./Notes/ch9-10_Notes.html">Notes</a>, <a href="./Notes/ch9-10_Slides.html">Slides</a></td>
+<td class="org-left"><a href="https://youtu.be/ZUWtnxE0SDw">Recording 6</a></td>
+</tr>
+
+<tr>
+<td class="org-left">10/02</td>
+<td class="org-left">11-13</td>
+<td class="org-left"><a href="./Notes/ch11-13_Notes.html">Notes</a>, <a href="./Notes/ch11-13_Slides.html">Slides</a></td>
+<td class="org-left"><a href="https://youtu.be/3jXUp4j9csM">Recording 7</a></td>
+</tr>
+
+<tr>
+<td class="org-left">10/09</td>
+<td class="org-left">14,15</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">10/16</td>
+<td class="org-left">16</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">10/23</td>
+<td class="org-left">17,18</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">10/30</td>
+<td class="org-left">19,20</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">11/06</td>
+<td class="org-left">21,22</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">11/13</td>
+<td class="org-left">23,24</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">11/20</td>
+<td class="org-left">25,26</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">11/27</td>
+<td class="org-left">27,28</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">12/04</td>
+<td class="org-left">29,30</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+<div id="outline-container-org1af05d0" class="outline-2">
+<h2 id="org1af05d0"><span class="section-number-2">2</span> ASTR 101L</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><a href="./Syllabus/LabSyllabus.pdf">Lab Syllabus</a></li>
+<li><a href="./Reference.pdf">Reference sheet</a></li>
+<li>Schedule <i>(The following is tentative, dates may be moved around&#x2013;announcements to be made in class)</i>:</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Date</th>
+<th scope="col" class="org-left">Lab</th>
+<th scope="col" class="org-left">Due</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><i>08/21</i></td>
+<td class="org-left"><i>Lab 0: Observing Projects</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>08/28</i></td>
+<td class="org-left"><i>Lab 1: Foundations</i></td>
+<td class="org-left"><i>Pre-lab reading</i></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>09/04</i></td>
+<td class="org-left"><i>Lab 2: Properties of Planets</i></td>
+<td class="org-left"><i>Lab 1 Homework</i></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>09/11</i></td>
+<td class="org-left"><i>Lab 3: Kepler's Laws</i></td>
+<td class="org-left"><i>Observing Project 1</i></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>09/18</i></td>
+<td class="org-left"><i>Lab 4: Parallax</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>09/25</i></td>
+<td class="org-left"><i>Lab 5: Astro-Photometry and Imaging</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>10/02</i></td>
+<td class="org-left"><i>Lab 6: Spectra and Atoms</i></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">10/09</td>
+<td class="org-left">Lab 7: Properties of Stars</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">10/16</td>
+<td class="org-left">Lab 8: Stellar Evolution</td>
+<td class="org-left">Lab 7 Homework</td>
+</tr>
+
+<tr>
+<td class="org-left">10/23</td>
+<td class="org-left">Lab 9: Binary Stars</td>
+<td class="org-left">Observing Project 2</td>
+</tr>
+
+<tr>
+<td class="org-left">10/30</td>
+<td class="org-left">Lab 10: Star Clusters and the Milky Way</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">11/06</td>
+<td class="org-left">Lab 11: Galaxies and Cepheids</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">11/13</td>
+<td class="org-left">Lab 12: Cosmology</td>
+<td class="org-left">Observing Project 3</td>
+</tr>
+
+<tr>
+<td class="org-left">11/20</td>
+<td class="org-left">Lab 13: Quasars</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">11/27</td>
+<td class="org-left">Lab 14: Alien Life</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">12/04</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2018-10-05 Fri 13:06</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
