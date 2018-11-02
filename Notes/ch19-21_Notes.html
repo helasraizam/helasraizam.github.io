@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 17-18</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ASTR101 Ch 17-18</h1>
+<div id="outline-container-orgd71afcb" class="outline-2">
+<h2 id="orgd71afcb">Ch 19 - Celestial Distances</h2>
+<div class="outline-text-2" id="text-orgd71afcb">
+</div>
+<div id="outline-container-orgb3c0932" class="outline-3">
+<h3 id="orgb3c0932">Fundamental Units of Distance</h3>
+<div class="outline-text-3" id="text-orgb3c0932">
+<ul class="org-ul">
+<li>Distances initially had to do with the human body:
+<ol class="org-ol">
+<li>The inch is the approximate distance between knuckles</li>
+<li>The yard is the span from the extended finger to the nose of the British king (??)</li>
+<li>Foot is the British king's foot</li>
+<li>Different countries had different measures.</li>
+</ol></li>
+<li>Around 1750, a uniform set of standards was made</li>
+</ul>
+</div>
+<div id="outline-container-org42e9e91" class="outline-4">
+<h4 id="org42e9e91">The Metric System</h4>
+<div class="outline-text-4" id="text-org42e9e91">
+<ul class="org-ul">
+<li>The metric system is the SI units we've been studying, and has the meter as the unit of length.</li>
+<li>This includes prefixes like centi-, mili-, kilo-, etc.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge4354fb" class="outline-4">
+<h4 id="orge4354fb">Modern Redefinitions of the Meter</h4>
+<div class="outline-text-4" id="text-orge4354fb">
+<ul class="org-ul">
+<li>In 1889, the meter was defined by a bar of platinum-iridium metal in Paris, of which precise replicas were made.</li>
+<li>As science gets more and more precise, so do the definitions of these distances.</li>
+<li>In 1960, a meter is defined as the distance of 1,650,763.73 wavelengths of a specific atomic transition of krypton-86.</li>
+<li>In 1983, a meter is defined in terms of the speed of light, as the distance light travels in 1/299,792,458.6 seconds, which is even more stable.</li>
+<li>Therefore, a light-second is defined as the <i>distance</i> that light travels in one second, 299,792,458.6 meters.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5b38a36" class="outline-4">
+<h4 id="org5b38a36">Distances within the Solar System</h4>
+<div class="outline-text-4" id="text-org5b38a36">
+<ul class="org-ul">
+<li>Early astronomers like Copernicus and Kepler measured the <i>relative</i> distances (ratios of distances) of planets, not the <i>absolute</i> (or actual) distances.</li>
+<li>Some distances can be directly calculated from radar measurements, using the known speed of light.</li>
+<li>The basic unit of distance for objects within the solar system is the astronomical unit (AU), the (average) distance between the Earth and the Sun; 1 AU = 1.5\ten{11} m=500 light-seconds.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1ef6564" class="outline-3">
+<h3 id="org1ef6564">Surveying the Stars</h3>
+<div class="outline-text-3" id="text-org1ef6564">
+</div>
+<div id="outline-container-orgefd7000" class="outline-4">
+<h4 id="orgefd7000">Triangulation in Space</h4>
+<div class="outline-text-4" id="text-orgefd7000">
+<ul class="org-ul">
+<li>You can deduce how far a pen is from you because you have two eyes [activity].</li>
+<li>We can use parallax to deduce the distance of an object based on how far you have to turn your head to see it from two points along the <i>baseline</i>, A and B.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_4.png" alt="19_4.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd4f86b0" class="outline-4">
+<h4 id="orgd4f86b0">Distances to Stars</h4>
+<div class="outline-text-4" id="text-orgd4f86b0">
+<ul class="org-ul">
+<li>In the scale of outer space, we have a baseline of 2 AU from the Earth's rotation.</li>
+<li>Which is nothing, when talking of cosmic scales.  We don't detect see a parallax effect from Earth's nearest star.</li>
+<li>Unless we try really hard, which astronomers Friedrich Bessel, Friedrich Struve, and Thomas Henderson of Germany, Russia, and Scotland did in 1838, independently, of 61 Cygni, Alpha Centauri, and Vega.</li>
+<li>The closest star, Alpha Centauri, showed parallax of 1.5 arcsec&#x2014;about the angular resolution of a quarter seen from 3 miles away!</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_6.png" alt="19_6.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd1d4ce6" class="outline-4">
+<h4 id="orgd1d4ce6">Units of Stellar Distance</h4>
+<div class="outline-text-4" id="text-orgd1d4ce6">
+<ul class="org-ul">
+<li>An object needs to be 206,265 AU away to have a parallax of 1 arcsec.</li>
+<li>A <i>parsec (pc)</i> is defined as this distance; 1 pc=206,625 AU.  It's how far away something has to be from Earth to have a parallax of 1 arcsecond.</li>
+<li>The distance away <i>D</i> of a star, in parsecs, is the reciprocal of its parallax <i>p</i> in seconds:</li>
+</ul>
+<p>
+\[D=\frac{1}{p}.\]
+</p>
+</div>
+</div>
+<div id="outline-container-org9442b01" class="outline-4">
+<h4 id="org9442b01">The Nearest Stars</h4>
+<div class="outline-text-4" id="text-org9442b01">
+<ul class="org-ul">
+<li>Recall closest star is Alpha Centauri (actually a binary star!).</li>
+<li>A third, faint star, Proxima Centauri, is .1 Ly closer.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf6d7aac" class="outline-4">
+<h4 id="orgf6d7aac">Measuring Parallaxes in Space</h4>
+<div class="outline-text-4" id="text-orgf6d7aac">
+<ul class="org-ul">
+<li>Stellar parallax measurement revolutionized by Hipparcos spacecraft in 1989, which measured stars out to 300 Ly with accuracy of 10-20%.</li>
+<li>Its successor Gaia was launched in 2013 by the European Space Agency, it should measure the position and distances of almost 1 billion stars with an accuracy of ten-millionths of an arcsecond, out to 30,000 Ly (almost a third of the galactic disk).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6152090" class="outline-3">
+<h3 id="org6152090">Variable Stars: One Key to Cosmic Distances</h3>
+<div class="outline-text-3" id="text-org6152090">
+<ul class="org-ul">
+<li>Most stars have constant luminosity, like the Sun, but some are <i>variable stars</i> whose luminosity typically changes on a regular cycle.</li>
+<li>Observe the <i>light curve</i> for an example star.  What is the <i>minimum</i>, <i>maximum</i>, and <i>period</i> of the star?</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_9.png" alt="19_9.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-orga18781e" class="outline-4">
+<h4 id="orga18781e">Pulsating Variables</h4>
+<div class="outline-text-4" id="text-orga18781e">
+<ul class="org-ul">
+<li>Two types of variable stars yield accurate distances.  They're both <i>pulsating variable stars</i>, which means they actually expand and contract in time, like your chest does when you breathe.</li>
+<li>We can measure their periods with the doppler shift of the expanding/contracting surface, or with the change in overall color (due to temperature change), or with the changing luminosity, which is most important.</li>
+<li>The two types are <i>cepheids</i> and <i>RR Lyrae</i>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1f64d2e" class="outline-4">
+<h4 id="org1f64d2e">Cepheid Variables</h4>
+<div class="outline-text-4" id="text-org1f64d2e">
+<ul class="org-ul">
+<li>Large, yellow, pulsating stars.</li>
+<li>Several hundred are known, with periods of 3-50 days.</li>
+<li>Luminosities are 10<sup>3</sup> to 10<sup>4</sup> times brighter than the Sun, and vary between .01 and 10 times the average luminosity.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb4e2be6" class="outline-4">
+<h4 id="orgb4e2be6">The Period-Luminosity Relation</h4>
+<div class="outline-text-4" id="text-orgb4e2be6">
+<ul class="org-ul">
+<li>The periods of cepheids can be directly measured, as mentioned above.</li>
+<li>Turns out the period is related to the absolute luminosity; this is known as the <i>period-luminosity relation,</i> discovered in 1908 by Henrietta Leavitt of Harvard.  This is huge, because we can figure out how far away the cepheid is by comparing the apparent magnitude (flux) that we observe to the absolute luminosity!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6bfdfbd" class="outline-4">
+<h4 id="org6bfdfbd">RR Lyrae Stars</h4>
+<div class="outline-text-4" id="text-org6bfdfbd">
+<ul class="org-ul">
+<li>More common but less luminous than the cepheids.</li>
+<li>Periods always less than one day.</li>
+<li>Brightness changes typically less than a factor of about 2.</li>
+<li>By noticing that RR Lyrae in clusters has the same apparent brightness, it was discovered that they all have the same intrinsic luminosity, 50 L<sub>o</sub>.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_14.png" alt="19_14.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org32d1023" class="outline-3">
+<h3 id="org32d1023">The H-R Diagram and Cosmic Distances</h3>
+<div class="outline-text-3" id="text-org32d1023">
+</div>
+<div id="outline-container-orgf24615d" class="outline-4">
+<h4 id="orgf24615d">Distances from Spectral Types</h4>
+<div class="outline-text-4" id="text-orgf24615d">
+<ul class="org-ul">
+<li>If we need to measure distance to a star that isn't varying, we can take advantage of the H-R diagram.</li>
+<li>From the spectrum, we can determine the spectral class.  We can then analyze the spectrum to deduce the pressure, from which we draw the density of the star.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/18_15.png" alt="18_15.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Luminosity classes are divided into:
+<ul class="org-ul">
+<li>Ia: Brightest supergiants</li>
+<li>Ib: Less luminous supergiants</li>
+<li>II: Bright giants</li>
+<li>III: Giants</li>
+<li>IV: Subgiants (smaller than giants, bigger than main-sequence)</li>
+<li>V: Main-sequence stars</li>
+</ul></li>
+<li>Need both luminosity and spectral type to fully characterize star on H-R diagram; eg., F3 V, or M2  III.</li>
+</ul>
+<ul class="org-ul">
+<li>If we have both spectral class and luminosity class, we can find the luminosity from the H-R diagram.  This method is (inaccurately) referred to as <i>spectroscopic parallax</i>.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_15.png" alt="19_15.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga9f8aa3" class="outline-4">
+<h4 id="orga9f8aa3">Measurement Methods for Varying Distances</h4>
+<div class="outline-text-4" id="text-orga9f8aa3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Range (Ly)</th>
+<th scope="col" class="org-left">Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">4-30,000*</td>
+<td class="org-left">Trigonometric parallax</td>
+</tr>
+
+<tr>
+<td class="org-left">up to 300,000</td>
+<td class="org-left">RR Lyrae</td>
+</tr>
+
+<tr>
+<td class="org-left">up to 1,200,000</td>
+<td class="org-left">H-R diagram and spectroscopic distances</td>
+</tr>
+
+<tr>
+<td class="org-left">up to 60,000,000</td>
+<td class="org-left">Cepheids</td>
+</tr>
+</tbody>
+</table>
+<pre class="example">
+* requires Gaia
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfc5842b" class="outline-2">
+<h2 id="orgfc5842b">Ch 21 - The Birth of Stars and the Discovery of Planets Outside the Solar System</h2>
+<div class="outline-text-2" id="text-orgfc5842b">
+</div>
+<div id="outline-container-org9935727" class="outline-3">
+<h3 id="org9935727">Star Formation</h3>
+<div class="outline-text-3" id="text-org9935727">
+<ul class="org-ul">
+<li>We've discussed stars as nuclear furnaces that activate if they reach 10-12 million K with the pp-chain, but how do they come to this point?</li>
+<li>It's estimated that on average, three stars are formed per year in our Galaxy.</li>
+</ul>
+</div>
+<div id="outline-container-orgab52924" class="outline-4">
+<h4 id="orgab52924">Quick Review</h4>
+<div class="outline-text-4" id="text-orgab52924">
+<ul class="org-ul">
+<li>Stars are defined by their ability to sustain nuclear fusion.</li>
+<li>Stable (main-sequence) stars like the Sun maintain equilibrium through nuclear fusion in their stars.</li>
+<li>Each second, 600 million tons of hydrogen fuse to helium in the Sun, releasing 4 million tons of matter as energy.  This means all stars will eventually run out of fuel.</li>
+<li>Stars range from about 1/12 M<sub>o</sub> to 200 M<sub>Sun</sub>, with smaller stars being more prevalent.</li>
+</ul>
+<ul class="org-ul">
+<li>Along the main sequence, the higher the mass, the higher the luminosity.</li>
+<li>A galaxy of stars like the Milky Way contains enough gas and dust to make billions of Sun-like stars.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0da221e" class="outline-4">
+<h4 id="org0da221e">Molecular Clouds: Stellar Nurseries</h4>
+<div class="outline-text-4" id="text-org0da221e">
+<ul class="org-ul">
+<li>To study star birth, we have to look for dense, cold clouds.</li>
+<li><i>Giant molecular clouds</i> are massive reservoirs of interstellar matter, with temperatures 10-20 K and most atoms bound in molecules.  Most stars are born of giant molecular clouds.</li>
+<li>Clouds contain cold, dense regions called <i>clumps</i>.  Clumps in turn somtimes contain denser, smaller regions, called <i>cores</i>, which are star embryos!</li>
+</ul>
+<ul class="org-ul">
+<li>Remember that a star's life revolves around two forces, gravity and pressure&#x2014;gravity condenses everything inward, and pressure resists by pushing out.</li>
+<li>The higher the temperature, the higher the pressure.  So low-temperature clouds and cores are ideal for gravity to take over, which is good, because&#x2026;</li>
+<li>To sustain fusion, we need to increase the density of interstellar atoms by 10<sup>20</sup>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9356fb7" class="outline-4">
+<h4 id="org9356fb7">The Orion Molecular Cloud</h4>
+<div class="outline-text-4" id="text-org9356fb7">
+<ul class="org-ul">
+<li>Orion constellation contains molecular cloud, seen through infrared and radio emissions.</li>
+<li>It is a present source of active star formation.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_3.png" alt="21_3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Orion's belt ~5 million years old, middle of sword contains <i>Orion Nebula</i>, 300,000 to 1 million years old, where stars still form today.</li>
+<li>The nebula contains a bright cluster of stars called the <i>Trapezium</i>.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_5.png" alt="21_5.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>(a) visible and (b) IR images of Orion Nebula show the Trapezium.</p>
+</div>
+<ul class="org-ul">
+<li>Only about 1% of the dust in has converted to stars, the rest will probably be heated and blown away by stellar winds and explosions.</li>
+<li>This is why older star clusters are easier to seen the visible range; the dust has been pushed away.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org276530c" class="outline-4">
+<h4 id="org276530c">Triggered Star Formation</h4>
+<div class="outline-text-4" id="text-org276530c">
+<ul class="org-ul">
+<li>Once star clusters mature, they can help create more clusters, which is how the stars of Orion are theorized to have come about.  This process is referred to as <i>triggered star formation</i>.
+<ol class="org-ol">
+<li>A massive star emits UV and high-speed gas (stellar wind) when formed.</li>
+<li>This heats up the gas around it and causes it to expand.</li>
+<li>Dying stars explode, further heating the gas.</li>
+<li>Hot gases pile into the surrounding cold cloud, increasing its density.</li>
+<li>If density is sufficiently increased, gravity takes over, stars begin to form.</li>
+</ol></li>
+</ul>
+<ul class="org-ul">
+<li>This process can't take place if only low-mass stars are produced in the cloud, as are in many clouds.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_7.png" alt="21_7.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>Triggered star formation</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1c5aa25" class="outline-4">
+<h4 id="org1c5aa25">The Birth of a Star</h4>
+<div class="outline-text-4" id="text-org1c5aa25">
+<ul class="org-ul">
+<li>The step between dust compressing and the youngest star is difficult to observe, because (1) it's very short (thousands of years, making it sparse), and (2) it's literally as dusty as you can get without being a star, so that it absorbs a lot of visible light.</li>
+<li>Still, a combination of limited observations and theoretical calculations yield the following.</li>
+</ul>
+<ol class="org-ol">
+<li>A dense, cold core is formed.</li>
+<li>The gravitational force of infalling gas overwhelms the (relatively low) internal pressure.</li>
+<li>A rapid collapse ensues, increasing many-fold the core density.  Between this core contraction and the beginning of pp-fusion, the object is called a <i>protostar</i>.</li>
+<li>By conservation of angular momentum, the protostar spins faster and faster as it contracts, so that objects along the poles (which don't move much) collapse inward, but objects along the equator don't quite collapse.</li>
+<li>The protostar, having reached its final mass, becomes a <i>T Tauri star</i>.</li>
+</ol>
+<ul class="org-ul">
+<li>Only stars with mass &le;M<sub>Sun</sub> become T Tauri stars.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_8.png" alt="21_8.png" />
+</p>
+<p><span class="figure-number">Figure 10: </span>Orange lines are stellar wind.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9bf680d" class="outline-4">
+<h4 id="org9bf680d">Winds and Jets</h4>
+<div class="outline-text-4" id="text-org9bf680d">
+<ul class="org-ul">
+<li>T Tauri may be a middle stage between protostar and hydrogen-fusing stars like the Sun, according to recent observations.</li>
+<li>T Tauri release stellar winds, mainly protons and electrons streaming at several hundred thousand mph.</li>
+<li>Sometimes light is emitted from a denser lump of gas that the stellar wind stream collides with, exciting its atoms and emitting light.  This light-emitting gas portion is known as a <i>Herbig-Haro (HH) object</i> after its discoverers.</li>
+<li>The stellar wind pushes out the surrounding dust and gas until the disk and protostar are visible.</li>
+</ul>
+<ul class="org-ul">
+<li>The dust enveloping the birthing star is so dense that the streams are visible, but no the star itself!</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_10.png" alt="21_10.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb1468eb" class="outline-3">
+<h3 id="orgb1468eb">The H-R Diagram and the Study of Stellar Evolution</h3>
+<div class="outline-text-3" id="text-orgb1468eb">
+</div>
+<div id="outline-container-org8f94a42" class="outline-4">
+<h4 id="org8f94a42">Evolutionary Tracks</h4>
+<div class="outline-text-4" id="text-org8f94a42">
+<ul class="org-ul">
+<li>We can graphically describe the evolution of a star by tracing its characteristics in an H-R diagram!</li>
+<li>Let's start with a protostar, which is initially cool with a very large radius and low density.  Heat can radiate out of the star easily at this low-density stage, meaning gravity is much stronger than internal pressure.</li>
+<li>Thus the star very quickly shrinks, decreasing its surface area and therefore luminosity (downward on H-R diagram).</li>
+<li>It keeps shrinking until internal temperature is strong enough to counter gravitational contraction, increasing its temperature in the process (leftward on H-R diagram).</li>
+</ul>
+<ul class="org-ul">
+<li>Note the timescales, and that more massive stars go through all stages of evolution faster.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_12.png" alt="21_12.png" />
+</p>
+<p><span class="figure-number">Figure 12: </span>Numbers are years of age, stars above dashed line are still enveloped by infalling material.</p>
+</div>
+<ul class="org-ul">
+<li>When the star's inner temperature is high enough to fuse hydrogen to helium, we say the star has reached the main sequence.</li>
+<li>Stars on the main sequence are much more stable, changing very slowly with the depletion of hydrogen, the star's life fuel.</li>
+<li>Where the star falls on the main sequence depends on its mass; the higher the mass, the higher the temperature and luminosity.</li>
+<li>If the mass is too low (less than the <i>critical mass</i> of 0.075 M<sub>o</sub>), temperatures for nuclear reaction are never achieved; these become brown dwarfs or planets.</li>
+<li>On the other hand, if the mass is too high (100-200 M<sub>o</sub>), the internal pressure halts the accretion of additional matter.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbb38470" class="outline-3">
+<h3 id="orgbb38470">Exoplanets Everywhere: What We Are Learning</h3>
+<div class="outline-text-3" id="text-orgbb38470">
+</div>
+<div id="outline-container-org2ef724a" class="outline-4">
+<h4 id="org2ef724a">Kepler Results</h4>
+<div class="outline-text-4" id="text-org2ef724a">
+
+<div class="figure">
+<p><img src="./Images/21_23.png" alt="21_23.png" />
+</p>
+<p><span class="figure-number">Figure 13: </span>Kepler Discoveries</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/21_24.png" alt="21_24.png" />
+</p>
+<p><span class="figure-number">Figure 14: </span>Actual Abundances</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8aa3053" class="outline-4">
+<h4 id="org8aa3053">Planets with known density</h4>
+<div class="outline-text-4" id="text-org8aa3053">
+<ul class="org-ul">
+<li>We can compare planet radius and density to get additional information about percentage of materials in the planet.</li>
+<li>Note as mass increases, radius increases, until there is so much mass that it causes gravitational contraction.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_25.png" alt="21_25.png" height="500px" />
+</p>
+<p><span class="figure-number">Figure 15: </span>Blue are if planets had pure compositions</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge21bd6d" class="outline-4">
+<h4 id="orge21bd6d">Exoplanetary Systems</h4>
+<div class="outline-text-4" id="text-orge21bd6d">
+<ul class="org-ul">
+<li>Other planetary systems than the solar system (exoplanetary systems) do happen, and likely also with multiple planets.  Over 3000 such systems have been observed.  One such exoplanetary system is Kepler-62.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/21_26.png" alt="21_26.png" />
+</p>
+<p><span class="figure-number">Figure 16: </span>Artist's conception.  Habitable zones have calculated temperatures 0-100&deg;C which supports liquid water.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
