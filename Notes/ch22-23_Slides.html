@@ -1,183 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>ASTR101 Ch 22-24</title>
-<meta name="generator" content="Org mode" />
+<meta charset="utf-8"/>
+<title>ASTR101 Ch 22-23</title>
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+.underline { text-decoration: underline; }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="reveal.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
 <link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
@@ -190,439 +35,451 @@
 <script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css.css" />
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div id="content">
-<h1 class="title">ASTR101 Ch 22-24</h1>
-<div id="outline-container-org0a690f3" class="outline-2">
-<h2 id="org0a690f3">Ch 22 - Stars from Adolescence to Old Age</h2>
-<div class="outline-text-2" id="text-org0a690f3">
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">ASTR101 Ch 22-23</h1>
+</section>
+<section>
+<section id="slide-sec-orgb473cc1">
+<h2 id="orgb473cc1">Ch 22 - Stars from Adolescence to Old Age</h2>
+<div class="outline-text-2" id="text-orgb473cc1">
 </div>
-<div id="outline-container-org9414e91" class="outline-4">
-<h4 id="org9414e91">Evolution from the Main Sequence to Red Giants</h4>
-<div class="outline-text-4" id="text-org9414e91">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org432f1e6">
+<h4 id="org432f1e6">Evolution from the Main Sequence to Red Giants</h4>
+<ul>
 <li>We've traced stellar evolution up to the main sequence.</li>
 <li>The main sequence is where the star sustains itself through fusion.</li>
 <li>It's referred to as the prolonged adolescence or adulthood stage of the star's life cycle.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<ul>
 <li>Left edge of main sequence below is referred to as the <i>zero-age main sequence</i>, where stars first fuse hydrogen and settle in to the main sequence.</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/18_15.png" alt="18_15.png" />
 </p>
 </div>
-<ul class="org-ul">
+</section>
+<ul>
 <li>While on main sequence, mass doesn't change much (only .7% of mass is converted to energy in fusion) but chemical composition goes from mostly Hydrogen to more and more Helium.</li>
 <li>This change in composition changes the star's temperature, luminosity, size, and interior structure.</li>
 <li>This moves it along the H-R diagram!  How?</li>
 <li>As H converts to He through the nuclear pp-chain, the inner density increases, increasing temperature, giving protons more speed on average, resulting in more collisions, and a much higher rate of fusion.</li>
 <li>The rate of fusion of the pp-cycle increases with temperature as</li>
+
 </ul>
 <p>
 \[\mbox{Rate of pp-fusion}\propto{}T^4.\]
 </p>
-<ul class="org-ul">
+</section>
+<ul>
 <li>So temperature increases, and luminosity will increase due to the increased rate of fusion (which produces increased rate of energy).</li>
 <li>This means up and to the left on the H-R diagram, but these changes are relatively small and most stars remains on the main sequence for most of their lives.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org28273ed" class="outline-4">
-<h4 id="org28273ed">Lifetimes on the Main Sequence</h4>
-<div class="outline-text-4" id="text-org28273ed">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org8b06d65">
+<h4 id="org8b06d65">Lifetimes on the Main Sequence</h4>
+<ul>
 <li>How long a star stays on the main sequence depends on how much fuel it starts with and how quickly it uses it up.</li>
 <li>More massive stars use up fuel more quickly since they need greater inner temperatures to balance out the much higher pressures of outer layers, and the rate of fusion goes as T<sup>4</sup>.</li>
 <li>On average, 90% of a star's life is spent on the main sequence.  This time depends on its mass.</li>
 <li>Turns out a mass of .4 gives the star around 200 billion years on the main sequence, while a mass of 40 solar masses is a mere million years (Table 22.1).</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org2ea1356" class="outline-4">
-<h4 id="org2ea1356">From Main-Sequence to Red Giant</h4>
-<div class="outline-text-4" id="text-org2ea1356">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orged1142e">
+<h4 id="orged1142e">From Main-Sequence to Red Giant</h4>
+<ul>
 <li>Eventually, hydrogen in the core is depleted with helium in its place (and whatever heavier elements it had to start with).</li>
 <li>The temperature for helium fusion is much higher, so that doesn't happen in these stars.</li>
 <li>The star begins to shrink, and its brightness and heat comes from the conversion of gravitational into heat energy (as Kelvin and Helmholtz posited).</li>
 <li>This process heats up the hydrogen that was just outside the core the whole time enough for it to undergo fusion, which in turns heats up layers outside of it, causing them to expand.</li>
 <li>Meanwhile the helium core keeps contracting, giving out more heat, causing more fusion.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Most star burns brighter than it ever did in this stage, since the fusion is not confined to the core.</li>
 <li>The increased heat causes the outer layers to expand, and the star's size increases ridiculously.</li>
 <li>This increase in size results in a decrease in temperature.  So our star is now cooler (to the right H-R) but also more luminous (up on H-R).</li>
 <li>As stars evolve, they become more red.</li>
 <li>This stage represents the star's old age.</li>
 <li>Remember that more massive stars go through every stage much faster.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>E.g., Betelgeuse is 10 million years old but is already a red supergiant (compared to the red star that is the 4.5 billion year-old Sun), because it's 16 times more massive.</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/22_4.png" alt="22_4.png" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-org0850bd0" class="outline-4">
-<h4 id="org0850bd0">Models for Evolution to the Giant Stage</h4>
-<div class="outline-text-4" id="text-org0850bd0">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgad5a759">
+<h4 id="orgad5a759">Models for Evolution to the Giant Stage</h4>
+<ul>
 <li>We discussed two evolutions; one is the adolescent formation of stars <i>to</i> the zero-age main sequence (ZAMS) of Ch. 21, one is the old-age evolution of stars <i>out of</i> the main ZAMS that we've just discussed.</li>
 <li>Both plots depend on mass.</li>
 <li>Remember, they represent different parts of a star's life cycle.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/21_12.png" alt="21_12.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Young star evolution to ZAMS.</p>
 </div>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/22_5.png" alt="22_5.png" height="600px" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Old star evolution from ZAMS.</p>
 </div>
-</div>
-</div>
-<div id="outline-container-org01b103a" class="outline-3">
-<h3 id="org01b103a">Star Clusters</h3>
-<div class="outline-text-3" id="text-org01b103a">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org92ca3fd">
+<h3 id="org92ca3fd">Star Clusters</h3>
+<ul>
 <li>These time scales span millions and billions of years, so we can't directly observe a star's life cycles.</li>
 <li>We can turn to star clusters, wherein the stars were born at approximately the same time, of the same material, in the same conditions, but have different masses (therefore evolve at different rates).</li>
 <li>This is like looking at a snapshot at various times of a star's life, all at once.</li>
+
 </ul>
-</div>
-<div id="outline-container-orgabc35da" class="outline-4">
-<h4 id="orgabc35da">Star Clusters</h4>
-<div class="outline-text-4" id="text-orgabc35da">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org8ccb160">
+<h4 id="org8ccb160">Star Clusters</h4>
+<ul>
 <li>There are three types of star clusters: <i>globular clusters</i>, <i>open clusters</i>, and <i>stellar associations</i>.</li>
 <li>Stellar associations contain the youngest stars, followed by open clusters, followed by globular clusters, on average.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org1449d97" class="outline-4">
-<h4 id="org1449d97">Globular Clusters</h4>
-<div class="outline-text-4" id="text-org1449d97">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org5ef3e63">
+<h4 id="org5ef3e63">Globular Clusters</h4>
+<ul>
 <li><i>Globular clusters</i> are most scarce in the Milky Way, there are only 150 of them.</li>
 <li>They hang out at the halo and central bulge of the Galaxy.</li>
 <li>Live billions of years.</li>
 <li>Very dense in stars</li>
 <li>Contain only very old stars.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org8363bb3" class="outline-4">
-<h4 id="org8363bb3">Open Clusters</h4>
-<div class="outline-text-4" id="text-org8363bb3">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org5bd6fbb">
+<h4 id="org5bd6fbb">Open Clusters</h4>
+<ul>
 <li><i>Open Clusters</i> number in the thousands in the Galaxy.</li>
 <li>Very small, at diameters less than 30 Ly.</li>
 <li>Hang out in the disk and spiral arms.</li>
 <li>Average lifespan of a few hundred million years.</li>
 <li>Not very dense (hence, "open").</li>
 <li>Fast stars often leave the clusters.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org2346af3" class="outline-4">
-<h4 id="org2346af3">Stellar Associations</h4>
-<div class="outline-text-4" id="text-org2346af3">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org510684f">
+<h4 id="org510684f">Stellar Associations</h4>
+<ul>
 <li><i>Associations</i> also number in the thousands.</li>
 <li>Hang out in the spiral arms.</li>
 <li>Lifespans up to tens of millions of years.</li>
 <li>Association stars are extremely young.</li>
+
 </ul>
+</section>
+<section id="slide-sec-orgd7eb654">
+<h3 id="orgd7eb654">Checking out the Theory</h3>
+<div class="outline-text-3" id="text-orgd7eb654">
 </div>
-</div>
-</div>
-<div id="outline-container-org600ed24" class="outline-3">
-<h3 id="org600ed24">Checking out the Theory</h3>
-<div class="outline-text-3" id="text-org600ed24">
-</div>
-<div id="outline-container-org4db3029" class="outline-4">
-<h4 id="org4db3029">H-R Diagrams of Young Clusters</h4>
-<div class="outline-text-4" id="text-org4db3029">
+</section>
+<section id="slide-sec-org6c97b96">
+<h4 id="org6c97b96">H-R Diagrams of Young Clusters</h4>
 
 <div class="figure">
 <p><img src="./Images/22_8.png" alt="22_8.png" />
 </p>
 <p><span class="figure-number">Figure 5: </span>Young, 3 million year-old cluster (computational).</p>
 </div>
+</section>
+<section >
+<div class="column" style="float:left; width: 50%">
 
 <div class="figure">
 <p><img src="./Images/22_9.png" alt="22_9.png" />
 </p>
 <p><span class="figure-number">Figure 6: </span>NGC2264, Christmas Tree Cluster &#x2014; young, dusty.</p>
 </div>
+</div>
+
+<div class="column" style="float:right; width: 50%">
 
 <div class="figure">
 <p><img src="./Images/22_10.png" alt="22_10.png" />
 </p>
 <p><span class="figure-number">Figure 7: </span>NGC 2264 H-R Diagram&#x2014;good agreement!</p>
 </div>
+</div>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/22_12.png" alt="22_12.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>Cluster M41 is about 100 million years old (older, more orange stars).</p>
 </div>
-</div>
-</div>
-<div id="outline-container-org4111b91" class="outline-4">
-<h4 id="org4111b91">H-R Diagrams of Older Clusters</h4>
-<div class="outline-text-4" id="text-org4111b91">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org8bbcd0a">
+<h4 id="org8bbcd0a">H-R Diagrams of Older Clusters</h4>
+<ul>
 <li>In older clusters, the stars a few times more massive than the Sun and heavier have left the ZAMS.</li>
 <li>The point where stars being leaving the main sequence is called the <i>main-sequence turnoff</i>.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/22_13.png" alt="22_13.png" />
 </p>
 <p><span class="figure-number">Figure 9: </span>Old, 4.24-billion year-old cluster (computational).</p>
 </div>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/22_14.png" alt="22_14.png" />
 </p>
 <p><span class="figure-number">Figure 10: </span>Cluster 47 Tucanae, zoomed in luminosity.</p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>We can get the age of a cluster from its main-sequence turnoff!</li>
 <li>I.e., the later we wait, the more less-massive stars have time to get off the ZAMS.</li>
 <li>The specific rate is attained by comparing simulation to observation.</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/22_15.png" alt="22_15.png" />
 </p>
 </div>
+</section>
+<section id="slide-sec-org9427360">
+<h3 id="org9427360">Further Evolution of Stars</h3>
+<div class="outline-text-3" id="text-org9427360">
 </div>
-</div>
-</div>
-<div id="outline-container-orgf7624d9" class="outline-3">
-<h3 id="orgf7624d9">Further Evolution of Stars</h3>
-<div class="outline-text-3" id="text-orgf7624d9">
-</div>
-<div id="outline-container-org787f895" class="outline-4">
-<h4 id="org787f895">Helium Fusion</h4>
-<div class="outline-text-4" id="text-org787f895">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgc04d90c">
+<h4 id="orgc04d90c">Helium Fusion</h4>
+<ul>
 <li>Let's focus on stars with initial low masses, about twice the solar mass (initial because the mass will change) and lower.</li>
 <li>When gravity shrinks the star, the core temperature can reach higher temperatures than it had in its main-sequence days.</li>
 <li>When it reaches 100 million K, it's hot enough for the <i>triple-alpha process</i> of fusion of three helium atoms into a single carbon nucleus.</li>
 <li>All carbon on Earth was once made in a red giant!</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>The triple-alpha process requires three helium atoms&#x2014;each of which has double the protons and hence electric repulsion as hydrogen&#x2014;to collide together, simultaneously.</li>
 <li>This is unlike the pp-chain in which only two particles collide at a time, making it a much more scarce reaction.</li>
 <li>So it's understandable that the temperature needed, 100 million K, is much greater for this process.</li>
 <li>In low-mass stars, this ignites the entire core in a fusion chain reaction called a <i>helium flash</i> (in higher-mass stars, it's not a flash, but a slower process).</li>
 <li>The flash increases temperature, heating the core, in turn increasing nuclear fusion reactions in a runaway generation of energy!</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org910c560" class="outline-4">
-<h4 id="org910c560">Becoming a Giant Again</h4>
-<div class="outline-text-4" id="text-org910c560">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgb1a170f">
+<h4 id="orgb1a170f">Becoming a Giant Again</h4>
+<ul>
 <li>The star comes to balance after the helium flash, now producing more energy at its core so that its surface temperature increases, but its overall luminosity decreases (left and downwards on H-R).</li>
 <li>Sometimes, carbon will collid with helium to form oxygen.</li>
 <li>This new stability feeding on the fusion of helium is short-lived because of the very fast rate of fusion, caused by the high temperature.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/22_17.png" alt="22_17.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>Layers in a low-mass star before death.</p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>After the helium is used up, the star's fusion is once again depleted, gravity takes over again, and it begins to shrink.</li>
 <li>This again causes the core to heat up adjacent shells&#x2014;this time, of unfused helium in the middle shells as well as unfused hydrogen in the outer shells, returning it for a short time to the red giant stage.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org18a512d" class="outline-4">
-<h4 id="org18a512d">Mass Loss from Red Giant Stars and the Formation of Planetary Nebulae</h4>
-<div class="outline-text-4" id="text-org18a512d">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgbc91ccf">
+<h4 id="orgbc91ccf">Mass Loss from Red Giant Stars and the Formation of Planetary Nebulae</h4>
+<ul>
 <li>As stars expand prior- and post-helium flash, they become very large, so that it's easier for outer particles to escape their gravity.</li>
 <li>Stars lose a lot of gas this way, in expanding shells corresponding to the changing radius of the star as it contracts with its nuclear exhaustion, expands with the helium flash, contracts again with nuclear exhaustion (of He), etc.</li>
 <li>Each shell can contain 10-20% of the star's mass.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>How many times will a star, having exhausted its fuel, spark a new fuel source?  Only once (helium) for these low-mass stars.</li>
 <li>The star instead continues to compress, reaching surface temperatures as high as 100,000 K.</li>
 <li>At this stage, the stars emit strong UV-radiation and stellar winds which heat up the gases they emitted in their red giant stage and ionize them, causing them to glow.</li>
 <li>The result are misnamed, <i>planetary nebulae</i>, a name that has stuck.  Obviously, there are no planets involved here.</li>
 <li>Our galaxy has tens of thousands of planetary nebulae.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/22_18.png" alt="22_18.png" />
 </p>
 <p><span class="figure-number">Figure 13: </span>Planetary nebulae.</p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Why do planetary nebulae have such different shape?</li>
 <li>One possibility is that they all have the same shape, but are viewed from different angles.</li>
 <li>This requires that they all be shaped like donuts.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-orge851356" class="outline-4">
-<h4 id="orge851356">Cosmic Recycling</h4>
-<div class="outline-text-4" id="text-orge851356">
-<ul class="org-ul">
+</section>
+<section >
+</section>
+<section id="slide-sec-org131ab43">
+<h4 id="org131ab43">Cosmic Recycling</h4>
+<ul>
 <li>The expelled mass of dying stars can form new stars.</li>
 <li>But these are different (more complex) atoms.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-orgc25cca5" class="outline-4">
-<h4 id="orgc25cca5">The Red Giant Sun and the Fate of Earth</h4>
-<div class="outline-text-4" id="text-orgc25cca5">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org472db2d">
+<h4 id="org472db2d">The Red Giant Sun and the Fate of Earth</h4>
+<ul>
 <li>4.5 billion years ago, the Sun just reached the zero-age main sequence and emitted only about 70% of its present radiation (Earth is theorized to have had more carbon dioxide in its atmosphere, keeping it warm enough to match evolution).</li>
 <li>As the Sun warmed, CO<sub>2</sub> was more readily absorbed in the hotter Earth into rocks and other reactions, decreasing its presence in the atmosphere, resulting in more stable climate.  This will continue in the future (but on way too slow a timescale to undo likely global warming effects of the next century).</li>
 <li>As the polar caps and oceans begin to evaporate, however, we are set to eventually have a Venus-like runaway greenhouse effect in .5-2 billion years.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Not to mention, the Sun will eventually become a red giant&#x2014;so large, it will swallow Mercury and Venus, Earth likely to follow.</li>
 <li>What can we do?</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>One idea is to literally move the Earth to a farther orbit.</li>
+
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-9RuaB3c9FQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<ul class="org-ul">
+<ul>
 <li>We could redirect an asteroid to move close enough to Earth to give Earth a gravity assist (like spaceships have stolen gravity from other planets, Earth would steal it from the asteroid) to move outward.</li>
+
 </ul>
+</section>
+<section id="slide-sec-org2352ee1">
+<h3 id="org2352ee1">The Evolution of More Massive Stars</h3>
+<div class="outline-text-3" id="text-org2352ee1">
 </div>
-</div>
-</div>
-<div id="outline-container-orgb71831c" class="outline-3">
-<h3 id="orgb71831c">The Evolution of More Massive Stars</h3>
-<div class="outline-text-3" id="text-orgb71831c">
-</div>
-<div id="outline-container-org049d390" class="outline-4">
-<h4 id="org049d390">Making New Elements in Massive Stars</h4>
-<div class="outline-text-4" id="text-org049d390">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org783e14a">
+<h4 id="org783e14a">Making New Elements in Massive Stars</h4>
+<ul>
 <li>Now we know where Carbon (and sometimes Oxygen!) is made.  Only in stars, where the pressures and temperatures are so unimaginably high.  What about more massive atoms?  Where do they come from?  They can never be made in low-mass stars.</li>
 <li>When more massive stars start burning helium, they do so much more gradually, becoming so bright and large that we call them <i>supergiants</i>.</li>
 <li>They grow up to a diameter the size of Jupiter's orbit (Betelgeuse's size!).</li>
 <li>They also give off a lot of mass in stellar winds and outbursts.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/22_20.png" alt="22_20.png" />
 </p>
 <p><span class="figure-number">Figure 14: </span>Eta Carinae (100 solar masses) has released a lot of mass.</p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Stars with masses greater than 8 solar masses compress the carbon-oxygen core enough to ignite fusion of carbon into oxygen, and at even higher temperatures, oxygen into neon into magnesium and silicon.</li>
 <li>The endpoint of this process is Iron, which we discussed is the first element to require energy for fusion.</li>
 <li>So how do we get more massive atoms?  We'll see when we study the death of the star.</li>
 <li>The process of making new atomic nuclei is termed <i>nucleosynthesis</i>.</li>
 <li>The theory of nucleosynthesis is accurate enough to correctly deduce the relative abundance of atoms in stars.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-orge209af6" class="outline-4">
-<h4 id="orge209af6">Elements in Globular Clusters and Open Clusters Are Not the Same</h4>
-<div class="outline-text-4" id="text-orge209af6">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org9e31d9c">
+<h4 id="org9e31d9c">Elements in Globular Clusters and Open Clusters Are Not the Same</h4>
+<ul>
 <li>Globular and open clusters have different abundances of elements heavier than helium.</li>
 <li>Since globular clusters are older, the ancient stars transmitted heavier elements into the clouds that made the next generation, and so on, so that globular clusters will have more heavier elements.</li>
 <li>Astronomers are searching for <i>first-generation stars</i>, made of only hydrogen and helium, from very distant galaxies which formed when the universe was only a few hundred million years old, whose light is just reaching Earth now.</li>
+
 </ul>
+</section>
+</section>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
 </body>
 </html>
