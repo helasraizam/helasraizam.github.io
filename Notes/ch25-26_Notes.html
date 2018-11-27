@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 25-26</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ASTR101 Ch 25-26</h1>
+<div id="outline-container-org0ee487b" class="outline-2">
+<h2 id="org0ee487b">Ch 25 - The Milky Way Galaxy</h2>
+<div class="outline-text-2" id="text-org0ee487b">
+</div>
+<div id="outline-container-org2ab22b2" class="outline-3">
+<h3 id="org2ab22b2">The Architecture of the Galaxy</h3>
+<div class="outline-text-3" id="text-org2ab22b2">
+</div>
+<div id="outline-container-orgb267049" class="outline-4">
+<h4 id="orgb267049">Herschel Measures the Galaxy</h4>
+<div class="outline-text-4" id="text-orgb267049">
+<ul class="org-ul">
+<li>In 1785, William Herschel noticed that most of the stars he observed lay along a plane.</li>
+<li>He hypothesized that the Sun was near the middle of a disk-shaped system of stars.</li>
+<li>The shape was correct, but he thought we were at the center because of interstellar dust.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_3.png" alt="25_3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Harlow Shapley used RR Lyrae stars (using the period-luminosity relations) to map star clusters.</li>
+<li>He found them distributed in a spherical volume with its center far from the Sun in the direction of Sagittarius.</li>
+<li>This Thus the Sun is not the center of our Galaxy.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_4.png" alt="25_4.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgfd412bd" class="outline-4">
+<h4 id="orgfd412bd">Disks and Haloes</h4>
+<div class="outline-text-4" id="text-orgfd412bd">
+<ul class="org-ul">
+<li>The main issue with mapping out our Galaxy is the interstellar dust which blocks out stars.</li>
+<li>Astronomers use radio and IR frequency ranges, which penetrate interstellar dust better.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_5.png" alt="25_5.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Brightest part is 100,000 Ly in diameter, only 2000 Ly thick.</li>
+<li>Youngest stars and their dust within 100 Ly of the Galaxy.</li>
+<li>In the disk, stars are concentrated in a central <i>bar</i> composed of mostly old yellow-red stars.</li>
+<li>The Milky Way Galaxy and other spiral galaxies with bars are termed <i>barred spirals</i>.</li>
+<li>The sun is halfway between the galactic center and its edge, 70 Ly from the galactic plane.</li>
+<li>The two main arms, Scutum-Centaurus and Perseus, emerge from the bar.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_6.png" alt="25_6.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Unbarred (M74) and strongly barred spiral galaxies (NGC1365).</p>
+</div>
+<ul class="org-ul">
+<li>Near the center is of the Galaxy is the <i>central bulge</i> (or <i>nuclear bulge</i>).</li>
+<li>It's difficult to observe due to interstellar dust, so the first image was taken in infrared.</li>
+<li>The bulge is twice as long as it is wide, shaped like a peanut.</li>
+<li>At its center is a tremendous concentration of matter.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_7.png" alt="25_7.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The Galaxy consists of a thin disk, a thick disk, the nuclear bulge, and a spherical <i>halo</i> of very old, faint stars extending at least 150,000 from the galactic center, containing most globular clusters.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_8.png" alt="25_8.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The mass extends even farther out with <i>dark matter</i>, an invisible source of mass with unknown composition.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org24e138c" class="outline-3">
+<h3 id="org24e138c">Spiral Structure</h3>
+<div class="outline-text-3" id="text-org24e138c">
+</div>
+<div id="outline-container-org76c5d38" class="outline-4">
+<h4 id="org76c5d38">The Arms of the Milky Way</h4>
+<div class="outline-text-4" id="text-org76c5d38">
+
+<div class="figure">
+<p><img src="./Images/25_MWarms.png" alt="25_MWarms.png" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/25_10.png" alt="25_10.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Most stars are in the two main arms, Scutum-Centaurus and Perseus.</li>
+<li>The Sun is along a short arm, the Orion Spur, which is 10,000 Ly long.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_11.png" alt="25_11.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>Features near Orion Spur</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org1f70408" class="outline-4">
+<h4 id="org1f70408">Formation of Spiral Structure</h4>
+<div class="outline-text-4" id="text-org1f70408">
+<ul class="org-ul">
+<li>Galaxies don't rotate all together, as expected from Kepler's law, P<sup>2</sup>&prop;a<sup>3</sup>.</li>
+<li>Instead, they have <i>differential galactic rotation</i>, where closer objects rotate with a higher period.</li>
+<li>Differential rotation turns features into spirals, which explains the <i>spiral arms</i> of the Galaxy.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_12.png" alt="25_12.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Turns out that this differential rotation over the 13-billion-year age of the Galaxy would result in it spiralling so much, it loses its features.</li>
+<li>Hubble observations show galaxies of like age begin with bring, clumpy star-forming regions.</li>
+<li>Those that would become spiral galaxies then decreased in turbulence until rotation was the dominating motion.</li>
+</ul>
+<ul class="org-ul">
+<li>Only at 3.6 billion years  old would well-defined spiral arms begin to form, and only well-defined arms would form.</li>
+<li>Finally, at around 8 billion years old, the galaxies could have multi-armed structures.</li>
+<li>Supercomputer simulations replicate spiral arms and demonstrate the importance of the gravitational influence of giant molecular clouds on the formation of spiral arms.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org93824f7" class="outline-3">
+<h3 id="org93824f7">The Mass of the Galaxy</h3>
+<div class="outline-text-3" id="text-org93824f7">
+</div>
+<div id="outline-container-org78bb020" class="outline-4">
+<h4 id="org78bb020">Kepler Helps Weigh the Galaxy</h4>
+<div class="outline-text-4" id="text-org78bb020">
+<ul class="org-ul">
+<li>The Sun, like the rest of the stars in the Galaxy, orbits the Galactic center.</li>
+<li>The speed of this orbit is 200 kps (!), so that it takes us 225 million years to circle the galactic center.  This is called a <i>galactic year</i>, of which 20 have passed in Earth's entire lifetime.</li>
+<li>We can use this orbital period and Kepler's law to find the mass of the galaxy.</li>
+</ul>
+<ul class="org-ul">
+<li>We obtain the result that the mass inside the Sun's orbit (a radius of 30,000 Ly) is about a billion Solar masses.</li>
+<li>Astronomers supposed this is a good approximation for the mass of the Galaxy, since luminous matter and bright stars drop off dramatically beyond 30,000 Ly from the galactic center.</li>
+<li>This seems like a reasonable conclusion, right?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf4f91d4" class="outline-4">
+<h4 id="orgf4f91d4">A Galaxy of Mostly Invisible Matter</h4>
+<div class="outline-text-4" id="text-orgf4f91d4">
+<ul class="org-ul">
+<li>Nope.</li>
+</ul>
+<ul class="org-ul">
+<li>A violation of Kepler's law consists of globular clusters and satellite galaxies outside of the luminous boundary of the Milky Way which don't rotate more slowly than the Sun.</li>
+<li>There are some globular clusters and RR Lyrae 30-150 kLy with orbital velocities greater than the Sun!</li>
+</ul>
+<ul class="org-ul">
+<li>Turns out most objects outside the Galaxy are moving faster than the Sun!</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_13.png" alt="25_13.png" />
+</p>
+<p><span class="figure-number">Figure 11: </span>Orbital velocities CO/H gas as function of distance from Galactic Center (red), compared to orbital velocities if the matter were mostly contained within 50,000 Ly (blue).</p>
+</div>
+<ul class="org-ul">
+<li>By comparing the period of the Sun to that of the matter outside of the Galaxy, we can find how much matter is between the Sun's orbital radius and the edge of the Galaxy.</li>
+<li>Remember, we can use Kepler's Law here because the orbits are <i>stable</i>; neither falling into the galactic center, nor flying out away from it.</li>
+<li>Astronomers calculate the total mass of the Galaxy to be at least 2&times;10<sup>12</sup> M<sub>Sun</sub>!</li>
+<li>This is 20 times greater than the amount of luminous matter.</li>
+<li>The <i>dark matter halo</i> which composes most of this matter extends to 200,000 Ly and is not quite spherical.</li>
+</ul>
+<ul class="org-ul">
+<li>What is dark matter (DM)?</li>
+<li>Can't be stars, since it's invisible.</li>
+<li>Can't be a gas, or we would have detected its emission and/or absorption spectra.</li>
+<li>Can't be interstellar dust, which would obscure galaxies noticeably.</li>
+</ul>
+<ul class="org-ul">
+<li>Can't be black holes or neutron stars, which would produce more X-rays than are observed, and would have resulted in a lot more heavy elements in younger stars than we observe today.</li>
+<li>Can't be brown-dwarfs or Jupiter-like planets; gravitational lensing experiments of the dark matter conclude that they can't be made up of lots of small objects one millionth to one tenth the mass of the Sun.</li>
+<li>Perhaps DM is made of a subatomic particle we haven't detected yet on Earth!</li>
+<li>DM is an active area of research.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgab9ac5f" class="outline-3">
+<h3 id="orgab9ac5f">The Center of the Galaxy</h3>
+<div class="outline-text-3" id="text-orgab9ac5f">
+<ul class="org-ul">
+<li>At the center of the galaxy is a black hole with the mass equivalent of 4.6 million Suns concentrated in a sphere of diameter smaller than Mercury's orbit.</li>
+<li>This is an example of a <i>supermassive black hole</i>, <i>Sagittarius A*</i>, a black hole much too large to have been created by the death of a single star.</li>
+</ul>
+</div>
+<div id="outline-container-orgf13c515" class="outline-4">
+<h4 id="orgf13c515">A Journey toward the Center</h4>
+<div class="outline-text-4" id="text-orgf13c515">
+
+<div class="figure">
+<p><img src="./Images/25_14.png" alt="25_14.png" />
+</p>
+<p><span class="figure-number">Figure 12: </span>Radio image of the galactic center region by the VLA in NM.</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/25_16.png" alt="25_16.png" />
+</p>
+<p><span class="figure-number">Figure 13: </span>Sagittarius A and some hot ionized gas, taken by VLA radio telescopes.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcc76829" class="outline-4">
+<h4 id="orgcc76829">Finding the Heart of the Galaxy</h4>
+<div class="outline-text-4" id="text-orgcc76829">
+<ul class="org-ul">
+<li>How can we tell that it's a black hole and not a dense cluster of stars at the center of the Galaxy?</li>
+<li>The event horizon of a <i>galactic black hole</i> of mass 4&times;10<sup>6</sup> M<sub>Sun</sub> is only 17 times the size of the Sun (the size of a single red giant).</li>
+</ul>
+<ul class="org-ul">
+<li>We can observe the orbits around Sagittarius A* to find its mass by Kepler's law and get an upper limit of 17 Lh on its diameter.</li>
+<li>This upper limit is tightened through radio astronomy, in which the Very Long Baseline Array found the diameter to be no larger than .3 AU (the size of Mercury's orbit).</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_17.png" alt="25_17.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>If the central mass were made up of something other than a supermassive black hole, the objects are calculated to collapse and form a black hole within 100,000 years, which is very small compared to the Galaxy's 13 billion year lifespan.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb4c6b6b" class="outline-4">
+<h4 id="orgb4c6b6b">Finding the Source</h4>
+<div class="outline-text-4" id="text-orgb4c6b6b">
+<ul class="org-ul">
+<li>Sagittarius A* may have formed from a large cloud of gas, then grown as it absorbed other objects, or it could have formed indirectly through the death of a star before growing.</li>
+<li>Sagittarius A* is not finished eating, and clouds are disappearing into it at a rate of 1 M<sub>Sun</sub>/thousand years.</li>
+</ul>
+<ul class="org-ul">
+<li>Every 10,000 years (on average), it swallows a star that passes nearby for dessert, letting off a flare of radiation that briefly outshines all the stars in the Milky Way.</li>
+<li>In 2013, when the Chandra X-ray satellite detected a flare 400 times brighter than usual, but this is smaller than expected for a full star (probably a heating asteroid).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd469e0f" class="outline-3">
+<h3 id="orgd469e0f">Stellar Populations in the Galaxy</h3>
+<div class="outline-text-3" id="text-orgd469e0f">
+
+<div class="figure">
+<p><img src="./Images/25_T25_1.png" alt="25_T25_1.png" />
+</p>
+<p><span class="figure-number">Figure 15: </span>Table 25.1</p>
+</div>
+</div>
+<div id="outline-container-org4824ce1" class="outline-4">
+<h4 id="org4824ce1">Two Kinds of Stars</h4>
+<div class="outline-text-4" id="text-org4824ce1">
+<ul class="org-ul">
+<li>During WWII, Walter Baade of Germany discovered two types of stars using the Mt Wilson telescopes of Southern California.</li>
+<li>Examining Andromeda, he noticed that the reddish stars in its nuclear bulge resemble those in our globular clusters and halo, and distinguished these from the bluer stars near the spiral arms.</li>
+<li>He called the bright blue stars <i>population I</i> and the stars of the halo/globular cluster <i>population II</i>.</li>
+</ul>
+<ul class="org-ul">
+<li>We now know these have different chemical compositions, age, and orbital motions around the galactic center.</li>
+<li>Population I stars are found only in the disk and with eccentricities near zero, such as supergiants.  Interstellar matter and molecular clouds are found where Population I stars are found.</li>
+<li>Population II stars don't care about spiral arms, but occur throughout the galaxy, with eccentric elliptical orbits that can take them through the galactic disk.  These include RR Lyrae.  Stars in globular clusters are also classified as Population II.</li>
+<li>Population I has stars as old as 10 billion years and as new as today, while Population II consist of ancient stars 11-13 billion years old.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_19.png" alt="25_19.png" />
+</p>
+<p><span class="figure-number">Figure 16: </span>Halo stars go through the galactic plane.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgba64c1c" class="outline-3">
+<h3 id="orgba64c1c">The Formation of the Galaxy</h3>
+<div class="outline-text-3" id="text-orgba64c1c">
+</div>
+<div id="outline-container-org7657ae4" class="outline-4">
+<h4 id="org7657ae4">The Protogalactic Cloud and the Monolithic Collapse Model</h4>
+<div class="outline-text-4" id="text-org7657ae4">
+<ul class="org-ul">
+<li>We can use stellar surveys to analyze the formation of the Galaxy.</li>
+<li>For example, since the oldest stars in the halo and globular clusters are spherically distributed, the <i>protogalactic cloud</i> that birthed the Galaxy was probably roughly spherical.</li>
+<li>The oldest stars are 12-13 billion years old, so our Galaxy probably shares about that age.</li>
+<li>Just as with star formation, the protogalactic cloud collapsed to form a thin rotating disk.</li>
+<li>Stars born before the collapse didn't participate in it!</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_21.png" alt="25_21.png" />
+</p>
+<p><span class="figure-number">Figure 17: </span>Monolithic collapse model of Galaxy formation.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9482f18" class="outline-4">
+<h4 id="org9482f18">Collision Victims and the Multiple Merger Model</h4>
+<div class="outline-text-4" id="text-org9482f18">
+<ul class="org-ul">
+<li>70 kLy from Earth and 50 kLy from the Galactic center is the closest known galaxy, the Sagittarius dwarf galaxy.</li>
+<li>It's on the other side of the galactic center, and its elongated shape indicates it's being torn by our galaxy's tides.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/25_22.png" alt="25_22.png" />
+</p>
+<p><span class="figure-number">Figure 18: </span>Sagittarius dwarf galaxy,</p>
+</div>
+<ul class="org-ul">
+<li>There's evidence for more close encounters between our Galaxy and others.</li>
+<li>Such interactions with smaller galaxies result in the Milky Way stealing some of their stars due to its greater pull, which then orbit our Galaxy in eccentric halo orbits.</li>
+<li>Astronomers have identified streams originating from 12 small galaxies that came close to our galaxy, with six more streams associated with globular clusters.</li>
+<li>Globular cluster M54 is thought to be the nucleus of the Sagittarius dwarf which is currently merging with the Milky Way.</li>
+</ul>
+<ul class="org-ul">
+<li>There are more galactic collisions in store.  Long tidal tails have been stripped from the Canis Major dwarf galaxy and wrapped themselves around the Milky Way thrice; they are expected to merge in the next billion years.</li>
+<li>In 3 billion years, the Milky Way itself is expected to be swallowed by the Andromeda galaxy.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D-0GaBQ494E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
