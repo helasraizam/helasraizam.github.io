@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ASTR101 Ch 0-1</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="reveal.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">ASTR101 Ch 0-1</h1>
+</section>
+<section>
+<section id="slide-sec-org0d2d7dd">
+<h2 id="org0d2d7dd">Ch 0 - Math Review (prealgebra)</h2>
+<div class="outline-text-2" id="text-org0d2d7dd">
+</div>
+</section>
+<section id="slide-sec-org7537e7c">
+<h3 id="org7537e7c">Exponentiation and logarithms</h3>
+<div class="outline-text-3" id="text-org7537e7c">
+</div>
+</section>
+<section id="slide-sec-org0f472fb">
+<h4 id="org0f472fb">Exponentiation (\(a^n\)) means multiplying a number by itself.</h4>
+<ul>
+<li>Anything raised to the power of 0 is 1 (except 0).</li>
+<li>A number \(a\) raised to the \(n\)<sup>th</sup> power means it multiplies itself \(n\) times.</li>
+<li>For example, a<sup>1</sup>=a, a<sup>2</sup>=a*a, a<sup>3</sup>=a*a*a.</li>
+<li>Eg: What is 2<sup>5</sup>?</li>
+<li>Eg: What is 3<sup>2</sup>?</li>
+<li>Eg: Why do we say \(\sqrt{a}=a^{1/2}\)?</li>
+
+</ul>
+</section>
+<section id="slide-sec-org5ff70e6">
+<h4 id="org5ff70e6">Logarithms</h4>
+<ul>
+<li>Exponentiation asks, "what do I get when I multiply a number \(a\) by itself \(n\) times?"</li>
+<li>Logarithms ask, "how many times do I have to multiply a number \(a\) by itself to get \(b\)?"</li>
+<li>We denote the logarithm of \(b\)</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgd4c1858">
+<h3 id="orgd4c1858">Mathematical manipulations</h3>
+<div class="outline-text-3" id="text-orgd4c1858">
+</div>
+</section>
+<section id="slide-sec-orga8d785c">
+<h4 id="orga8d785c">Order of Operations</h4>
+<ul>
+<li>PEMDAS: parentheses, exponents, multiplication &amp; division, addition and subtraction.</li>
+<li>Eg: What is 4*(2+3)<sup>4</sup>?</li>
+<li>Eg: What is 2+3*2<sup>2</sup>/3?</li>
+
+</ul>
+</section>
+<section id="slide-sec-org63cdca5">
+<h4 id="org63cdca5">FOIL - First, Outer, Inner, Last</h4>
+<ul>
+<li>If you have a product of sums, e.g. (a+b)*(c+d), how do you evaluate it?</li>
+<li>Expand by multiplying the First terms in both parentheses, then the Outer, then Inner, then Last.</li>
+<li>(a+b)*(c+d)=a*c+a*d+b*c*b*d.</li>
+<li>Eg: What's (2+2)(3+5)?  (First use FOIL, then use PEMDAS to check).</li>
+<li>Eg: What's (x+3)(x-2)?</li>
+<li>Eg: What's (a+2b)<sup>2</sup>?</li>
+
+</ul>
+</section>
+<section id="slide-sec-org6b525ed">
+<h3 id="org6b525ed">Fractions</h3>
+<div class="outline-text-3" id="text-org6b525ed">
+</div>
+</section>
+<section id="slide-sec-org50f26f1">
+<h4 id="org50f26f1">Multiplication and Division</h4>
+<div>
+\begin{align*}
+\frac ab*\frac cd&=\frac{ac}{bd}\\\\
+\frac ab \div\frac cd&=\frac ab * \frac dc=\frac{ad}{bc}
+\end{align*}
+
+</div>
+</section>
+<section id="slide-sec-org54d7d6a">
+<h4 id="org54d7d6a">Addition and Subtraction</h4>
+<div>
+\begin{align*}
+\frac ac+\frac bc&=\frac{a+b}c\\\\
+\frac ac-\frac bc&=\frac{a-b}c\\\\
+\frac ab+\frac cd&=\frac{ad}{bd}+\frac{cb}{db}=\frac{ad+cb}{db}
+\end{align*}
+
+</div>
+</section>
+<section id="slide-sec-orgcb61462">
+<h3 id="orgcb61462">Percentages</h3>
+<div class="outline-text-3" id="text-orgcb61462">
+</div>
+</section>
+<section id="slide-sec-org86ff887">
+<h4 id="org86ff887">Finding percentage</h4>
+<ul>
+<li>Recall that equivalent fractions can be expressed multiple ways; e.g., 2/3 is the same as 4/6 or 20/30.</li>
+<li>A percentage is just a fraction out of 100.  For example, 1/2 is the same as 50/100, so we say 1/2 is 50%.  1/4 is 25/100 so we say 1/4 of something is 25% of it.</li>
+<li>To find the percentage, solve the equation 2/3=x/100.  What do we get?</li>
+
+</ul>
+</section>
+<section id="slide-sec-org6219c03">
+<h3 id="org6219c03">Angles</h3>
+<div class="outline-text-3" id="text-org6219c03">
+</div>
+</section>
+<section id="slide-sec-orgfd200d2">
+<h4 id="orgfd200d2">Equivalent angles</h4>
+
+<div class="figure">
+<p><img src="./Images/0_angles.png" alt="0_angles.png" />
+</p>
+</div>
+<ul>
+<li>A red line crosses two parallel blue lines.</li>
+<li>First, concentrate on the lower blue line.  Which angles are equal?</li>
+<li>Now, compare the bottom angles to the top angles.  Which are equal?</li>
+
+</ul>
+</section>
+<section id="slide-sec-org56fdae5">
+<h4 id="org56fdae5">Radians</h4>
+<ul>
+<li>Radians are an alternative to degrees.</li>
+<li>There are 360&deg; in a circle if we're talking about degrees.</li>
+<li>In radians, there are 2&pi; radians in a circle.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgdab86ca">
+<h4 id="orgdab86ca">Degree-Minute-Second (DMS)</h4>
+<ul>
+<li>We can further divide degrees if we want to talk about very precise angles.</li>
+<li>We can divide degrees into 60 <i>arcminutes</i>, and each arcminute into 60 <i>arcseconds</i>.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org766ccf3">
+<h3 id="org766ccf3">Isolating Variables</h3>
+<ul>
+<li>Suppose we have an equation (2+x)<sup>2</sup>+3=x<sup>2</sup>, and we have to solve for x.</li>
+<li>The end goal is to just have x on one side of the equation.</li>
+<li>Let's solve it!</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgb0348c4">
+<h3 id="orgb0348c4">Proportionality</h3>
+<ul>
+<li>Suppose Yelle makes three times as much money as Xavier at her job.</li>
+<li>We can choose "y" to be how much Yelle makes and "x" to be how much Xavier makes.  Then, y=3x.</li>
+<li>When we have something of the form y=[constant]*x, we say y is <i>proportional</i> to x, with the notation y&prop;x.</li>
+<li>Exercise: Suppose a&prop;b, and if b=5, a=2.  What is a when b is 10?</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-sec-org7572e7f">
+<h2 id="org7572e7f">Ch 1 - Science and the Universe: A Brief Tour</h2>
+<div class="outline-text-2" id="text-org7572e7f">
+</div>
+</section>
+<section id="slide-sec-orga0355d5">
+<h3 id="orga0355d5">The Nature of Astronomy</h3>
+<ul>
+<li><i>Astronomy</i> is the study of objects that lie beyond our planet Earth and the processes by which these objects interact with one another.</li>
+<li>Universe is changing</li>
+
+</ul>
+</section>
+<section id="slide-sec-orga1f04eb">
+<h3 id="orga1f04eb">The Nature of Science</h3>
+<div class="outline-text-3" id="text-orga1f04eb">
+</div>
+</section>
+<section id="slide-sec-orgf039a5c">
+<h4 id="orgf039a5c">Observational Science</h4>
+<ul>
+<li>Objective, evidence-based, reproducible.</li>
+<li>Scientific Method
+<ol>
+<li>Observation: Observe something.</li>
+<li>Question: Ask a question about the observation.</li>
+<li>Hypothesis: Give a possible answer to the question.</li>
+<li>Experiment: Come up with and perform an experiment to find out whether the hypothesis is correct.</li>
+<li>Analysis: Analyze the data of the experiment.</li>
+<li>Conclusion: Formulate a conclusion from the data.</li>
+<li>Repeat!</li>
+
+</ol></li>
+
+</ul>
+</section>
+<section id="slide-sec-org58d8181">
+<h4 id="org58d8181">Geocentric and Heliocentric Model</h4>
+
+<div class="figure">
+<p><img src="./Images/ch1/geocentric.jpg" alt="geocentric.jpg" class="paired" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="https://www.almanac.com/sites/default/files/users/Almanac%20Staff/dwarf-planets_0.jpg" alt="dwarf-planets_0.jpg" class="paired" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orge10c446">
+<h3 id="orge10c446">The Laws of Nature</h3>
+<ul>
+<li>Scientific Laws or Scientific Theories?  Limitations and Evolution of Science.</li>
+<li>Math: The language of science</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgbb157da">
+<h3 id="orgbb157da">Numbers in Astronomy</h3>
+<ul>
+<li>Scientific Notation (Appendix C)</li>
+<li>SI Units (Appendix D)</li>
+<li>Unit Conversion</li>
+<li>Astronomical Units and Constants
+<ul>
+<li>Speed of light</li>
+<li>Light-year: Measure of the DISTANCE that light travels in one year.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-sec-org79682a3">
+<h3 id="org79682a3">Consequences of Light Travel Time</h3>
+<div class="outline-text-3" id="text-org79682a3">
+</div>
+</section>
+<section id="slide-sec-org335a999">
+<h4 id="org335a999">Light has finite speed!</h4>
+<ul>
+<li>Light-year: A natural historical measure!</li>
+<li>AU: Average Earth-Sun distance, approximately 1.5x10<sup>8</sup> km.</li>
+<li>A history-book of the universe!</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgae1b383">
+<h3 id="orgae1b383">A Tour of the Universe</h3>
+<div class="outline-text-3" id="text-orgae1b383">
+</div>
+</section>
+<section id="slide-sec-orgb9448a0">
+<h4 id="orgb9448a0">Overview of our Solar System</h4>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0fKBhvDjuy0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+</section>
+<section id="slide-sec-orgff5fd9c">
+<h4 id="orgff5fd9c">Overview of Milky Way</h4>
+<ul>
+<li>Can't see the rim!  Interstellar dust in-plane&#x2014;some wavelengths invisible to the gas!</li>
+
+</ul>
+</section>
+<section id="slide-sec-orga55a377">
+<h3 id="orga55a377">The Universe on the Large Scale</h3>
+<div class="outline-text-3" id="text-orga55a377">
+</div>
+</section>
+<section id="slide-sec-org18cdac9">
+<h4 id="org18cdac9">Universe, Cosmos, Galaxy, System, etc.</h4>
+<ul>
+<li>Capitalized, "Galaxy" refers to Milky Way, uncapitalized to any galaxy</li>
+<li>We are part of a Local Group of over 50 galaxies, which is part of the Virgo Supercluster, with diameter of 110 MLy.</li>
+<li>Solar System &lt; Galaxy &lt; galaxy cluster &lt; supercluster &lt; Universe</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgf1b41c8">
+<h3 id="orgf1b41c8">The Universe of the Very Small</h3>
+<ul>
+<li>Vacuum: On Earth, 10<sup>19</sup> atoms/cc, interstellar gas: 1 atom/cc, intergalactic space: 1 atom/m<sup>2</sup>.</li>
+<li>Cosmically Abundant Elements (Table 1.1) - pattern?  Atomic Fusion.</li>
+<li>Discerning atoms with proton number, atomic isotopes, charged atoms.</li>
+<li>Atomic structure: proton, neutron, electron.
+<ul>
+<li>Electron radius is ~10<sup>5</sup> times the nucleus radius.</li>
+<li>Earth-Sun distance is ~100 times the size of the Sun.</li>
+<li>Matter is mostly empty space!</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-sec-org53af9de">
+<h4 id="org53af9de">Four forces</h4>
+<ul>
+<li>Gravity, Electromagnetism, Strong and Weak Nuclear Forces.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgb010d7d">
+<h3 id="orgb010d7d">A Conclusion and a Beginning</h3>
+<ul>
+<li>The temporal universe:</li>
+
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qe3PJ8WKO2E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 0-1</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ASTR101 Ch 0-1</h1>
+<div id="outline-container-orgcff33d1" class="outline-2">
+<h2 id="orgcff33d1">Ch 0 - Math Review (prealgebra)</h2>
+<div class="outline-text-2" id="text-orgcff33d1">
+</div>
+<div id="outline-container-org0e256f8" class="outline-3">
+<h3 id="org0e256f8">Exponentiation and logarithms</h3>
+<div class="outline-text-3" id="text-org0e256f8">
+</div>
+<div id="outline-container-org151c122" class="outline-4">
+<h4 id="org151c122">Exponentiation (\(a^n\)) means multiplying a number by itself.</h4>
+<div class="outline-text-4" id="text-org151c122">
+<ul class="org-ul">
+<li>Anything raised to the power of 0 is 1 (except 0).</li>
+<li>A number \(a\) raised to the \(n\)<sup>th</sup> power means it multiplies itself \(n\) times.</li>
+<li>For example, a<sup>1</sup>=a, a<sup>2</sup>=a*a, a<sup>3</sup>=a*a*a.</li>
+<li>Eg: What is 2<sup>5</sup>?</li>
+<li>Eg: What is 3<sup>2</sup>?</li>
+<li>Eg: Why do we say \(\sqrt{a}=a^{1/2}\)?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge1d28d2" class="outline-4">
+<h4 id="orge1d28d2">Logarithms</h4>
+<div class="outline-text-4" id="text-orge1d28d2">
+<ul class="org-ul">
+<li>Exponentiation asks, "what do I get when I multiply a number \(a\) by itself \(n\) times?"</li>
+<li>Logarithms ask, "how many times do I have to multiply a number \(a\) by itself to get \(b\)?"</li>
+<li>We denote the logarithm of \(b\)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgff1feb9" class="outline-3">
+<h3 id="orgff1feb9">Mathematical manipulations</h3>
+<div class="outline-text-3" id="text-orgff1feb9">
+</div>
+<div id="outline-container-orgbd0be12" class="outline-4">
+<h4 id="orgbd0be12">Order of Operations</h4>
+<div class="outline-text-4" id="text-orgbd0be12">
+<ul class="org-ul">
+<li>PEMDAS: parentheses, exponents, multiplication &amp; division, addition and subtraction.</li>
+<li>Eg: What is 4*(2+3)<sup>4</sup>?</li>
+<li>Eg: What is 2+3*2<sup>2</sup>/3?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbcc1605" class="outline-4">
+<h4 id="orgbcc1605">FOIL - First, Outer, Inner, Last</h4>
+<div class="outline-text-4" id="text-orgbcc1605">
+<ul class="org-ul">
+<li>If you have a product of sums, e.g. (a+b)*(c+d), how do you evaluate it?</li>
+<li>Expand by multiplying the First terms in both parentheses, then the Outer, then Inner, then Last.</li>
+<li>(a+b)*(c+d)=a*c+a*d+b*c*b*d.</li>
+<li>Eg: What's (2+2)(3+5)?  (First use FOIL, then use PEMDAS to check).</li>
+<li>Eg: What's (x+3)(x-2)?</li>
+<li>Eg: What's (a+2b)<sup>2</sup>?</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org2b32691" class="outline-3">
+<h3 id="org2b32691">Fractions</h3>
+<div class="outline-text-3" id="text-org2b32691">
+</div>
+<div id="outline-container-org59640da" class="outline-4">
+<h4 id="org59640da">Multiplication and Division</h4>
+<div class="outline-text-4" id="text-org59640da">
+\begin{align*}
+\frac ab*\frac cd&=\frac{ac}{bd}\\\\
+\frac ab \div\frac cd&=\frac ab * \frac dc=\frac{ad}{bc}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org5cf08c6" class="outline-4">
+<h4 id="org5cf08c6">Addition and Subtraction</h4>
+<div class="outline-text-4" id="text-org5cf08c6">
+\begin{align*}
+\frac ac+\frac bc&=\frac{a+b}c\\\\
+\frac ac-\frac bc&=\frac{a-b}c\\\\
+\frac ab+\frac cd&=\frac{ad}{bd}+\frac{cb}{db}=\frac{ad+cb}{db}
+\end{align*}
+</div>
+</div>
+</div>
+<div id="outline-container-org4752c61" class="outline-3">
+<h3 id="org4752c61">Percentages</h3>
+<div class="outline-text-3" id="text-org4752c61">
+</div>
+<div id="outline-container-org2887b39" class="outline-4">
+<h4 id="org2887b39">Finding percentage</h4>
+<div class="outline-text-4" id="text-org2887b39">
+<ul class="org-ul">
+<li>Recall that equivalent fractions can be expressed multiple ways; e.g., 2/3 is the same as 4/6 or 20/30.</li>
+<li>A percentage is just a fraction out of 100.  For example, 1/2 is the same as 50/100, so we say 1/2 is 50%.  1/4 is 25/100 so we say 1/4 of something is 25% of it.</li>
+<li>To find the percentage, solve the equation 2/3=x/100.  What do we get?</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbd48e5b" class="outline-3">
+<h3 id="orgbd48e5b">Angles</h3>
+<div class="outline-text-3" id="text-orgbd48e5b">
+</div>
+<div id="outline-container-org8eecab1" class="outline-4">
+<h4 id="org8eecab1">Equivalent angles</h4>
+<div class="outline-text-4" id="text-org8eecab1">
+
+<div class="figure">
+<p><img src="./Images/0_angles.png" alt="0_angles.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>A red line crosses two parallel blue lines.</li>
+<li>First, concentrate on the lower blue line.  Which angles are equal?</li>
+<li>Now, compare the bottom angles to the top angles.  Which are equal?</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9bdfd7d" class="outline-4">
+<h4 id="org9bdfd7d">Radians</h4>
+<div class="outline-text-4" id="text-org9bdfd7d">
+<ul class="org-ul">
+<li>Radians are an alternative to degrees.</li>
+<li>There are 360&deg; in a circle if we're talking about degrees.</li>
+<li>In radians, there are 2&pi; radians in a circle.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb3e3f0" class="outline-4">
+<h4 id="orgdb3e3f0">Degree-Minute-Second (DMS)</h4>
+<div class="outline-text-4" id="text-orgdb3e3f0">
+<ul class="org-ul">
+<li>We can further divide degrees if we want to talk about very precise angles.</li>
+<li>We can divide degrees into 60 <i>arcminutes</i>, and each arcminute into 60 <i>arcseconds</i>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orga81901e" class="outline-3">
+<h3 id="orga81901e">Isolating Variables</h3>
+<div class="outline-text-3" id="text-orga81901e">
+<ul class="org-ul">
+<li>Suppose we have an equation (2+x)<sup>2</sup>+3=x<sup>2</sup>, and we have to solve for x.</li>
+<li>The end goal is to just have x on one side of the equation.</li>
+<li>Let's solve it!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org04664e4" class="outline-3">
+<h3 id="org04664e4">Proportionality</h3>
+<div class="outline-text-3" id="text-org04664e4">
+<ul class="org-ul">
+<li>Suppose Yelle makes three times as much money as Xavier at her job.</li>
+<li>We can choose "y" to be how much Yelle makes and "x" to be how much Xavier makes.  Then, y=3x.</li>
+<li>When we have something of the form y=[constant]*x, we say y is <i>proportional</i> to x, with the notation y&prop;x.</li>
+<li>Exercise: Suppose a&prop;b, and if b=5, a=2.  What is a when b is 10?</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org556f8d2" class="outline-2">
+<h2 id="org556f8d2">Ch 1 - Science and the Universe: A Brief Tour</h2>
+<div class="outline-text-2" id="text-org556f8d2">
+</div>
+<div id="outline-container-org8ed1a3e" class="outline-3">
+<h3 id="org8ed1a3e">The Nature of Astronomy</h3>
+<div class="outline-text-3" id="text-org8ed1a3e">
+<ul class="org-ul">
+<li><i>Astronomy</i> is the study of objects that lie beyond our planet Earth and the processes by which these objects interact with one another.</li>
+<li>Universe is changing</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org496476f" class="outline-3">
+<h3 id="org496476f">The Nature of Science</h3>
+<div class="outline-text-3" id="text-org496476f">
+</div>
+<div id="outline-container-org6b50a54" class="outline-4">
+<h4 id="org6b50a54">Observational Science</h4>
+<div class="outline-text-4" id="text-org6b50a54">
+<ul class="org-ul">
+<li>Objective, evidence-based, reproducible.</li>
+<li>Scientific Method
+<ol class="org-ol">
+<li>Observation: Observe something.</li>
+<li>Question: Ask a question about the observation.</li>
+<li>Hypothesis: Give a possible answer to the question.</li>
+<li>Experiment: Come up with and perform an experiment to find out whether the hypothesis is correct.</li>
+<li>Analysis: Analyze the data of the experiment.</li>
+<li>Conclusion: Formulate a conclusion from the data.</li>
+<li>Repeat!</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcb3d9fb" class="outline-4">
+<h4 id="orgcb3d9fb">Geocentric and Heliocentric Model</h4>
+<div class="outline-text-4" id="text-orgcb3d9fb">
+
+<div class="figure">
+<p><img src="./Images/ch1/geocentric.jpg" alt="geocentric.jpg" class="paired" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="https://www.almanac.com/sites/default/files/users/Almanac%20Staff/dwarf-planets_0.jpg" alt="dwarf-planets_0.jpg" class="paired" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb70065b" class="outline-3">
+<h3 id="orgb70065b">The Laws of Nature</h3>
+<div class="outline-text-3" id="text-orgb70065b">
+<ul class="org-ul">
+<li>Scientific Laws or Scientific Theories?  Limitations and Evolution of Science.</li>
+<li>Math: The language of science</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9d262fe" class="outline-3">
+<h3 id="org9d262fe">Numbers in Astronomy</h3>
+<div class="outline-text-3" id="text-org9d262fe">
+<ul class="org-ul">
+<li>Scientific Notation (Appendix C)</li>
+<li>SI Units (Appendix D)</li>
+<li>Unit Conversion</li>
+<li>Astronomical Units and Constants
+<ul class="org-ul">
+<li>Speed of light</li>
+<li>Light-year: Measure of the DISTANCE that light travels in one year.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org13cb261" class="outline-3">
+<h3 id="org13cb261">Consequences of Light Travel Time</h3>
+<div class="outline-text-3" id="text-org13cb261">
+</div>
+<div id="outline-container-org6cd5587" class="outline-4">
+<h4 id="org6cd5587">Light has finite speed!</h4>
+<div class="outline-text-4" id="text-org6cd5587">
+<ul class="org-ul">
+<li>Light-year: A natural historical measure!</li>
+<li>AU: Average Earth-Sun distance, approximately 1.5x10<sup>8</sup> km.</li>
+<li>A history-book of the universe!</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org648597c" class="outline-3">
+<h3 id="org648597c">A Tour of the Universe</h3>
+<div class="outline-text-3" id="text-org648597c">
+</div>
+<div id="outline-container-org3b311c1" class="outline-4">
+<h4 id="org3b311c1">Overview of our Solar System</h4>
+<div class="outline-text-4" id="text-org3b311c1">
+</div>
+</div>
+
+<div id="outline-container-org39df96a" class="outline-4">
+<h4 id="org39df96a">Overview of Milky Way</h4>
+<div class="outline-text-4" id="text-org39df96a">
+<ul class="org-ul">
+<li>Can't see the rim!  Interstellar dust in-plane&#x2014;some wavelengths invisible to the gas!</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5c0b942" class="outline-3">
+<h3 id="org5c0b942">The Universe on the Large Scale</h3>
+<div class="outline-text-3" id="text-org5c0b942">
+</div>
+<div id="outline-container-org89c86a0" class="outline-4">
+<h4 id="org89c86a0">Universe, Cosmos, Galaxy, System, etc.</h4>
+<div class="outline-text-4" id="text-org89c86a0">
+<ul class="org-ul">
+<li>Capitalized, "Galaxy" refers to Milky Way, uncapitalized to any galaxy</li>
+<li>We are part of a Local Group of over 50 galaxies, which is part of the Virgo Supercluster, with diameter of 110 MLy.</li>
+<li>Solar System &lt; Galaxy &lt; galaxy cluster &lt; supercluster &lt; Universe</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0b08203" class="outline-3">
+<h3 id="org0b08203">The Universe of the Very Small</h3>
+<div class="outline-text-3" id="text-org0b08203">
+<ul class="org-ul">
+<li>Vacuum: On Earth, 10<sup>19</sup> atoms/cc, interstellar gas: 1 atom/cc, intergalactic space: 1 atom/m<sup>2</sup>.</li>
+<li>Cosmically Abundant Elements (Table 1.1) - pattern?  Atomic Fusion.</li>
+<li>Discerning atoms with proton number, atomic isotopes, charged atoms.</li>
+<li>Atomic structure: proton, neutron, electron.
+<ul class="org-ul">
+<li>Electron radius is ~10<sup>5</sup> times the nucleus radius.</li>
+<li>Earth-Sun distance is ~100 times the size of the Sun.</li>
+<li>Matter is mostly empty space!</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org9be957e" class="outline-4">
+<h4 id="org9be957e">Four forces</h4>
+<div class="outline-text-4" id="text-org9be957e">
+<ul class="org-ul">
+<li>Gravity, Electromagnetism, Strong and Weak Nuclear Forces.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org5fe1ba2" class="outline-3">
+<h3 id="org5fe1ba2">A Conclusion and a Beginning</h3>
+<div class="outline-text-3" id="text-org5fe1ba2">
+<ul class="org-ul">
+<li>The temporal universe:</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qe3PJ8WKO2E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
