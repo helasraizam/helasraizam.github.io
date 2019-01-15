@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ASTR101 Ch 19-20</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="reveal.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">ASTR101 Ch 19-20</h1>
+</section>
+<section>
+<section id="slide-sec-orgd8db764">
+<h2 id="orgd8db764">Ch 19 - Celestial Distances</h2>
+<div class="outline-text-2" id="text-orgd8db764">
+</div>
+</section>
+<section id="slide-sec-org7f23769">
+<h3 id="org7f23769">Fundamental Units of Distance</h3>
+<ul>
+<li>Distances initially had to do with the human body:
+<ol>
+<li>The inch is the approximate distance between knuckles</li>
+<li>The yard is the span from the extended finger to the nose of the British king (??)</li>
+<li>Foot is the British king's foot</li>
+<li>Different countries had different measures.</li>
+
+</ol></li>
+<li>Around 1750, a uniform set of standards was made</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgc1f721d">
+<h4 id="orgc1f721d">The Metric System</h4>
+<ul>
+<li>The metric system is the SI units we've been studying, and has the meter as the unit of length.</li>
+<li>This includes prefixes like centi-, mili-, kilo-, etc.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orge00f610">
+<h4 id="orge00f610">Modern Redefinitions of the Meter</h4>
+<ul>
+<li>In 1889, the meter was defined by a bar of platinum-iridium metal in Paris, of which precise replicas were made.</li>
+<li>As science gets more and more precise, so do the definitions of these distances.</li>
+<li>In 1960, a meter is defined as the distance of 1,650,763.73 wavelengths of a specific atomic transition of krypton-86.</li>
+<li>In 1983, a meter is defined in terms of the speed of light, as the distance light travels in 1/299,792,458.6 seconds, which is even more stable.</li>
+<li>Therefore, a light-second is defined as the <i>distance</i> that light travels in one second, 299,792,458.6 meters.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgcb35b30">
+<h4 id="orgcb35b30">Distances within the Solar System</h4>
+<ul>
+<li>Early astronomers like Copernicus and Kepler measured the <i>relative</i> distances (ratios of distances) of planets, not the <i>absolute</i> (or actual) distances.</li>
+<li>Some distances can be directly calculated from radar measurements, using the known speed of light.</li>
+<li>The basic unit of distance for objects within the solar system is the astronomical unit (AU), the (average) distance between the Earth and the Sun; 1 AU = 1.5&times;10<sup>11</sup> m=500 light-seconds.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgd0aff7b">
+<h3 id="orgd0aff7b">Surveying the Stars</h3>
+<div class="outline-text-3" id="text-orgd0aff7b">
+</div>
+</section>
+<section id="slide-sec-org1644bfd">
+<h4 id="org1644bfd">Triangulation in Space</h4>
+<ul>
+<li>You can deduce how far a pen is from you because you have two eyes [activity].</li>
+<li>We can use parallax to deduce the distance of an object based on how far you have to turn your head to see it from two points along the <i>baseline</i>, A and B.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_4.png" alt="19_4.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org5d646e2">
+<h4 id="org5d646e2">Distances to Stars</h4>
+<ul>
+<li>In the scale of outer space, we have a baseline of 2 AU from the Earth's rotation.</li>
+<li>Which is nothing, when talking of cosmic scales.  We don't detect see a parallax effect from Earth's nearest star.</li>
+<li>Unless we try really hard, which astronomers Friedrich Bessel, Friedrich Struve, and Thomas Henderson of Germany, Russia, and Scotland did in 1838, independently, of 61 Cygni, Alpha Centauri, and Vega.</li>
+<li>The closest star, Alpha Centauri, showed parallax of 1.5 arcsec&#x2014;about the angular resolution of a quarter seen from 3 miles away!</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/19_6.png" alt="19_6.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgf3a084b">
+<h4 id="orgf3a084b">Units of Stellar Distance</h4>
+<ul>
+<li>An object needs to be 206,265 AU away to have a parallax of 1 arcsec.</li>
+<li>A <i>parsec (pc)</i> is defined as this distance; 1 pc=206,625 AU.  It's how far away something has to be from Earth to have a parallax of 1 arcsecond.</li>
+<li>The distance away <i>D</i> of a star, in parsecs, is the reciprocal of its parallax <i>p</i> in arcseconds:</li>
+
+</ul>
+<p>
+\[D=\frac{1}{p}.\]
+</p>
+</section>
+<section id="slide-sec-orgf15f621">
+<h4 id="orgf15f621">The Nearest Stars</h4>
+<ul>
+<li>Recall closest star is Alpha Centauri (actually a binary star!).</li>
+<li>A third, faint star, Proxima Centauri, is .1 Ly closer.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org9866b71">
+<h4 id="org9866b71">Measuring Parallaxes in Space</h4>
+<ul>
+<li>Stellar parallax measurement revolutionized by Hipparcos spacecraft in 1989, which measured stars out to 300 Ly with accuracy of 10-20%.</li>
+<li>Its successor Gaia was launched in 2013 by the European Space Agency, it should measure the position and distances of almost 1 billion stars with an accuracy of ten-millionths of an arcsecond, out to 30,000 Ly (almost a third of the galactic disk).</li>
+
+</ul>
+</section>
+<section id="slide-sec-org2865e88">
+<h3 id="org2865e88">Variable Stars: One Key to Cosmic Distances</h3>
+<ul>
+<li>Most stars have constant luminosity, like the Sun, but some are <i>variable stars</i> whose luminosity typically changes on a regular cycle.</li>
+<li>Observe the <i>light curve</i> for an example star.  What is the <i>minimum</i>, <i>maximum</i>, and <i>period</i> of the star?</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_9.png" alt="19_9.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org45dc334">
+<h4 id="org45dc334">Pulsating Variables</h4>
+<ul>
+<li>Two types of variable stars yield accurate distances.  They're both <i>pulsating variable stars</i>, which means they actually expand and contract in time, like your chest does when you breathe.</li>
+<li>We can measure their periods with the doppler shift of the expanding/contracting surface, or with the change in overall color (due to temperature change), or with the changing luminosity, which is most important.</li>
+<li>The two types are <i>cepheids</i> and <i>RR Lyrae</i>.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgcbbc791">
+<h4 id="orgcbbc791">Cepheid Variables</h4>
+<ul>
+<li>Large, yellow, pulsating stars.</li>
+<li>Several hundred are known, with periods of 3-50 days.</li>
+<li>Luminosities are 10<sup>3</sup> to 10<sup>4</sup> times brighter than the Sun, and vary between .01 and 10 times the average luminosity.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgce71ff1">
+<h4 id="orgce71ff1">The Period-Luminosity Relation</h4>
+<ul>
+<li>The periods of cepheids can be directly measured, as mentioned above.</li>
+<li>Turns out the period is related to the absolute luminosity; this is known as the <i>period-luminosity relation,</i> discovered in 1908 by Henrietta Leavitt of Harvard.  This is huge, because we can figure out how far away the cepheid is by comparing the apparent magnitude (flux) that we observe to the absolute luminosity!</li>
+
+</ul>
+</section>
+<section id="slide-sec-org3d3e76b">
+<h4 id="org3d3e76b">RR Lyrae Stars</h4>
+<ul>
+<li>More common but less luminous than the cepheids.</li>
+<li>Periods always less than one day.</li>
+<li>Brightness changes typically less than a factor of about 2.</li>
+<li>By noticing that RR Lyrae in clusters has the same apparent brightness, it was discovered that they all have the same intrinsic luminosity, 50 L<sub>o</sub>.</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/19_14.png" alt="19_14.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orga237a25">
+<h3 id="orga237a25">The H-R Diagram and Cosmic Distances</h3>
+<div class="outline-text-3" id="text-orga237a25">
+</div>
+</section>
+<section id="slide-sec-org9596fac">
+<h4 id="org9596fac">Distances from Spectral Types</h4>
+<ul>
+<li>If we need to measure distance to a star that isn't varying, we can take advantage of the H-R diagram.</li>
+<li>From the spectrum, we can determine the spectral class.  We can then analyze the spectrum to deduce the pressure, from which we draw the density of the star.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/18_15.png" alt="18_15.png" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li>Luminosity classes are divided into:
+<ul>
+<li>Ia: Brightest supergiants</li>
+<li>Ib: Less luminous supergiants</li>
+<li>II: Bright giants</li>
+<li>III: Giants</li>
+<li>IV: Subgiants (smaller than giants, bigger than main-sequence)</li>
+<li>V: Main-sequence stars</li>
+
+</ul></li>
+<li>Need both luminosity and spectral type to fully characterize star on H-R diagram; eg., F3 V, or M2  III.</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>If we have both spectral class and luminosity class, we can find the luminosity from the H-R diagram.  This method is (inaccurately) referred to as <i>spectroscopic parallax</i>.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/19_15.png" alt="19_15.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgf9adb08">
+<h4 id="orgf9adb08">Measurement Methods for Varying Distances</h4>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Range (Ly)</th>
+<th scope="col" class="org-left">Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">4-30,000*</td>
+<td class="org-left">Trigonometric parallax</td>
+</tr>
+
+<tr>
+<td class="org-left">up to 300,000</td>
+<td class="org-left">RR Lyrae</td>
+</tr>
+
+<tr>
+<td class="org-left">up to 1,200,000</td>
+<td class="org-left">H-R diagram and spectroscopic distances</td>
+</tr>
+
+<tr>
+<td class="org-left">up to 60,000,000</td>
+<td class="org-left">Cepheids</td>
+</tr>
+</tbody>
+</table>
+<pre  class="example">
+* requires Gaia
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-sec-orgd3ca12c">
+<h2 id="orgd3ca12c">Ch 20 - Interstellar Matter</h2>
+<ul>
+<li>Under Construction</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

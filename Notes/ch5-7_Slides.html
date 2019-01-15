@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ASTR101 Ch 5, 7</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="reveal.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">ASTR101 Ch 5, 7</h1>
+</section>
+<section>
+<section id="slide-sec-org62a3c35">
+<h2 id="org62a3c35">Ch 5 - Radiation and Spectra</h2>
+<div class="outline-text-2" id="text-org62a3c35">
+</div>
+</section>
+<section id="slide-sec-org541fe35">
+<h3 id="org541fe35">The Behavior of Light</h3>
+<ul>
+<li><i>Radiation</i> in our context is light, which radiates outwards&#x2014;though in other contexts it describes subatomic particles released in atomic processes.</li>
+<li>Our radiation (light, in this course) is also generated at the atomic level.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org1c8155b">
+<h4 id="org1c8155b">Maxwell's Theory of Electromagnetism</h4>
+<ul>
+<li>Each atom is made up of protons (positive charge), neutrons (no charge), and electrons (negative charge).</li>
+<li>The neutrons and protons are in a tiny nucleus, while the electron is generally around it.</li>
+<li>Electricity and Magnetism - electric force is due to stationary charged particles interacting, while magnetic force is due to moving charged particles interacting (among other things).</li>
+
+</ul>
+</section>
+<ul>
+<li>We can talk about the field that a charged distribution exerts as a generalization of its force on multiple objects; like the gravitational field, we call these the electric or magnetic fields; each can create the other.</li>
+<li>Oscillations of charged matter creates electromagnetic waves; light.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org48915cb">
+<h4 id="org48915cb">The Wave-Like Characteristics of Light</h4>
+<ul>
+<li>Water and sound waves, light waves, and mediums.</li>
+<li>The aether.</li>
+<li>Speed of light.</li>
+<li><i>Wavelength &lambda;</i> is the horizontal length covered by one cycle, <i>frequency f</i> the number of cycles that pass per second (measured in 1/s, or Hertz; Hz).  The wave speed is denoted \[v=f\lambda.\]  For light in a vacuum, the velocity is given by \(v=c\).</li>
+
+</ul>
+</section>
+<section id="slide-sec-org580b795">
+<h4 id="org580b795">Light as a Photon</h4>
+<ul>
+<li>Light sometimes behaves like a particle would; we term the equivalent light "particle", a <i>photon</i>.</li>
+<li>This <i>particle-wave duality</i> is studied in Quantum Mechanics and Quantum Optics.</li>
+<li>The wave and photon models of light are simplifications of the quantum model which describes both.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org1159bdb">
+<h4 id="org1159bdb">Propagation of Light</h4>
+<ul>
+<li>By how  much does the area increase if we double the radius?</li>
+<li>As distance from the bright object increases by factor s, radiation concentration decreases by 1/s<sup>2</sup>; this is the <i>inverse square law</i>.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/5_5.png" alt="5_5.png" width="400cm" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org782cf74">
+<h3 id="org782cf74">The Electromagnetic Spectrum</h3>
+
+<div class="figure">
+<p><img src="./Images/5_6.png" alt="5_6.png" height="400cm" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="http://www.infinity-theory.com/userfiles/images/allow/EMSpectrum/EMSpectrum_ByPeterAVenis_UnderCCBY4.0.png" alt="EMSpectrum_ByPeterAVenis_UnderCCBY4.0.png" width="750cm" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org5fdd3be">
+<h4 id="org5fdd3be">Types of Electromagnetic Radiation</h4>
+<ul>
+<li><i>Gamma rays</i> are high energy, short wavelength rays dangerous to living tissue.  Generated deep inside stars and absorbed by atmosphere.</li>
+<li><i>X-rays</i> are energetic and penetrate tissue but not bone (hence their use), blocked by atmosphere.</li>
+<li><i>Ultraviolet (UV)</i> is higher energy than violet light; also called "black light"; mostly blocked by atmosphere, causes sunburn, cancer in overexposure.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="http://www.infinity-theory.com/userfiles/images/allow/EMSpectrum/EMSpectrum_ByPeterAVenis_UnderCCBY4.0.png" alt="EMSpectrum_ByPeterAVenis_UnderCCBY4.0.png" width="750cm" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li><i>Visible light</i>, ROY G BIV&#x2014;mostly passes through atmosphere if not cloudy.</li>
+<li><i>Infrared</i> radiation is absorbed by water and carbon dioxide, but somewhat penetrates atmosphere.</li>
+<li><i>Microwave</i>, used in short-range communication and microwave ovens, are absorbed by water vapor.</li>
+<li><i>Radio waves</i> include radar and AM (which reflects inside ionosphere).</li>
+<li>The visible universe is only one small portion of Astronomy, which includes radio astronomy, astronomy examining infrared, x-ray, etc.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orge26c3b4">
+<h4 id="orge26c3b4">Radiation and Temperature</h4>
+<ul>
+<li>Astronomical objects can emit mostly one band of wavelengths, depending on temperature.</li>
+<li>Radiation source is atomic in nature.  Particles vibrating rapidly (high temperature) emit higher energy waves in general.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org154561d">
+<h4 id="org154561d">Radiation Laws</h4>
+<ul>
+<li><i>Blackbody</i>: object that doesn't reflect or scatter any radiation (an idealization useful for theory); it absorbs radiation, gets hot, and its atoms release radiation from the heat.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/5_8.png" alt="5_8.png" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li>Note that radiation is emitted at all wavelengths, due to distribution of temperatures.</li>
+<li><i>Stefan-Boltzmann Law</i>: A hotter object emits more total power than a cooler one. With \(\sigma=5.67\times10^{-8}\), the <i>energy flux</i> F&#x2013;or power emitted per square meter&#x2014;is given by \[F=\sigma{}T^4\]</li>
+<li><i>Wien's Law</i>: The higher the temperature, the shorter the peak energy wavelength. \[\lambda_{max}=\frac{(3\times10^6 nm\cdot{}K)}{T}.\]</li>
+<li>These criteria give us a "star thermometer"&#x2014;if we can measure the emitted light distribution, we can make inferences about the temperature of that star!</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Heating metal: no glowing (infrared) -&gt; dull red -&gt; orange-red -&gt; yellow -&gt; blue-white.  (Unrelated to "hot" and "cool" colors in Art).</li>
+<li>The <i>absolute luminosity L</i> of a star is its total power emitted in all directions.  It's obtained from the energy flux (power per unit area) by multiplying by the total surface area of a sphere; \[L=4\pi{}R^{2}F=4\pi{}R^{2}\sigma{}T^4.\]</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgb348d9f">
+<h3 id="orgb348d9f">Spectroscopy in Astronomy</h3>
+<div class="outline-text-3" id="text-orgb348d9f">
+</div>
+</section>
+<section id="slide-sec-org6ffa62c">
+<h4 id="org6ffa62c">Properties of Light</h4>
+<ul>
+<li><i>Reflection</i> is light "bouncing" off of a surface, like a mirror.</li>
+<li><i>Refraction</i> is the bending of light by materials (eg, when light goes from one <i>medium</i>, or material, to another).</li>
+<li><i>Optics</i> is the study of light; one optical instrument or tool is the telescope.</li>
+<li>Telescopes differ from binoculars and glasses because they use curved mirrors rather than curved lenses to magnify.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org2ab63b9">
+<h4 id="org2ab63b9">White light</h4>
+<ul>
+<li>White light, passed through a prism, results in a rainbow, because the refraction of light depends on the material as well as the frequency of light, in a phenomenon known as <i>dispersion</i> (the rays disperse).</li>
+<li>This results in a spectrum; an instrument used to measure the spectrum is called a <i>spectrometer</i>.</li>
+<li>White light is actually the presence of all wavelengths of light!</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/4_8.png" alt="4_8.png" class="paired" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/5_13.png" alt="5_13.png" class="paired" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org3925b96">
+<h4 id="org3925b96">The Value of Stellar Spectra</h4>
+<ul>
+<li>The sun's light was put through a spectrometer in 1802 by William Wollaston; he noticed that some frequencies were not present (they were black where the color would appear).</li>
+<li>Researchers found the same is true of light that passes through a gas of some element.</li>
+<li>That means the gas is <i>not</i> transparent to some wavelengths&#x2014;it lets most colors through, but not some specific set of colors.  Combining two gases would subtract both their sets of colors from the resulting spectrum, each element having its specific spectrum.</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Heated gases also emitted light in a particular set of small <i>bands</i>, or portions of frequencies, and these matched!  <b>Each element has its signature spectrum!</b></li>
+<li>What do you think?</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/5_12.png" alt="5_12.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org1c0d371">
+<h4 id="org1c0d371">Types of Spectra</h4>
+<ul>
+<li>A <i>continuous spectrum</i>, formed by a radiating dense gas or solid, is composed of all wavelengths of light.  An <i>absorption spectrum</i> is a series of black lines in an otherwise continuous spectrum, which gives information about what wavelengths are <i>absorbed</i> by a material.  The <i>emission spectrum</i> is the opposite, it's what wavelengths are emitted by the material when it's excited.</li>
+<li>We can apply <i>spectral analysis</i> to help determine the material in a sample, or in light from a distant galaxy.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org6ad1e4a">
+<h3 id="org6ad1e4a">The Structure of the Atom</h3>
+<ul>
+<li>What's an atom made of?</li>
+<li>In their natural state, atoms are electrically neutral.</li>
+<li><i>Rutherford's Gold Foil Experiment</i> hit gold with &alpha; particles&#x2014;He<sup>2+</sup>&#x2014;some bounced; "as if you fired a 15-inch shell at a piece of tissue paper and it came back and hit you."</li>
+<li>Conclusion: nearly all mass is contained in a tight nucleus, the electrons are in motion (or they would go towards the protons).</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/5_15.png" alt="5_15.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org37c5465">
+<h4 id="org37c5465">The Atomic Nucleus</h4>
+<ul>
+<li>Mass of proton is 2000 times that of electron, their charges are equal and opposite.</li>
+<li>Electrons "orbit" about an average radius, different for each atom.</li>
+<li>Elements are defined by the number of protons (1 for hydrogen, 2 for helium, etc.).</li>
+<li><i>Isotopes</i> of an element have different numbers of neutrons.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/5_17.png" alt="5_17.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org754280f">
+<h4 id="org754280f">The Bohr Atom</h4>
+<ul>
+<li>Niels Bohr solves the mystery of why electrons don't collapse into nucleus: quantized orbital radii.  Energy is only radiated or absorbed when an electron changes <i>energy levels</i>, energies corresponding to a certain orbital radius.  Strange, but lays foundations for Quantum Mechanics.</li>
+<li>If the correct amount of energy is supplied, the electron can jump to a higher energy level.  The electron can also jump down to a lower energy level, releasing energy in the form of light.</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>The energy that light carries is given by its frequency \(f\) in the relationship, \[E=hf,\] where \(h=6.626\times10^{-34}\) joule-seconds (J&sdot;s) is <i>Planck's constant</i>.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgbb6f60d">
+<h3 id="orgbb6f60d">Formation of Spectral Lines</h3>
+<ul>
+<li>Bohr's model can explain the spectral lines of different materials!</li>
+<li>Based on orbital radii of atoms (based on their nuclear configuration), each atom can accept and emit a unique spectrum of light.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/5_19.png" alt="5_19.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org0487d44">
+<h4 id="org0487d44">Energy Levels and Excitation</h4>
+<ul>
+<li><i>Ground state</i> is the lowest radius that an electron can orbit the nucleus.</li>
+<li><i>Excitation</i> is when an atom absorbs energy and goes to a higher energy level.  After excitation, it may relax back to its original state, releasing light.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org3853b98">
+<h4 id="org3853b98">Energy Level Diagrams for Hydrogen</h4>
+
+<div class="figure">
+<p><img src="./Images/5_20.png" alt="5_20.png" />
+</p>
+</div>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/5_21.png" alt="5_21.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orga0d1430">
+<h4 id="orga0d1430">Ionization</h4>
+<ul>
+<li>An atom is <i>ionized</i>, or turned into an <i>ion</i>, when enough energy is given to the electron to free it from the pull of the nucleus.</li>
+<li>This changes the energy levels.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org1ab691c">
+<h3 id="org1ab691c">The Doppler Effect</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/imoxDcn2Sgo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<ul target="_blank">
+<li><a href="http://galileoandeinstein.physics.virginia.edu/more_stuff/flashlets/doppler.htm">Doppler Effect Simulation</a></li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li><i>redshift</i> is a lengthening of the wavelength, and <i>blueshift</i> a shortening of it.</li>
+<li>The <i>doppler shift</i> is defined by the equation,</li>
+
+</ul>
+<p>
+\[\frac{\Delta\lambda}{\lambda}=\frac{v}{c}\]
+  where &lambda; is the source wavelength, &Delta;&lambda; the difference between &lambda; and what is measured by the observer, c the speed of light, v the relative speed of the observer and source in line of sight.
+</p>
+<ul>
+<li>So how are astronomers confident of the chemical make-up of stars?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-org4b284ea">
+<h2 id="org4b284ea">Ch 7 - Other Worlds: An Introduction to the Solar System</h2>
+<div class="outline-text-2" id="text-org4b284ea">
+</div>
+</section>
+<section id="slide-sec-orgdea7d18">
+<h3 id="orgdea7d18">Overview of our Planetary System</h3>
+<ul>
+<li>Solar system: Sun, planets, moons, rings, debris (asteroids, comets, dust).</li>
+<li>All formed together around 4.5 billions years ago.</li>
+<li>Every planet has been flown past, orbited, or landed on by a probe.</li>
+<li>Probes have penetrated Jupiter's atmosphere and landed on Venus, Mars, the Moon, Saturn's moon Titan, and asteroids and comets.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org6a9bc33">
+<h4 id="org6a9bc33">An Inventory</h4>
+<ul>
+<li>Planets orbit on the same plane, while dwarf planets don't.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/7_3.png" alt="7_3.png" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li>Four <i>terrestrial planets</i>; Mercury, Venus, Earth, and Mars&#x2014;small, made of rock/metal.</li>
+<li>Four <i>jovian</i>, or <i>giant planets</i>: Jupiter, Saturn, Uranus, Neptune&#x2014;large (1400 Earth fit in Jupiter, EC), made of ice, liquid, and gas.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/3_AsteroidBelt.jpg" alt="3_AsteroidBelt.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgcb67b48">
+<h4 id="orgcb67b48">Smaller Members of the Solar System</h4>
+<ul>
+<li>Only Mercury and Venus are without moons.</li>
+<li>Largest moons are the Moon, 4 Galilean moons (Jupiter), and Titan (Saturn) and Triton (Neptune).</li>
+<li>Each of the giant planets has a ring with orbiting bodies ranging in size from dust to mountain.</li>
+<li>Asteroids are remnants of the formation of the solar system, some of them were likely captured as small moons.</li>
+<li>Comets are also remnants of solar system formation, but are made of ice (eg, carbon monoxide/dioxide, water) and orbit farther out.</li>
+<li>Meteors are broken rock (<i>cosmic dust</i>) and burn up if they enter Earth's atmosphere, become a <i>meteorite</i> if they hit the ground.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org149a19f">
+<h4 id="org149a19f">A Scale Model of the Solar System</h4>
+<ul>
+<li>The text presents a scale model of the solar system, scaled down by 10<sup>9</sup>.</li>
+
+</ul>
+<iframe width="300" height="315" src="https://www.youtube.com/embed/zR3Igc3Rhfg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> <iframe width="300" height="315" src="https://www.youtube.com/embed/i93Z7zljQ7I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</section>
+<section id="slide-sec-orgd36830c">
+<h3 id="orgd36830c">Composition and Structure of Planets</h3>
+<div class="outline-text-3" id="text-orgd36830c">
+</div>
+</section>
+<section id="slide-sec-orga04f634">
+<h4 id="orga04f634">The Giant Planets</h4>
+<ul>
+<li>Recall there are the rocky terrestrial planets and icy jovian planets&#x2014;they must have formed under different conditions.</li>
+<li>Largest planets Jupiter and Saturn close to Sun in composition.  Heavier elements sink to rocky, metal, ice center, bulk is liquefied hydrogen.</li>
+<li>Uranus and Neptune also have a core of rock/metal/ice, but smaller atmospheres.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgc318fde">
+<h4 id="orgc318fde">The Terrestrial Planets</h4>
+<ul>
+<li>Most abundant rocks are <i>silicates</i>, made of silicon and oxygen, and most common metal is iron.  Mercury has the greatest proportion of metal, the other 3 have similar composition of 2/3 silicates and 1/3 iron-nickel/sulfur combinations.</li>
+<li>Terrestrial planets also have denser matter in center of planet, leading to theory that they were once also liquid.  Process of separating a planet's interior layers into different compositions and densities is called <i>differentiation</i>, which occurs when the planet is hot (melting point of rocks, ~1300K), and stays as the planet cools.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orge3def43">
+<h4 id="orge3def43">Moons, Asteroids, and Comets</h4>
+<ul>
+<li>Most moons share the composition of their planet (rocky for terrestrial moons and icy with a hard core for giant planets' moons)</li>
+<li>Only the largest asteroids are differentiated.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org4c690fe">
+<h4 id="org4c690fe">Temperature: Going to Extremes</h4>
+<ul>
+<li>Remember the light intensity falls as \(1/r^2\); this light also provides heat.  The temperature reduces approximately as \(\frac{1}{\sqrt{r}}\), so the farther you are from the Sun, the colder it gets.  Mercury (.39 AU from the Sun) is about 500 K, while Pluto (39.5 AU from the Sun) is 50 K.</li>
+<li>Remember, planetary atmosphere has a big effect on this; heat kept in by <i>greenhouse effect</i>; in which atmosphere has greater transparency to (incoming) visible radiation than (outgoing) infrared.  The effect results in Venus having greater temperature than Mercury!</li>
+<li>Earth is the only planet we know of with surface temperature generally matching liquid phase of water.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orga633837">
+<h4 id="orga633837">Geological Activity</h4>
+<ul>
+<li>Planets shaped in part by comet collisions&#x2014;mostly during solar system formation, but even now; eg., Comet Shoemaker-Levy 9 with Jupiter, Summer 1994, which came within 660 million km.</li>
+<li>Internal forces can build mountains and build new islands; eg, volcanoes, earthquakes.  Earth and Venus are most active planets, and even some jovian planet moons are active!  The Moon has been dead and inactive for billions of years.</li>
+<li>Hawai'i's getting a new island by 32,018!  (maybe)</li>
+<li>Earth and Venus have molten cores.</li>
+
+</ul>
+</section>
+<section >
+<p>
+<img src="./Images/7_13.png" alt="7_13.png" />
+<img src="./Images/7_14.png" alt="7_14.png" />
+</p>
+</section>
+<section id="slide-sec-orgf115003">
+<h3 id="orgf115003">Dating Planetary Surfaces</h3>
+<div class="outline-text-3" id="text-orgf115003">
+</div>
+</section>
+<section id="slide-sec-org10405ff">
+<h4 id="org10405ff">Count the craters</h4>
+<ul>
+<li>Rate of impact has been pretty constant for several billion years.</li>
+<li>Can only count to date when the planet "smoothed itself out" through, eg, lava flow.</li>
+<li>Can also be used to date smoothing events and date terrain.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgb8b1904">
+<h4 id="orgb8b1904">Radioactive Rocks</h4>
+<ul>
+<li>Some <i>radioactive</i> nuclei are unstable and can split apart (decay) to other nuclei, at random times.</li>
+<li>But we do know their <i>half-life</i>; the time for approximately half of them to decay in a large sample.</li>
+<li>The original unstable nuclei are the <i>parents</i> and they split apart to <i>daughter</i> particles.</li>
+<li>Every half-life, half of the particles will have decayed; this is the principle behind Carbon dating!</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/7_16.png" alt="7_16.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org8c315bc">
+<h3 id="org8c315bc">Origin of the Solar System</h3>
+<ul>
+<li>An <i>exoplanet</i> is a planet outside of the solar system.  Some of these range between the terrestrial and giant planets in size; termed <i>superearths</i>.</li>
+<li>In some exoplanet systems, the giants are close to the star and the terrestrial planets are farther (to be discussed in ch 21)!</li>
+
+</ul>
+</section>
+<section id="slide-sec-org9bff29e">
+<h4 id="org9bff29e">Looking for Patterns</h4>
+<ul>
+<li>Planets orbit the Sun (and, mostly, themselves) counter-clockwise, and the Sun orbits itself counter-clockwise, evidence that the Sun and planets may have formed from a spinning cloud of gas and dust called the <i>solar nebula</i>.</li>
+<li>Sun, Jupiter and Saturn have similar compositions, evidence they may have been formed from the same material reservoir.</li>
+<li>Terrestrial planets have less of these materials, since at their temperature so close to the Sun the materials would evaporate (whereas they're liquid/ice/gas in the vicinity of the giant planets).</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgcde36b6">
+<h4 id="orgcde36b6">The Evidence from Far Away</h4>
+<ul>
+<li>We can compare this present data to star systems far away that are in varying stages of formations like that of the solar system to get a good picture of the birth of the solar system.</li>
+<li>The name for solar nebulas (the cloud posited to birth the solar system) outside of the solar system is <i>circumstellar disks</i>.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orga99d06f">
+<h4 id="orga99d06f">Building Planets</h4>
+<ul>
+<li>As planets form from circumstellar disks common around young stars, we begin to see <i>planetesimals</i>&#x2014;planet foetuses.  Computer simulations with Physics laws taken into account support these theories.</li>
+<li>Still leaves the questions; why do Uranus and Pluto spin on their sides, why does Venus spin slowly around itself retroactively?  These could be the results of early collisions.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

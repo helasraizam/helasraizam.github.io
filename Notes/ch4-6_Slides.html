@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ASTR101 Ch 4, 6</title>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="reveal.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">ASTR101 Ch 4, 6</h1>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-org5c5e608">Ch 4 - Earth, Moon, and Sky</a>
+<ul>
+<li><a href="#/slide-org49075b2">Earth and Sky</a>
+<ul>
+<li><a href="#/slide-orgb5d8a56">Locating Places on Earth</a></li>
+<li><a href="#/slide-org344ae53">Latitude and Longitude</a></li>
+<li><a href="#/slide-org1589cbb">The Seasons</a></li>
+<li><a href="#/slide-org0a26e0a">Limits of the sun's latitudinal movement</a></li>
+<li><a href="#/slide-org43aed7f">The Seasons at Different Latitudes</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org7b0c479">Keeping Time</a>
+<ul>
+<li><a href="#/slide-orga2d4c47">The Length of the Day</a></li>
+<li><a href="#/slide-orgfeb4981">Apparent Solar Time</a></li>
+<li><a href="#/slide-org7bbb5ac">Mean Solar Time and Standard Time</a></li>
+<li><a href="#/slide-org4260871">The International Date Line</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgf55469c">The Calendar</a>
+<ul>
+<li><a href="#/slide-org2786af8">The Challenge of the Calendar</a></li>
+<li><a href="#/slide-orgd277c61">Early Calendars</a></li>
+<li><a href="#/slide-org16ce7fc">The Gregorian Calendar</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org21d4130">Phases and Motions of the Moon</a>
+<ul>
+<li><a href="#/slide-orgf588cf8">Lunar Phases</a></li>
+<li><a href="#/slide-orgb5b6cba">The Moon's Revolution and Rotation</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgf0f5db0">Ocean Tides and the Moon, The Formation of Tides</a></li>
+<li><a href="#/slide-orgd9e746b">Eclipses of the Sun and Moon</a>
+<ul>
+<li><a href="#/slide-org286f6e5">Eclipses of the Sun</a></li>
+<li><a href="#/slide-org3c177d6">Eclipses of the Moon</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#/slide-orgdc9d09f">Ch 6 - Astronomical Instruments</a>
+<ul>
+<li><a href="#/slide-org70000db">Telescopes</a>
+<ul>
+<li><a href="#/slide-org386757c">How Telescopes Work</a></li>
+<li><a href="#/slide-orge185e4e">Lenses</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgd937b1c">Telescopes Today</a>
+<ul>
+<li><a href="#/slide-org440555f">Picking the Best Observing Sites</a></li>
+<li><a href="#/slide-org095f265">The Resolution of a Telescope</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgd86062c">Visible-Light Detectors and Instruments</a>
+<ul>
+<li><a href="#/slide-org0d96b26">Photographic and Electronic Detectors</a></li>
+<li><a href="#/slide-orgb640693">Infrared Observations</a></li>
+<li><a href="#/slide-org2a1b60a">Spectroscopy</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgf8f90df">Radio Telescopes</a>
+<ul>
+<li><a href="#/slide-org9291f5f">Detection of Radio Energy from Space</a></li>
+<li><a href="#/slide-org3558e22">Radio Interferometry</a></li>
+<li><a href="#/slide-orgbc2574f">Radar Astronomy</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org4a0b94d">Observations Outside Earth's Atmosphere</a>
+<ul>
+<li><a href="#/slide-org1ff2cb9">Airborne and Space Infrared Telescopes</a></li>
+<li><a href="#/slide-orgf441c1d">Hubble Space Telescope (HST)</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org0772a32">High-Energy Observatories</a></li>
+<li><a href="#/slide-org7a57ff9">The Future of Large Telescopes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-sec-org5c5e608">
+<h2 id="org5c5e608">Ch 4 - Earth, Moon, and Sky</h2>
+<div class="outline-text-2" id="text-org5c5e608">
+</div>
+</section>
+<section id="slide-sec-org49075b2">
+<h3 id="org49075b2">Earth and Sky</h3>
+<ul>
+<li><b>Earth's orbit is nearly a perfect circle</b></li>
+<li>Where do seasons come from?</li>
+<li>If it's Summer here, what season is it in Australia?</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgb5d8a56">
+<h4 id="orgb5d8a56">Locating Places on Earth</h4>
+<ul>
+<li>A man waves hello to a penguin, walks 50 miles, turns right, walks another 50 miles, turns right again, walks another 50 miles, and waves hello to the same penguin, who has not moved.  Where is he?</li>
+<li>What if it were a polar bear?</li>
+<li>Does Earth rotate towards the East or the West?</li>
+
+</ul>
+</section>
+<section id="slide-sec-org344ae53">
+<h4 id="org344ae53">Latitude and Longitude</h4>
+<ul>
+<li><i>Great circles</i>: circles on surface of sphere sharing sphere center.</li>
+<li>Latitudes are <i>meridians</i>, passing through N and S poles.</li>
+<li>Longitudes start at Greenwich, England (GMT!), the <i>Prime Meridian</i>, 0&deg;.  They go 180&deg; east and west.</li>
+<li>How can we use Polaris to find our latitude?</li>
+<li>How can we find our latitude?</li>
+<li>How can we find our longitude? (EC)</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/2_LatLong.jpg" alt="2_LatLong.jpg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Djexplo/Wikimedia Commons</p>
+</div>
+</section>
+<section id="slide-sec-org1589cbb">
+<h4 id="org1589cbb">The Seasons</h4>
+<ul>
+<li>What we know:
+<ul>
+<li>The Earth's orbit is nearly circular, changing by &lt;3%.</li>
+<li>Earth is closest to the Sun in January.</li>
+<li>The two hemispheres have opposite seasons.</li>
+
+</ul></li>
+<li>Conclusion: The seasons are caused by Earth's tilt!</li>
+<li>How, exactly?</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/4_5.png" alt="4_5.png" height="300cm" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/4_6.png" alt="4_6.png" height="300cm" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li>So one hemisphere gets more heat than the other during its Summer.</li>
+<li>But it also gets that heat for longer!  Longer days!</li>
+<li>Does the sun rise in the Northeast or Southeast?</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/4_7.png" alt="4_7.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org0a26e0a">
+<h4 id="org0a26e0a">Limits of the sun's latitudinal movement</h4>
+<ul>
+<li>Northernmost: June 21 (<i>Summer Solstice</i>)&#x2014;sun over <i>Tropic of Cancer</i> (23&deg; N), no nights in <i>Arctic Circle</i>, no days in <i>Antarctic Circle</i>.</li>
+<li>Southernmost: December 21 (<i>Winter Solstice</i>)&#x2014;sun over <i>Tropic of Capricorn</i> (23&deg; S), no days in <i>Arctic Circle</i>, no nights in <i>Antarctic Circle</i>.</li>
+<li>Sun crosses equator at <i>vernal (Spring)</i> and <i>autumnal (Fall) equinoxes</i>&#x2014;North and South hemispheres are both 12 hours here.</li>
+
+</ul>
+
+
+<div class="figure">
+<p><img src="./Images/4_8.png" alt="4_8.png" class="paired" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/4_9.png" alt="4_9.png" class="paired" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org43aed7f">
+<h4 id="org43aed7f">The Seasons at Different Latitudes</h4>
+<ul>
+<li>The Sun appears to rise earlier and set later because of atmospheric refraction.</li>
+<li><i>Twilight</i> is when the sun is 18&deg; below the horizon and the sky doesn't appear completely dark.</li>
+<li>This has an effect on seasons, weather, and day lengths.</li>
+<li>Eg, July and August are hotter than June because the atmosphere takes time to heat up, just like the day is hotter at sunset than sunrise.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org7b0c479">
+<h3 id="org7b0c479">Keeping Time</h3>
+<div class="outline-text-3" id="text-org7b0c479">
+</div>
+</section>
+<section id="slide-sec-orga2d4c47">
+<h4 id="orga2d4c47">The Length of the Day</h4>
+<ul>
+<li>The solar day is based on the sun's position in the sky.  There's also the <i>sidereal</i> day, based on the actual 360&deg; rotation of the Earth.</li>
+<li>Recall from last week's demo that a solar day is about 4 minutes longer than a sidereal day because of the Earth's orbital motion.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/4_10.png" alt="4_10.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgfeb4981">
+<h4 id="orgfeb4981">Apparent Solar Time</h4>
+<ul>
+<li>So stars rise earlier and earlier according to the <i>apparent solar time</i> we use, based on the position of the Sun in the sky.</li>
+<li>The <i>meridian</i> is the great circle that crosses our zenith; hence <i>a.m. (ante meridiem)</i> and <i>p.m. (post meridiem)</i>.</li>
+<li>Apparent solar time is not great for Astronomy, since the apparent solar day length varies in the year, the slight elliptical orbit of the Earth, and Earth's axis not being perpendicular its orbital plane.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org7bbb5ac">
+<h4 id="org7bbb5ac">Mean Solar Time and Standard Time</h4>
+<ul>
+<li><i>Mean solar time</i> is what we use, based on the average value of the solar day in the year, 24 hours&#x2014;noon is when the Sun crosses the meridian.</li>
+<li>Time changes based on longitude, continually, but we split Earth into time zones roughly one hour each (fun fact, India chose a half-zone, 5.5 hours, and China only uses one time zone!).</li>
+<li><i>DST (daylight saving time)</i> is ahead of the local standard time by one hour (Fall back, Spring Forward), to prolong sunlight into evening hours.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org4260871">
+<h4 id="org4260871">The International Date Line</h4>
+<ul>
+<li>Lifehack, travel around the world to go back in time.  Just kidding, the <i>International Date Line</i>, along the 180&deg; meridian, changes the calendar date by one day.  No loopholes!</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgf55469c">
+<h3 id="orgf55469c">The Calendar</h3>
+<div class="outline-text-3" id="text-orgf55469c">
+</div>
+</section>
+<section id="slide-sec-org2786af8">
+<h4 id="org2786af8">The Challenge of the Calendar</h4>
+<ul>
+<li>The entire calendar is based on Astronomy:
+<ul>
+<li>Day is based on Earth's spin&#x2014;defined as 1.0000 solar day.</li>
+<li>Month is length of full lunar cycle&#x2014;29.5306 days.</li>
+<li>Year is based on Sun, and Earth's rotation around it&#x2014;365.2422 days.</li>
+<li>Week?  After Roman gods assigned to planets.</li>
+<li>These don't divide evenly..</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-sec-orgd277c61">
+<h4 id="orgd277c61">Early Calendars</h4>
+<ul>
+<li>Stonehenge (built over three periods, 2800-1500 BCE) concentric series of stones and ditches&#x2014;some aligned with Sun and Moon during critical rising and setting periods (such Summer and Winter solstices).</li>
+<li>Mayans had a complex calendar which could predict Astronomical events through an observatory.</li>
+<li>Ancient Chinese calendar centered around 12-year Jupiter cycle&#x2014;these are the 12 year signs of the Zodiac, which correspond to Jupiter's position along the Zodiac.</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Our calendar derives from the Sumerians, continuing with Egyptians and Greeks, leading to Ceasar's <i>Julian Calendar</i>, at 365.25 days/year, using leap years (with one extra day, 2/29) every four years (years divisible by 4).</li>
+<li>The Islamic Calendar is still lunar.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org16ce7fc">
+<h4 id="org16ce7fc">The Gregorian Calendar</h4>
+<ul>
+<li>Pope Gregory XIII corrected the 11 minutes/year that the Julian calendar was off&#x2014;off enough that the calendar was 10 days off by 1852.</li>
+<li>October 4, 1582, 10 days were immediately skipped in the calendar (to get back on track).  Like Julian calendar, every four years is a leap year&#x2014;except on centuries not divisible by 4 (e.g., 1700, 1800, 1900).  The year 2000 was a leap year, but not the year 1900.</li>
+<li>Catholic countries followed suit, other countries later&#x2014;American colonies skipped from September 2, 1752 to September 14, 1752 (12 days!).  Russia had to omit 13 days by the time it adopted the calendar during the Bolshevik revolution.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org21d4130">
+<h3 id="org21d4130">Phases and Motions of the Moon</h3>
+<ul>
+<li>Moonlight is literally reflected sunlight.</li>
+<li>Because of angles, results in <i>phases</i> (difference appearances, like full and crescent moon).</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgf588cf8">
+<h4 id="orgf588cf8">Lunar Phases</h4>
+<ul>
+<li>Sun only moves 1/12 of the sky in one month&#x2014;we can ignore this when looking at (monthly) lunar cycles.</li>
+<li>Sun illuminates half the moon, we observe at an angle.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/4_14.png" alt="4_14.png" />
+</p>
+</div>
+<ul>
+<li>Waxing=growing, waning=shrinking</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Moon rises later and later than sun each day.</li>
+<li>Full moons are not generally blocked by the Earth&#x2014;the diagram is not to scale and the Earth-Moon distance much larger, so Earth's shadow misses the moon most of the time (except lunar eclipses).  The moon's also 5&deg; from Earth's orbital plane.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/4_14.png" alt="4_14.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgb5b6cba">
+<h4 id="orgb5b6cba">The Moon's Revolution and Rotation</h4>
+<ul>
+<li>Period of revolution and period of rotation are the same (this is called <i>synchronous rotation</i>),</li>
+<li>So, we only see one side of the moon!</li>
+<li>We measure the <i>solar month</i>&#x2014;the period of the moon's cycles&#x2014;as 29.5306 days, but the <i>sidereal month</i> (with respect to the stars) is 27.3217 days.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgf0f5db0">
+<h3 id="orgf0f5db0">Ocean Tides and the Moon, The Formation of Tides</h3>
+<ul>
+<li>Earth is stretched to a <i>prolate spheroid</i> by the moon's varying gravity across it, only about 20 cm.</li>
+<li>The effect is complicated by land mass shapes, friction, earth's rotation, wind, variable ocean depth, and so some places have large tides, some places small tides.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/4_19.png" alt="4_19.png" height="300cm" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgd9e746b">
+<h3 id="orgd9e746b">Eclipses of the Sun and Moon</h3>
+<ul>
+<li>Sun and moon look like they're the same size (1/2&deg;)&#x2014;but the Sun is 400 times larger, and 400 times farther away&#x2014;what a coincidence!</li>
+<li>An eclipse consists of dark <i>umbra</i> and lighter <i>penumbra</i>.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/4_21.png" alt="4_21.png" height="350cm" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org286f6e5">
+<h4 id="org286f6e5">Eclipses of the Sun</h4>
+<ul>
+<li>Are a possibility twice a year, when the lunar and solar paths cross.</li>
+<li>A <i>partial eclipse</i> occurs when the Moon simply partially covers the Sun.</li>
+<li>An <i>annular eclipse</i> is when the moon appears smaller than the sun and the sun's ring is seen (this is more common).</li>
+<li>A <i>total solar eclipse</i> occurs when the Moon is nearer than its average distance to Earth, and completely covers the sun.</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Total solar eclipse is a small area on the Earth, along the <i>eclipse path</i>.</li>
+<li>Lasts less than 7 minutes at any point on the path.</li>
+<li>Surrounded by larger area penumbra.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/4_22.png" alt="4_22.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org3c177d6">
+<h4 id="org3c177d6">Eclipses of the Moon</h4>
+<ul>
+<li>In a lunar eclipse, Everyone on Earth sees the same Earth shadow on the moon, so these are much less rare for a given location than a solar eclipse.</li>
+<li>Earth's shadow covers four moons' widths.</li>
+<li>Can last as long as 1h40.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-sec-orgdc9d09f">
+<h2 id="orgdc9d09f">Ch 6 - Astronomical Instruments</h2>
+<div class="outline-text-2" id="text-orgdc9d09f">
+</div>
+</section>
+<section id="slide-sec-org70000db">
+<h3 id="org70000db">Telescopes</h3>
+<ul>
+<li>Only about 9000 stars visible to human eye.</li>
+<li>A <i>telescope</i> is a "bucket" for catching more light than your pupils normally would.</li>
+<li>Size matters.</li>
+<li>Light from the telescope can be spectrally separated.</li>
+<li>Then the amount of light is detected by a <i>detector</i>, a sensor.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org386757c">
+<h4 id="org386757c">How Telescopes Work</h4>
+<ul>
+<li>A telescope <i>collects</i> light from a source, and <i>focuses</i> it into a point or image.</li>
+<li>Collecting can be done with a lens or curved mirror.</li>
+<li>Telescope light-gathering power is compared with <i>apertures</i>; diameters of the telescope opening.</li>
+<li>How much more light can a telescope with twice the aperture collect?</li>
+<li>Can use an additional lens, the <i>eyepiece</i>, to magnify the image.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orge185e4e">
+<h4 id="orge185e4e">Lenses</h4>
+<ul>
+<li>Lenses are typically curved glass that <i>refract</i>, or bend, light rays.  This example converges light towards the <i>focus</i> of the lens, a <i>focal length</i> away from its center.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_4.png" alt="6_4.png" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li><i>Refracting telescopes</i> use a lens to focus light, while <i>reflecting telescopes</i> use a mirror.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_5.png" alt="6_5.png" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li>Light travels through a lens in refracting telescopes; imperfections anywhere in the lens or in the cut cause distortions.</li>
+<li>Different frequencies travel differently in lenses (remember prisms?), leading to <i>chromatic aberration</i> in refracting telescopes.</li>
+<li>Glass sags!</li>
+<li>Reflecting telescopes avoid these problems with a concave <i>primary mirror</i>, for which only a single surface needs good manufacturing.</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/6_6.png" alt="6_6.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgd937b1c">
+<h3 id="orgd937b1c">Telescopes Today</h3>
+<ul>
+<li>Millions/billions of dollars to build.</li>
+<li>Motorized drives.</li>
+<li>Huge steel supports for heavy mirrors (around 15 tons!).</li>
+<li>Largest diameter 10.4 m.</li>
+<li>Correct mechanically for sag (among other things).</li>
+<li>Can use multiple mirrors together, like 36 hexagonal mirrors in Keck telescopes.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org440555f">
+<h4 id="org440555f">Picking the Best Observing Sites</h4>
+<ul>
+<li>Gemini and Keck telescopes cost $100 million, so we want prime real estate.</li>
+<li>Mountains, far from light pollution is good.</li>
+<li>Other factors include clear weather, atmospheric water vapor, air turbulence  (which leads to bad <i>seeing</i>).  We want low turbulence, stable air (like air that's flowed over water a long distance).</li>
+<li>So we want high, dark, and dry.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org095f265">
+<h4 id="org095f265">The Resolution of a Telescope</h4>
+<ul>
+<li>Resolution refers to precision of detail in an image.</li>
+<li>Resolution measured in arcseconds (how big a quarter would look, 5 km away!).</li>
+<li>Good resolution can come from high aperture.</li>
+<li>Resolution is weakened by gases of different temperature which act as lenses, distorting the image.  This is why the stars "twinkle"!</li>
+<li>It's also why we have telescopes on satellites in space.</li>
+<li>Another option is <i>adaptive optics</i>, where we undistort atmospheric distortion with a flexible mirror.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgd86062c">
+<h3 id="orgd86062c">Visible-Light Detectors and Instruments</h3>
+<ul>
+<li>The human eye has short <i>integration time</i>; the time to accumulate light energy before sending a signal (to the brain).  A fraction of a second.  Also, the brain doesn't have a usb cable to save our data, so we use detectors.</li>
+<li>Before the detector, we typically use a spectrometer.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org0d96b26">
+<h4 id="org0d96b26">Photographic and Electronic Detectors</h4>
+<ul>
+<li>Used to take photographs, now use <i>charge-coupled devices (CCDs)</i> like those in cellphone cameras, where light radiation is measured in a grid of <i>pixels</i>.  This is 90 times more sensitive to light than the old photograph method.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgb640693">
+<h4 id="orgb640693">Infrared Observations</h4>
+<ul>
+<li><a href="http://coolcosmos.ipac.caltech.edu/infrared_gallery/1">Infrared Zoo</a></li>
+<li>These are difficult because at an average surface temperature of 300 K, the Earth emits radiation at a peak wavelength of 10&mu;m (Wien's Law).</li>
+<li>Detectors are shielded from nearby radiation and cooled near absolute zero (1-3 K) through immersion in liquid Helium.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org2a1b60a">
+<h4 id="org2a1b60a">Spectroscopy</h4>
+<ul>
+<li>Gives information about chemical composition, temperature, motion, and more.</li>
+<li>Spread out light by color (using prism or more commonly, a <i>grating</i>) and put detectors in each color's path to measure just that color.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_16.png" alt="6_16.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgf8f90df">
+<h3 id="orgf8f90df">Radio Telescopes</h3>
+<ul>
+<li>1930s, Karl G. Jansky measures radio signals from an unknown source, strongest about 4 minutes earlier on each successive day.  What does he conclude?</li>
+
+</ul>
+</section>
+<section id="slide-sec-org9291f5f">
+<h4 id="org9291f5f">Detection of Radio Energy from Space</h4>
+<ul>
+<li>Note: radio waves are not Ke$ha's latest hits, they categorize a band of waves 10<sup>4</sup>-10<sup>12</sup> Hz.  We can't hear/see radio waves.</li>
+<li>Moving charged particles can create waves, so can waves move charged particles!</li>
+<li>How to create a radio wave-mirror?  Radio waves are reflected by conducting surfaces.  Radio telescopes resemble giant satellite dishes.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org3558e22">
+<h4 id="org3558e22">Radio Interferometry</h4>
+<ul>
+<li>Longer wavelengths are harder to resolve; the largest radio telescope has lower resolution than an amateur telescope.</li>
+<li>Radio astronomers take advantage of <i>interference</i> in radio waves by linking two or more telescopes into an <i>interferometer</i>, or better yet, into an <i>interferometer array</i>, such as the National Radio Astronomy Observatory's Very Large Array (VLA) near Socorro, NM, consisting of 27 25-m aperture telescopes on railroads over 36 km.</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/6_VLA.jpg" alt="6_VLA.jpg" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li>If we combine the interferometry data later, we can separate the telescopes further; as in the Very Long Baseline Array (VLBA);</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_21.png" alt="6_21.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-orgbc2574f">
+<h4 id="orgbc2574f">Radar Astronomy</h4>
+<ul>
+<li><i>Radar</i> is bouncing radio waves off of objects in our solar system and analyzing the reflection.  Timing gives us the distance to, say, a mountain on Jupiter's surface.</li>
+<li>Using the Doppler effect, radar observations can determine the speed of objects!</li>
+<li>Best facility was 305-m telescope in Arecibo, Puerto Rico, in a bowl shape with hills, wherein the detector is moved.  Now surpassed by Five-hundred-meter Aperture Radio Telescope (FAST) in Pingtang Cty, China, which moves plates in the dish to focus on different objects.</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/6_22.png" alt="6_22.png" />
+</p>
+</div>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/6_FAST.jpg" alt="6_FAST.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org4a0b94d">
+<h3 id="org4a0b94d">Observations Outside Earth's Atmosphere</h3>
+<div class="outline-text-3" id="text-org4a0b94d">
+</div>
+</section>
+<section id="slide-sec-org1ff2cb9">
+<h4 id="org1ff2cb9">Airborne and Space Infrared Telescopes</h4>
+<ul>
+<li>Water vapor is the main source of atmospheric interference, and it's concentrated in the lower part of Earth's atmosphere.  Even 100 m elevation helps!</li>
+<li>Airplane observations have been made since 1960s, and are still being made.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgf441c1d">
+<h4 id="orgf441c1d">Hubble Space Telescope (HST)</h4>
+<ul>
+<li>Named for Edwin Hubble, who discovered the expansion of the universe in the 1920s (more on that later).</li>
+<li>Mirror so precise that if it were scaled to the size of the entire continental US, there would be no hill or valley larger than ~6 cm.</li>
+<li>Scientists saved money by not testing it before launch.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/6_HUDF.jpg" alt="6_HUDF.jpg" height="300cm" />
+</p>
+</div>
+</section>
+<section >
+<ul>
+<li>Turns out the mirror's <i>shape</i> was off by the width of a human hair, enough to make things blurry.</li>
+<li>December 1993, astronauts captured the orbiting telescope and fixed it (even put a new camera on!).</li>
+<li>The HST has been upgraded and repaired multiple times since.</li>
+
+</ul>
+<p target="_blank">
+<a href="https://upload.wikimedia.org/wikipedia/commons/0/0d/Hubble_ultra_deep_field_high_rez_edit1.jpg" target="_blank">HUDF</a>
+</p>
+</section>
+<section id="slide-sec-org0772a32">
+<h3 id="org0772a32">High-Energy Observatories</h3>
+<ul>
+<li>Mirrors are harder for X- and &gamma;- (gamma-)rays, which go through matter, but this is rectified in satellites (somehow).</li>
+<li>Gamma-ray detection can be done indirectly by observing byproducts of their collisions with charged particles on Earth.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org7a57ff9">
+<h3 id="org7a57ff9">The Future of Large Telescopes</h3>
+<ul>
+<li>Large Synoptic Survey Telescope (LSST, 2021): Telescope with large field of view, scans sky for <i>transients</i> or events that happen quickly, such as exploding stars.</li>
+<li>Cherenkov Telescope Array (CTA, 2021-2025): Measures gamma rays from ground.</li>
+<li>Others working on larger-mirror telescopes (a third the size of a football field, composed of smaller mirrors).</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
