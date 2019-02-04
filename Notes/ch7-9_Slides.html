@@ -1,183 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"/>
 <title>ASTR101 Ch 8-9</title>
-<meta name="generator" content="Org mode" />
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+.underline { text-decoration: underline; }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
+
+<link rel="stylesheet" href="reveal.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
@@ -190,136 +35,126 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css.css" />
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2018 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
-<h1 class="title">ASTR101 Ch 8-9</h1>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">ASTR101 Ch 8-9</h1>
+</section>
+<section id="table-of-contents">
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org02e9219">Ch 8 - Earth as a Planet</a>
+<li><a href="#/slide-org1a1a798">Ch 7 - Other Worlds: An Introduction to the Solar System</a>
 <ul>
-<li><a href="#org6f2b62b">The Global Perspective</a>
+<li><a href="#/slide-orge4ae28d">Overview of our Planetary System</a>
 <ul>
-<li><a href="#orgf1325ee">Earth's Interior</a></li>
-<li><a href="#org4383f3e">Magnetic Field and Magnetosphere</a></li>
+<li><a href="#/slide-orgd0aa9f9">An Inventory</a></li>
+<li><a href="#/slide-org174114a">Smaller Members of the Solar System</a></li>
+<li><a href="#/slide-org9fce41c">A Scale Model of the Solar System</a></li>
 </ul>
 </li>
-<li><a href="#org66593c2">Earth's Crust</a>
+<li><a href="#/slide-org0b8df45">Composition and Structure of Planets</a>
 <ul>
-<li><a href="#org4aae490">Composition of the Crust</a></li>
-<li><a href="#org03b2849">Plate Tectonics</a></li>
-<li><a href="#org3f30ca8">Rift and Subduction Zones</a></li>
-<li><a href="#org3a796bb">Fault Zones and Mountain Building</a></li>
-<li><a href="#orgb6841ca">Volcanoes</a></li>
+<li><a href="#/slide-org4ac57e3">The Giant Planets</a></li>
+<li><a href="#/slide-orge963c54">The Terrestrial Planets</a></li>
+<li><a href="#/slide-orgd897e1e">Moons, Asteroids, and Comets</a></li>
+<li><a href="#/slide-org3a0f175">Temperature: Going to Extremes</a></li>
+<li><a href="#/slide-orged758bf">Geological Activity</a></li>
 </ul>
 </li>
-<li><a href="#org7a2fd2f">Earth's Atmosphere</a>
+<li><a href="#/slide-org64f29f1">Dating Planetary Surfaces</a>
 <ul>
-<li><a href="#org8e03145">Structure of the Atmosphere</a></li>
-<li><a href="#org69b2c35">Atmospheric Composition and Origin</a></li>
-<li><a href="#orga732dfb">Weather and Climate</a></li>
+<li><a href="#/slide-org4cdbaab">Count the craters</a></li>
+<li><a href="#/slide-orgbedb690">Radioactive Rocks</a></li>
 </ul>
 </li>
-<li><a href="#org2b616d4">Life, Chemical Evolution, and Climate Change</a>
+<li><a href="#/slide-org988de15">Origin of the Solar System</a>
 <ul>
-<li><a href="#orgad2425a">The Origin of Life</a></li>
-<li><a href="#org5a101a5">The Evolution of the Atmosphere</a></li>
-<li><a href="#orge6b3a67">The Greenhouse Effect and Global Warming</a></li>
-<li><a href="#orgd5cf04f">Human Impacts on Our Planet</a></li>
-</ul>
-</li>
-<li><a href="#org454aeb4">Cosmic Influences on the Evolution of Earth</a>
-<ul>
-<li><a href="#orgecc003b">Recent Impacts</a></li>
-<li><a href="#orge2e1650">Mass Extinction</a></li>
-<li><a href="#orgac6f0a3">Impacts and the Evolution of Life</a></li>
-<li><a href="#org7de8252">Impacts in Our Future?</a></li>
+<li><a href="#/slide-org2e38b47">Looking for Patterns</a></li>
+<li><a href="#/slide-org08b778f">The Evidence from Far Away</a></li>
+<li><a href="#/slide-orgad7f657">Building Planets</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org9c5478d">Ch 9 - Cratered Worlds</a>
+<li><a href="#/slide-org2233eae">Ch 8 - Earth as a Planet</a>
 <ul>
-<li><a href="#org26d30cd">General Properties of the Moon</a>
+<li><a href="#/slide-orgf5a83d6">The Global Perspective</a>
 <ul>
-<li><a href="#orgddde8e5">Exploration of the Moon</a></li>
-<li><a href="#org0699dae">Composition and Structure of the Moon</a></li>
+<li><a href="#/slide-org8ff5fec">Earth's Interior</a></li>
+<li><a href="#/slide-org7b4e870">Magnetic Field and Magnetosphere</a></li>
 </ul>
 </li>
-<li><a href="#org58d2462">The Lunar Surface</a>
+<li><a href="#/slide-orgd348c92">Earth's Crust</a>
 <ul>
-<li><a href="#org45b6f48">General Appearance</a></li>
-<li><a href="#org1085c37">Lunar History</a></li>
-<li><a href="#org02ee57e">On the Lunar Surface</a></li>
+<li><a href="#/slide-org781e961">Composition of the Crust</a></li>
+<li><a href="#/slide-org9dc1c83">Plate Tectonics</a></li>
+<li><a href="#/slide-org35fe473">Rift and Subduction Zones</a></li>
+<li><a href="#/slide-org33e0f7e">Fault Zones and Mountain Building</a></li>
+<li><a href="#/slide-orge97310d">Volcanoes</a></li>
 </ul>
 </li>
-<li><a href="#orgfb20ff9">Impact Craters</a>
+<li><a href="#/slide-orge637bde">Earth's Atmosphere</a>
 <ul>
-<li><a href="#org9f4d261">Volcanic Versus Impact Origin of Craters</a></li>
-<li><a href="#org8b70f6f">The Cratering Process</a></li>
-<li><a href="#org2ac7aa6">Using Crater Counts</a></li>
+<li><a href="#/slide-org11ffce8">Structure of the Atmosphere</a></li>
+<li><a href="#/slide-org019d823">Atmospheric Composition and Origin</a></li>
+<li><a href="#/slide-orgdd30d0d">Weather and Climate</a></li>
 </ul>
 </li>
-<li><a href="#org1b4c04f">The Origin of the Moon</a>
+<li><a href="#/slide-org7c9a5b0">Life, Chemical Evolution, and Climate Change</a>
 <ul>
-<li><a href="#orgf2f7348">The Giant Impact Hypothesis</a></li>
+<li><a href="#/slide-org60c2dd0">The Origin of Life</a></li>
+<li><a href="#/slide-org15829ab">The Evolution of the Atmosphere</a></li>
+<li><a href="#/slide-org4f1bb82">The Greenhouse Effect and Global Warming</a></li>
+<li><a href="#/slide-orgb8dbc17">Human Impacts on Our Planet</a></li>
 </ul>
 </li>
-<li><a href="#orgb5f75cd">Mercury</a>
+<li><a href="#/slide-org4e4e751">Cosmic Influences on the Evolution of Earth</a>
 <ul>
-<li><a href="#org2c09b46">Mercury's Orbit</a></li>
-<li><a href="#org8d1a050">Composition and Structure</a></li>
-<li><a href="#org6078f68">Mercury's Strange Rotation</a></li>
-<li><a href="#org3657c2b">The Surface of Mercury</a></li>
-<li><a href="#org4fff08d">The Origin of Mercury</a></li>
+<li><a href="#/slide-org9242671">Recent Impacts</a></li>
+<li><a href="#/slide-orgb4a4af5">Mass Extinction</a></li>
+<li><a href="#/slide-org098a507">Impacts and the Evolution of Life</a></li>
+<li><a href="#/slide-org38b7be2">Impacts in Our Future?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#/slide-orgefd0504">Ch 9 - Cratered Worlds</a>
+<ul>
+<li><a href="#/slide-org6704338">General Properties of the Moon</a>
+<ul>
+<li><a href="#/slide-org12dbfa5">Exploration of the Moon</a></li>
+<li><a href="#/slide-org736e485">Composition and Structure of the Moon</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org41abbf1">The Lunar Surface</a>
+<ul>
+<li><a href="#/slide-org7817868">General Appearance</a></li>
+<li><a href="#/slide-org65970ef">Lunar History</a></li>
+<li><a href="#/slide-org3f2664d">On the Lunar Surface</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org6accb02">Impact Craters</a>
+<ul>
+<li><a href="#/slide-org99fcd02">Volcanic Versus Impact Origin of Craters</a></li>
+<li><a href="#/slide-org840e690">The Cratering Process</a></li>
+<li><a href="#/slide-orgc5a3d33">Using Crater Counts</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org39bbe2b">The Origin of the Moon</a>
+<ul>
+<li><a href="#/slide-orgf4d56d1">The Giant Impact Hypothesis</a></li>
+</ul>
+</li>
+<li><a href="#/slide-org720a1e7">Mercury</a>
+<ul>
+<li><a href="#/slide-orgb40821f">Mercury's Orbit</a></li>
+<li><a href="#/slide-org4d89798">Composition and Structure</a></li>
+<li><a href="#/slide-orgb6ce53b">Mercury's Strange Rotation</a></li>
+<li><a href="#/slide-orgc085798">The Surface of Mercury</a></li>
+<li><a href="#/slide-org6e6ff23">The Origin of Mercury</a></li>
 </ul>
 </li>
 </ul>
@@ -327,583 +162,836 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org02e9219" class="outline-2">
-<h2 id="org02e9219">Ch 8 - Earth as a Planet</h2>
-<div class="outline-text-2" id="text-org02e9219">
+</section>
+<section>
+<section id="slide-sec-org1a1a798">
+<h2 id="org1a1a798">Ch 7 - Other Worlds: An Introduction to the Solar System</h2>
+<div class="outline-text-2" id="text-org1a1a798">
 </div>
-<div id="outline-container-org6f2b62b" class="outline-3">
-<h3 id="org6f2b62b">The Global Perspective</h3>
-<div class="outline-text-3" id="text-org6f2b62b">
+</section>
+<section id="slide-sec-orge4ae28d">
+<h3 id="orge4ae28d">Overview of our Planetary System</h3>
+<ul>
+<li>Solar system: Sun, planets, moons, rings, debris (asteroids, comets, dust).</li>
+<li>All formed together around 4.5 billions years ago.</li>
+<li>Every planet has been flown past, orbited, or landed on by a probe.</li>
+<li>Probes have penetrated Jupiter's atmosphere and landed on Venus, Mars, the Moon, Saturn's moon Titan, and asteroids and comets.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgd0aa9f9">
+<h4 id="orgd0aa9f9">An Inventory</h4>
+<ul>
+<li>Planets orbit on the same plane, while dwarf planets don't.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/7_3.png" alt="7_3.png" />
+</p>
 </div>
-<div id="outline-container-orgf1325ee" class="outline-4">
-<h4 id="orgf1325ee">Earth's Interior</h4>
-<div class="outline-text-4" id="text-orgf1325ee">
-<ul class="org-ul">
+</section>
+<ul>
+<li>Four <i>terrestrial planets</i>; Mercury, Venus, Earth, and Mars&#x2014;small, made of rock/metal.</li>
+<li>Four <i>jovian</i>, or <i>giant planets</i>: Jupiter, Saturn, Uranus, Neptune&#x2014;large (1400 Earth fit in Jupiter, EC), made of ice, liquid, and gas.</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="./Images/3_AsteroidBelt.jpg" alt="3_AsteroidBelt.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org174114a">
+<h4 id="org174114a">Smaller Members of the Solar System</h4>
+<ul>
+<li>Only Mercury and Venus are without moons.</li>
+<li>Largest moons are the Moon, 4 Galilean moons (Jupiter), and Titan (Saturn) and Triton (Neptune).</li>
+<li>Each of the giant planets has a ring with orbiting bodies ranging in size from dust to mountain.</li>
+<li>Asteroids are remnants of the formation of the solar system, some of them were likely captured as small moons.</li>
+<li>Comets are also remnants of solar system formation, but are made of ice (eg, carbon monoxide/dioxide, water) and orbit farther out.</li>
+<li>Meteors are broken rock (<i>cosmic dust</i>) and burn up if they enter Earth's atmosphere, become a <i>meteorite</i> if they hit the ground.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org9fce41c">
+<h4 id="org9fce41c">A Scale Model of the Solar System</h4>
+<ul>
+<li>The text presents a scale model of the solar system, scaled down by 10<sup>9</sup>.</li>
+
+</ul>
+<iframe width="300" height="315" src="https://www.youtube.com/embed/zR3Igc3Rhfg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> <iframe width="300" height="315" src="https://www.youtube.com/embed/i93Z7zljQ7I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</section>
+<section id="slide-sec-org0b8df45">
+<h3 id="org0b8df45">Composition and Structure of Planets</h3>
+<div class="outline-text-3" id="text-org0b8df45">
+</div>
+</section>
+<section id="slide-sec-org4ac57e3">
+<h4 id="org4ac57e3">The Giant Planets</h4>
+<ul>
+<li>Recall there are the rocky terrestrial planets and icy jovian planets&#x2014;they must have formed under different conditions.</li>
+<li>Largest planets Jupiter and Saturn close to Sun in composition.  Heavier elements sink to rocky, metal, ice center, bulk is liquefied hydrogen.</li>
+<li>Uranus and Neptune also have a core of rock/metal/ice, but smaller atmospheres.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orge963c54">
+<h4 id="orge963c54">The Terrestrial Planets</h4>
+<ul>
+<li>Most abundant rocks are <i>silicates</i>, made of silicon and oxygen, and most common metal is iron.  Mercury has the greatest proportion of metal, the other 3 have similar composition of 2/3 silicates and 1/3 iron-nickel/sulfur combinations.</li>
+<li>Terrestrial planets also have denser matter in center of planet, leading to theory that they were once also liquid.  Process of separating a planet's interior layers into different compositions and densities is called <i>differentiation</i>, which occurs when the planet is hot (melting point of rocks, ~1300K), and stays as the planet cools.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgd897e1e">
+<h4 id="orgd897e1e">Moons, Asteroids, and Comets</h4>
+<ul>
+<li>Most moons share the composition of their planet (rocky for terrestrial moons and icy with a hard core for giant planets' moons)</li>
+<li>Only the largest asteroids are differentiated.</li>
+
+</ul>
+</section>
+<section id="slide-sec-org3a0f175">
+<h4 id="org3a0f175">Temperature: Going to Extremes</h4>
+<ul>
+<li>Remember the light intensity falls as \(1/r^2\); this light also provides heat.  The temperature reduces approximately as \(\frac{1}{\sqrt{r}}\), so the farther you are from the Sun, the colder it gets.  Mercury (.39 AU from the Sun) is about 500 K, while Pluto (39.5 AU from the Sun) is 50 K.</li>
+<li>Remember, planetary atmosphere has a big effect on this; heat kept in by <i>greenhouse effect</i>; in which atmosphere has greater transparency to (incoming) visible radiation than (outgoing) infrared.  The effect results in Venus having greater temperature than Mercury!</li>
+<li>Earth is the only planet we know of with surface temperature generally matching liquid phase of water.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orged758bf">
+<h4 id="orged758bf">Geological Activity</h4>
+<ul>
+<li>Planets shaped in part by comet collisions&#x2014;mostly during solar system formation, but even now; eg., Comet Shoemaker-Levy 9 with Jupiter, Summer 1994, which came within 660 million km.</li>
+<li>Internal forces can build mountains and build new islands; eg, volcanoes, earthquakes.  Earth and Venus are most active planets, and even some jovian planet moons are active!  The Moon has been dead and inactive for billions of years.</li>
+<li>Hawai'i's getting a new island by 32,018!  (maybe)</li>
+<li>Earth and Venus have molten cores.</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/7_13.png" alt="7_13.png" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/7_14.png" alt="7_14.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Comet Shoemaker-Levy 9 on Jupiter (top) and its atmospheric effect  5 minutes to 5 days post-collision (bottom).</p>
+</div>
+
+</section>
+<section id="slide-sec-org64f29f1">
+<h3 id="org64f29f1">Dating Planetary Surfaces</h3>
+<div class="outline-text-3" id="text-org64f29f1">
+</div>
+</section>
+<section id="slide-sec-org4cdbaab">
+<h4 id="org4cdbaab">Count the craters</h4>
+<ul>
+<li>Rate of impact has been pretty constant for several billion years.</li>
+<li>Can only count to date when the planet "smoothed itself out" through, eg, lava flow.</li>
+<li>Can also be used to date smoothing events and date terrain.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgbedb690">
+<h4 id="orgbedb690">Radioactive Rocks</h4>
+<ul>
+<li>Some <i>radioactive</i> nuclei are unstable and can split apart (decay) to other nuclei, at random times.</li>
+<li>But we do know their <i>half-life</i>; the time for approximately half of them to decay in a large sample.</li>
+<li>The original unstable nuclei are the <i>parents</i> and they split apart to <i>daughter</i> particles.</li>
+<li>Every half-life, half of the particles will have decayed; this is the principle behind Carbon dating!</li>
+
+</ul>
+</section>
+<section >
+
+<div class="figure">
+<p><img src="./Images/7_16.png" alt="7_16.png" />
+</p>
+</div>
+</section>
+<section id="slide-sec-org988de15">
+<h3 id="org988de15">Origin of the Solar System</h3>
+<ul>
+<li>An <i>exoplanet</i> is a planet outside of the solar system.  Some of these range between the terrestrial and giant planets in size; termed <i>superearths</i>.</li>
+<li>In some exoplanet systems, the giants are close to the star and the terrestrial planets are farther (to be discussed in ch 21)!</li>
+
+</ul>
+</section>
+<section id="slide-sec-org2e38b47">
+<h4 id="org2e38b47">Looking for Patterns</h4>
+<ul>
+<li>Planets orbit the Sun (and, mostly, themselves) counter-clockwise, and the Sun orbits itself counter-clockwise, evidence that the Sun and planets may have formed from a spinning cloud of gas and dust called the <i>solar nebula</i>.</li>
+<li>Sun, Jupiter and Saturn have similar compositions, evidence they may have been formed from the same material reservoir.</li>
+<li>Terrestrial planets have less of these materials, since at their temperature so close to the Sun the materials would evaporate (whereas they're liquid/ice/gas in the vicinity of the giant planets).</li>
+
+</ul>
+</section>
+<section id="slide-sec-org08b778f">
+<h4 id="org08b778f">The Evidence from Far Away</h4>
+<ul>
+<li>We can compare this present data to star systems far away that are in varying stages of formations like that of the solar system to get a good picture of the birth of the solar system.</li>
+<li>The name for solar nebulas (the cloud posited to birth the solar system) outside of the solar system is <i>circumstellar disks</i>.</li>
+
+</ul>
+</section>
+<section id="slide-sec-orgad7f657">
+<h4 id="orgad7f657">Building Planets</h4>
+<ul>
+<li>As planets form from circumstellar disks common around young stars, we begin to see <i>planetesimals</i>&#x2014;planet foetuses.  Computer simulations with Physics laws taken into account support these theories.</li>
+<li>Still leaves the questions; why do Uranus and Pluto spin on their sides, why does Venus spin slowly around itself retroactively?  These could be the results of early collisions.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-sec-org2233eae">
+<h2 id="org2233eae">Ch 8 - Earth as a Planet</h2>
+<div class="outline-text-2" id="text-org2233eae">
+</div>
+</section>
+<section id="slide-sec-orgf5a83d6">
+<h3 id="orgf5a83d6">The Global Perspective</h3>
+<div class="outline-text-3" id="text-orgf5a83d6">
+</div>
+</section>
+<section id="slide-sec-org8ff5fec">
+<h4 id="org8ff5fec">Earth's Interior</h4>
+<ul>
 <li>With a diameter of 12,756, how can we study Earth's innards?</li>
 <li>One way is to by measuring the transmission of <i>seismic waves</i>, sound waves that travel inside the Earth due to, eg, earthquakes or explosions.  Just like a bell rings differently based on its shape and material distribution, the seismic waves change as they go through Earth.</li>
 <li>Seismic waves are measured at various locations, which has determined an inner composition for the Earth.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_3.png" alt="8_3.png" />
 </p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>The <i>crust</i> is the outermost layer, covered 55% by water by 6 km thick <i>oceanic crust</i>, made typically of <i>basalt</i>, volcanic rock produced from cooled lava, while 45% is 20-70 km-deep continental crust, made typically of <i>granites</i>, a class of silicates made from silicon and oxygen.  .3% of Earth's mass.</li>
 <li>The <i>mantle</i> is the largest layer, going down to about 2900 km.  It's pretty solid, though at these pressures/temperatures rocks can slowly move and deform.  Density of 2.5-5 g/cm<sup>3</sup>.</li>
 <li>The <i>core</i> is dense and metallic with a diameter of 7000 km, larger than Mercury.  The <i>outer core</i> is liquid, and the <i>inner core</i> (2400 km in diameter) may be solid.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Evidence for differentiation is that the Earth's bulk density is 5.5 g/cm<sup>3</sup> while its surface density is only 3 g/cm<sup>3</sup>.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org4383f3e" class="outline-4">
-<h4 id="org4383f3e">Magnetic Field and Magnetosphere</h4>
-<div class="outline-text-4" id="text-org4383f3e">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org7b4e870">
+<h4 id="org7b4e870">Magnetic Field and Magnetosphere</h4>
+<ul>
 <li>Moving ions in Earth's core create a giant magnetic field so that the Earth acts like a bar magnet; the region where this field dominates the Sun's magnetic field is called the <i>magnetosphere</i>, whose outer limit is the <i>magnetopause</i>.</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/8_5.png" alt="8_5.png" />
 </p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Charged particles moving in space become trapped in this magnetic field; namely, the <i>solar wind</i>, a collection of charged particles spreading outwards from the Sun's activities.  This shapes the magnetic field of the Earth away from the Sun.</li>
 <li>High-energy ions are trapped in regions of the magnetosphere called the <i>Van Allen Belt</i>.</li>
+
 </ul>
+</section>
+<section id="slide-sec-orgd348c92">
+<h3 id="orgd348c92">Earth's Crust</h3>
+<div class="outline-text-3" id="text-orgd348c92">
 </div>
-</div>
-</div>
-<div id="outline-container-org66593c2" class="outline-3">
-<h3 id="org66593c2">Earth's Crust</h3>
-<div class="outline-text-3" id="text-org66593c2">
-</div>
-<div id="outline-container-org4aae490" class="outline-4">
-<h4 id="org4aae490">Composition of the Crust</h4>
-<div class="outline-text-4" id="text-org4aae490">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org781e961">
+<h4 id="org781e961">Composition of the Crust</h4>
+<ul>
 <li>Largely oceanic basalt and continental granite (as discussed), both <i>igneous rock</i> (cooled <i>lava</i>, or molten rock).</li>
 <li><i>Sedimentary rocks</i> are wind or water-deposited rock fragments that bind together without melting, such as sandstone, shales, and limestone.</li>
 <li><i>Metamorphic rocks</i> are igneous rocks changed by high temperature and pressure.</li>
 <li>Neither sedimentary nor metamorphic rocks are common on other planets!</li>
 <li><i>Primitive rock</i> is the material of the planetary system that hasn't undergone heating&#x2014;there's none from Earth itself, since Earth was in a molten state.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org03b2849" class="outline-4">
-<h4 id="org03b2849">Plate Tectonics</h4>
-<div class="outline-text-4" id="text-org03b2849">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org9dc1c83">
+<h4 id="org9dc1c83">Plate Tectonics</h4>
+<ul>
 <li><i>Geology</i> is the study of the Earth's crust and the causes of its shape.</li>
 <li><i>Plate tectonics</i> explains the slow drift of continents and large geological features; it's a fundamental theory describing the heat transport of the Earth.  A heat transport mechanism is created in the evolution of all planets, based in part on the planet's composition.</li>
 <li>From the crust outwards, Earth is divided into about a dozen tectonic plates which are moving, slowly.</li>
 <li>The plate movement is powered by <i>convection</i>, or heat transfer by the movement of cold and hot material, of the mantle.  Convection mixes the milk in your coffee! <a href="https://www.instagram.com/p/BmQ57IQFLCl/?utm_source=ig_web_button_share_sheet">https://www.instagram.com/p/BmQ57IQFLCl/?utm_source=ig_web_button_share_sheet</a></li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_7.png" alt="8_7.png" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-org3f30ca8" class="outline-4">
-<h4 id="org3f30ca8">Rift and Subduction Zones</h4>
-<div class="outline-text-4" id="text-org3f30ca8">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org35fe473">
+<h4 id="org35fe473">Rift and Subduction Zones</h4>
+<ul>
 <li>Tectonic activity manifests in the crust as <i>rift zones</i> where tectonic plates pull apart from each other, with molten rock filling the space.</li>
 <li>Most rift zones are now in oceans, the central African rift is an example of a continental rift zone.</li>
 <li>As two plates drift apart, the plates overlap with other plates in <i>subduction zones</i>, most common with thinnner, oceanic plates.</li>
 <li>This is how mountain ranges are formed, while the ragged peak shapes of mountains is from water/ice erosion (unlike on Mercury or the moon, which lack water).</li>
 <li>60 thousand km of active rifts identified, drifting apart at 4 cm/year.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_9.png" alt="8_9.png" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-org3a796bb" class="outline-4">
-<h4 id="org3a796bb">Fault Zones and Mountain Building</h4>
-<div class="outline-text-4" id="text-org3a796bb">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org33e0f7e">
+<h4 id="org33e0f7e">Fault Zones and Mountain Building</h4>
+<ul>
 <li>Plates also slide parallel to each other in <i>faults</i>, also at a rate of centimeters per year.</li>
 <li>Motion is not smooth, but builds up stress in the crust released in sudden slippage (earthquakes).</li>
 <li>The average motion of the tectonic plates is constant, so the longer the time between earthquakes, the more violent the earthquake.</li>
 <li>Eg, Parkfield, CA has slipped 1 m every 25 years or so, but LA has earthquakes for 7 m of slippage every 150 years.  The last time LA had an earthquake was 1857.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_10.png" alt="8_10.png" />
 </p>
-<p><span class="figure-number">Figure 5: </span>San Andreas Fault</p>
+<p><span class="figure-number">Figure 10: </span>San Andreas Fault</p>
 </div>
-</div>
-</div>
-<div id="outline-container-orgb6841ca" class="outline-4">
-<h4 id="orgb6841ca">Volcanoes</h4>
-<div class="outline-text-4" id="text-orgb6841ca">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orge97310d">
+<h4 id="orge97310d">Volcanoes</h4>
+<ul>
 <li>Where lava rises to the surface.</li>
 <li><i>Mid-ocean ridges</i> are underwater mountain ranges formed by rising lava at plate boundaries.</li>
 <li>Lava flowing from long cracks can form lava plains.</li>
+
 </ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org7a2fd2f" class="outline-3">
-<h3 id="org7a2fd2f">Earth's Atmosphere</h3>
-<div class="outline-text-3" id="text-org7a2fd2f">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orge637bde">
+<h3 id="orge637bde">Earth's Atmosphere</h3>
+<ul>
 <li><i>Pressure</i> is force per unit area, and the atmosphere's pressure on us at Earth's surface is 1 <i>bar</i>, or 1.03 kg/cm<sup>2</sup>.  Compare to 300 bars average ocean floor pressure.</li>
 <li>Atmosphere's mass is 5&times;10<sup>18 </sup>kg, about a millionth Earth's total mass.</li>
+
 </ul>
-</div>
-<div id="outline-container-org8e03145" class="outline-4">
-<h4 id="org8e03145">Structure of the Atmosphere</h4>
-<div class="outline-text-4" id="text-org8e03145">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org11ffce8">
+<h4 id="org11ffce8">Structure of the Atmosphere</h4>
+<div class="column" style="float:left; width:50%">
+<ul>
 <li>Most of the atmosphere in <i>troposphere</i>, within 10 km of Earth's surface, containing convection currents.</li>
 <li>Followed by <i>stratosphere</i>, which rises to 50 km, cold and cloudless, with <i>ozone</i> (O<sub>3</sub>) on top (absorbs UV).</li>
 <li>Thin atmosphere above 100 km, <i>ionosphere</i> is where lighter (often ionized) atoms can leave the Earth!</li>
+
 </ul>
+</div>
+<div class="column" style="float:right; width:50%">
 
 <div class="figure">
 <p><img src="./Images/8_12.png" alt="8_12.png" height="500px" />
 </p>
 </div>
-<ul class="org-ul">
+</div>
+</section>
+<section >
+<ul>
 <li>Stratosphere has ozone (O<sub>3</sub>) on top, which absorbs ultraviolet light so we can survive.  We were destroying ozone with chlorofluorocarbons (CFCs), causing a hole in the ozone layer over the Antarctic, so an international agreement bans these chemicals.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org69b2c35" class="outline-4">
-<h4 id="org69b2c35">Atmospheric Composition and Origin</h4>
-<div class="outline-text-4" id="text-org69b2c35">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org019d823">
+<h4 id="org019d823">Atmospheric Composition and Origin</h4>
+<ul>
 <li>The air we breathe (at Earth's surface) is 78% N<sub>2</sub>, 21% O<sub>2</sub>, 1% Ar, with traces of water vapor, carbon dioxide, water droplets, dust particles, etc.  A <i>volatile</i> material evaporates at low temperatures.</li>
 <li>This composition has changed during Earth's history, as studied, e.g., in the chemistry of minerals forming at different times.</li>
 <li>Theories for source of Earth's atmosphere and oceans:
-<ol class="org-ol">
+<ol>
 <li>Formed with the rest of Earth from Sun debris.</li>
 <li>Released from interior through volcanic activity.</li>
 <li>Formed by comet/asteroid impacts</li>
+
 </ol></li>
 <li>Evidence favors combination of 2 and 3.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-orga732dfb" class="outline-4">
-<h4 id="orga732dfb">Weather and Climate</h4>
-<div class="outline-text-4" id="text-orga732dfb">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgdd30d0d">
+<h4 id="orgdd30d0d">Weather and Climate</h4>
+<ul>
 <li>All planets have <i>weather</i>; the circulation of atmosphere.</li>
 <li>Mostly powered by surface heat from sunlight, and convection currents.</li>
 <li><i>Climate</i> refers to atmospheric effects that last decades and centuries, which accumulate.</li>
 <li>A change in 2&deg; C would cut wheat production in half in North America, or melt enough glaciers to raise sea level by 10 m, flooding many cities and islands!</li>
 <li>Earth has had ice ages, the last of which lasted 20k years, 14k years ago, with ice nearly 2 km thick covering Boston and NYC.</li>
+
 </ul>
+</section>
+<section id="slide-sec-org7c9a5b0">
+<h3 id="org7c9a5b0">Life, Chemical Evolution, and Climate Change</h3>
+<div class="outline-text-3" id="text-org7c9a5b0">
 </div>
-</div>
-</div>
-<div id="outline-container-org2b616d4" class="outline-3">
-<h3 id="org2b616d4">Life, Chemical Evolution, and Climate Change</h3>
-<div class="outline-text-3" id="text-org2b616d4">
-</div>
-<div id="outline-container-orgad2425a" class="outline-4">
-<h4 id="orgad2425a">The Origin of Life</h4>
-<div class="outline-text-4" id="text-orgad2425a">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org60c2dd0">
+<h4 id="org60c2dd0">The Origin of Life</h4>
+<ul>
 <li><i>Astrobiology</i> studies the origins, distribution, and future of life in the universe.</li>
 <li>Chemical evidence suggests life precedes the oldest surviving rocks (3.9 billion years old).</li>
 <li>3.5&times;10<sup>9</sup> years ago, we had <i>stromatolites</i>&#x2014;blue-green photosynthesizing micro-organisms&#x2014;which still exist today!</li>
 <li>Fossils only preserved since 600 million years.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Early Earth atmosphere was CO<sub>2</sub> and CH<sub>4</sub> (methane) but no oxygen gas, which supports chemical reactions leading to productions of the building blocks of life (amino acids, proteins, etc.)</li>
 <li>Tens of millions of years after Earth's formation, large molecules (like viruses) existed in seas.</li>
 <li>Depleted food in nutrient-rich seas, then began evolutionary process in search for other food sources.</li>
 <li>Can study DNA in genetics or <i>genomics</i>, the study of shared genetics among Earthly beings.</li>
 <li>Most diversity of life in microbial level.  There are more microbes in a bucket of soil than stars in the Galaxy!</li>
+
 </ul>
+</section>
+<section >
 <p>
 <img src="./Images/8_16.png" alt="8_16.png" />
 <img src="./Images/8_treeoflife.png" alt="8_treeoflife.png" />
 </p>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Ideas that life may have begun in extremely hot locations on our planet.</li>
 <li>Life may have begun on Mars (which cooled sooner) and transferred somehow to Earth.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org5a101a5" class="outline-4">
-<h4 id="org5a101a5">The Evolution of the Atmosphere</h4>
-<div class="outline-text-4" id="text-org5a101a5">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org15829ab">
+<h4 id="org15829ab">The Evolution of the Atmosphere</h4>
+<ul>
 <li>Key evolutionary step is blue-green algae which takes in CO<sub>2</sub> and releases oxygen; these gave rise to plants!  Plants make use of <i>photosynthesis</i>, taking advantage of sunlight energy for their internal growth.</li>
 <li>Still not a lot of oxygen until 2 billion years ago due to Earth's crust's chemical reactions.</li>
 <li>After that, oxygen formed Earth's ozone (O<sub>3</sub>) layer, which allowed life to leave the ocean (before this, landmass was barren of life).</li>
 <li>Plants create oxygen which allows for animal life.  Animals ate plants.  Eventually, breathed oxygen directly from atmosphere.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-orge6b3a67" class="outline-4">
-<h4 id="orge6b3a67">The Greenhouse Effect and Global Warming</h4>
-<div class="outline-text-4" id="text-orge6b3a67">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org4f1bb82">
+<h4 id="org4f1bb82">The Greenhouse Effect and Global Warming</h4>
+<ul>
 <li><i>Greenhouse gases</i> reflect infrared but allow sunlight through; water vapor, methane, CO<sub>2</sub>.</li>
 <li>Currently raises temperature by 23 &deg;C on Earth (necessary!), but increasing (bad).</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/8_17.png" alt="8_17.png" />
 </p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Burning fossil fuels uses up oxygen (referred to as <i>oxidizing</i> process) and releases CO<sub>2</sub>.</li>
 <li>Forests create oxygen from CO<sub>2</sub>, but we're cutting those down.</li>
 <li>In the past century, atmospheric CO<sub>2</sub> increased by 30% (post-industrial revolution);</li>
 <li>Still rising at .5%/year.</li>
 <li>See <a href="https://climate.nasa.gov/evidence/">https://climate.nasa.gov/evidence/</a></li>
 <li>For common misconceptions, <a href="https://www.skepticalscience.com/argument.php?f=taxonomy">https://www.skepticalscience.com/argument.php?f=taxonomy</a>.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_18.png" alt="8_18.png" />
 </p>
 </div>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_climatechange.gif" alt="8_climatechange.gif" />
 </p>
 </div>
+</section>
+<section >
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8auMIfF50Ng" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_temperaturespiral.gif" alt="8_temperaturespiral.gif" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-orgd5cf04f" class="outline-4">
-<h4 id="orgd5cf04f">Human Impacts on Our Planet</h4>
-<div class="outline-text-4" id="text-orgd5cf04f">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgb8dbc17">
+<h4 id="orgb8dbc17">Human Impacts on Our Planet</h4>
+<ul>
 <li>We helped some animals go extinct with hunting.</li>
 <li>Relieved a lot of tree from standing up with lumbering.</li>
 <li>Making sure planet doesn't get cold with global warming.</li>
 <li><i>Anthropocine</i>, a suggested name for the current epoch highlighting humans as the dominant influence on our planet's atmosphere and ecology.</li>
+
 </ul>
-</div>
-</div>
-</div>
-<div id="outline-container-org454aeb4" class="outline-3">
-<h3 id="org454aeb4">Cosmic Influences on the Evolution of Earth</h3>
-<div class="outline-text-3" id="text-org454aeb4">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org4e4e751">
+<h3 id="org4e4e751">Cosmic Influences on the Evolution of Earth</h3>
+<ul>
 <li>Moon has craters from cosmic collisions long ago; where are Earth's craters?</li>
 <li>Earth was affected by about as many craters as the Moon (they are neighbors).</li>
 <li>Earth's active geology smooths out its surface.</li>
 <li>Crater impacts have had an important evolutionary influence.</li>
+
 </ul>
-</div>
-<div id="outline-container-orgecc003b" class="outline-4">
-<h4 id="orgecc003b">Recent Impacts</h4>
-<div class="outline-text-4" id="text-orgecc003b">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org9242671">
+<h4 id="org9242671">Recent Impacts</h4>
+<ul>
 <li>June 30, 1908, in Siberia, an explosion 8 km above the surface flattens 1000 km<sup>2</sup> of forest, killing reindeer and other animals and marking peaks in pressure measuring instruments.  Equivalent of 5 megaton nuclear bomb.</li>
 <li>Winter 2013, Chelyabinsk, Russia, .5-megaton explosion at height of 21 km.</li>
 <li>A lump of iron 40 m in diameter created the <i>Meteor Crater</i> in AZ 50,000 years ago with 10-megaton nuclear bomb.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_21.png" alt="8_21.png" />
 </p>
-<p><span class="figure-number">Figure 11: </span>Meteor Crater, AZ</p>
+<p><span class="figure-number">Figure 16: </span>Meteor Crater, AZ</p>
 </div>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/8_reindeer.jpg" alt="8_reindeer.jpg" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-orge2e1650" class="outline-4">
-<h4 id="orge2e1650">Mass Extinction</h4>
-<div class="outline-text-4" id="text-orge2e1650">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgb4a4af5">
+<h4 id="orgb4a4af5">Mass Extinction</h4>
+<ul>
 <li>Even larger meteors have a <i>global</i> effect.</li>
 <li>Marking the end of the dinosaur age 65 million years ago at the end of the Cretaceous period in a time of <i>mass extinction</i> when more than half the species on the planet died out ("the great dying"), in Mexico's Yucatan peninsula, with mass greater than a trillion tons measured from layer of deposited sediment, a meteor creates the Chicxulub crater.</li>
 <li>The sediment is rich in iridium (rare on Earth but abundant in comets and asteroids) which demonstrates mineral characteristics of the temperatures and pressures of a gigantic explosion.</li>
+
 </ul>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>So how did the dinosaurs die, around the planet?</li>
 <li>Lifted 100 trillion tons of dust into atmosphere, blocking sunlight for several months, killing plants and herbivores, creating large-scale fires (burning debris), and making rainwater acidic.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-orgac6f0a3" class="outline-4">
-<h4 id="orgac6f0a3">Impacts and the Evolution of Life</h4>
-<div class="outline-text-4" id="text-orgac6f0a3">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org098a507">
+<h4 id="org098a507">Impacts and the Evolution of Life</h4>
+<ul>
 <li>There are a dozen or so mass extinctions on geological record, "fun" fact.</li>
 <li>Following each mass extinction is a sudden evolutionary burst; the latter resulted in mammals to thrive.</li>
 <li>Earth is posited to have been struck by objects 1000 larger than the Chucxulub meteor in its early history, boiling Earth's ocean and stripping its atmosphere, and perhaps wiping life out several times.</li>
 <li>Oldest survivings Earthly microbes are thermophiles (adapted to high temperature).</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org7de8252" class="outline-4">
-<h4 id="org7de8252">Impacts in Our Future?</h4>
-<div class="outline-text-4" id="text-org7de8252">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org38b7be2">
+<h4 id="org38b7be2">Impacts in Our Future?</h4>
+<ul>
 <li>Not improbable that something should collide with Earth in the future.</li>
 <li>Good news, no Chicxulub-sized asteroids heading our way (thanks for checking, NASA).</li>
 <li>Still probing for asteroids on collision with Earth.  So far so good.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 
-<div id="outline-container-org9c5478d" class="outline-2">
-<h2 id="org9c5478d">Ch 9 - Cratered Worlds</h2>
-<div class="outline-text-2" id="text-org9c5478d">
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-orgefd0504">
+<h2 id="orgefd0504">Ch 9 - Cratered Worlds</h2>
+<div class="outline-text-2" id="text-orgefd0504">
 </div>
-<div id="outline-container-org26d30cd" class="outline-3">
-<h3 id="org26d30cd">General Properties of the Moon</h3>
-<div class="outline-text-3" id="text-org26d30cd">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org6704338">
+<h3 id="org6704338">General Properties of the Moon</h3>
+<ul>
 <li>The Moon has no atmosphere, so that ancient happenings are preserved, and the Moon is deficient volatiles.</li>
 <li>The Moon and Mercury share many similarities; see Table 9.1.</li>
 <li>Both are geologically dead.</li>
+
 </ul>
-</div>
-<div id="outline-container-orgddde8e5" class="outline-4">
-<h4 id="orgddde8e5">Exploration of the Moon</h4>
-<div class="outline-text-4" id="text-orgddde8e5">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org12dbfa5">
+<h4 id="org12dbfa5">Exploration of the Moon</h4>
+<ul>
 <li>Lunar exploration began with telescopic observations.</li>
 <li>Russia took photos of the lunar far side in 1959 with Luna 3 and landed on its surface in 1966, transmitting pictures and data to Earth.</li>
 <li>The US Apollo program sent 12 astronauts to the lunar surface from 1968 to 1972; the first arrived in 1969.  The program achieved three major objectives:
-<ol class="org-ol">
+<ol>
 <li>Astronauts collected 400 kg of samples for analysis.</li>
 <li>Each landing after the first left a lunar surface experiment package (ALSEP).</li>
 <li>Orbiting Apollo command modules analyzed lunar surface from above.</li>
+
 </ol></li>
 <li>Lunar missions lasted until 1972.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org0699dae" class="outline-4">
-<h4 id="org0699dae">Composition and Structure of the Moon</h4>
-<div class="outline-text-4" id="text-org0699dae">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org736e485">
+<h4 id="org736e485">Composition and Structure of the Moon</h4>
+<ul>
 <li>Density of only 3.3 g/cm<sup>3</sup>, the Moon is made entirely of silicate rock.  No large metal core (measured with seismometers).  Little water on Moon in chemically bound form, in rocks.</li>
 <li>NASA crashed LCROSS (lunar crater observation and sensing satellite) into Moon's South pole at 9000 km/hr, releasing a plume of water vapor and other chemicals visible o other spacecrafts.</li>
 <li>Estimated total water on Moon is hundreds of billions of tons; only enough to fill a lake 100 miles across.</li>
 <li>Estimated to be from asteroids and comets, some small fraction of their water froze in extremely cold regions (<i>cold traps</i>).</li>
+
 </ul>
+</section>
+<section id="slide-sec-org41abbf1">
+<h3 id="org41abbf1">The Lunar Surface</h3>
+<div class="outline-text-3" id="text-org41abbf1">
 </div>
-</div>
-</div>
-<div id="outline-container-org58d2462" class="outline-3">
-<h3 id="org58d2462">The Lunar Surface</h3>
-<div class="outline-text-3" id="text-org58d2462">
-</div>
-<div id="outline-container-org45b6f48" class="outline-4">
-<h4 id="org45b6f48">General Appearance</h4>
-<div class="outline-text-4" id="text-org45b6f48">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org7817868">
+<h4 id="org7817868">General Appearance</h4>
+<ul>
 <li>Lots of craters named after scientists, vast splotches of darker lava flows erroneously recognized as seas (sea is <i>mare</i> in Latin) and named, eg., Mare Nubium.  Prominent craters named after prominent scientists by Vatican scientists, except Galileo, who they named a small crater after.</li>
 <li>Though the moon appears similar, its geological features are created differently than Earth's.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org1085c37" class="outline-4">
-<h4 id="org1085c37">Lunar History</h4>
-<div class="outline-text-4" id="text-org1085c37">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org65970ef">
+<h4 id="org65970ef">Lunar History</h4>
+<ul>
 <li>Lunar rocks were radioactively dated to be up to 3.3-4.4 billion years old, much older than Earth's.  Keep in mind Earth and the Moon were created 4.5-4.6 billion years ago.</li>
 <li>Moon crust is made of 83% silicate rocks called <i>anorthosites</i>, in regions known as the lunar highlands, which are 4.1-4.4 billion years old.</li>
 <li>The maria cover 17% and are much less cratered, consisting mostly of dark-colored basalt from volcanic eruptions billions of years ago which covered <i>impact basins</i> of colliding material.</li>
 <li>Major lunar volcanic activity ceased about 3.3 billion years ago.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org02ee57e" class="outline-4">
-<h4 id="org02ee57e">On the Lunar Surface</h4>
-<div class="outline-text-4" id="text-org02ee57e">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org3f2664d">
+<h4 id="org3f2664d">On the Lunar Surface</h4>
+<ul>
 <li>"The surface is fine and powdery. I can pick it up loosely with my toe. But I can see the footprints of my boots and the treads in the fine sandy particles." - Neil Armstrong</li>
 <li>Boots sank several centimeters into fine dust of upper surface of lunar maria.</li>
 <li>Without atmosphere, Moon experiences greater temperature fluctuations, from -173 &deg;C to above 100 &deg;C.</li>
+
 </ul>
+</section>
+<section id="slide-sec-org6accb02">
+<h3 id="org6accb02">Impact Craters</h3>
+<div class="outline-text-3" id="text-org6accb02">
 </div>
-</div>
-</div>
-<div id="outline-container-orgfb20ff9" class="outline-3">
-<h3 id="orgfb20ff9">Impact Craters</h3>
-<div class="outline-text-3" id="text-orgfb20ff9">
-</div>
-<div id="outline-container-org9f4d261" class="outline-4">
-<h4 id="org9f4d261">Volcanic Versus Impact Origin of Craters</h4>
-<div class="outline-text-4" id="text-org9f4d261">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org99fcd02">
+<h4 id="org99fcd02">Volcanic Versus Impact Origin of Craters</h4>
+<ul>
 <li>Astronomers didn't realize lunar craters were result of impacts&#x2014;citing rarity of impact craters on Earth&#x2014;and thought they were the result of volcanic activity.</li>
 <li>Grove Gilbert, a geologist, suggested they were formed from impacts.</li>
 <li>Turns out the impacts are circular because of the minimum speed that gravity gives them and their resulting symmetric explosions, but Gilbert's theory wasn't accepted until after WWI when such explosion craters were studied to be circular.</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/9_13.png" alt="9_13.png" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-org8b70f6f" class="outline-4">
-<h4 id="org8b70f6f">The Cratering Process</h4>
-<div class="outline-text-4" id="text-org8b70f6f">
-<ol class="org-ol">
+</section>
+<section id="slide-sec-org840e690">
+<h4 id="org840e690">The Cratering Process</h4>
+<ol>
 <li>Projectile penetrates 2-3 times its diameter into planet, will form 10-15 times its diameter of a crater.</li>
 <li>Resulting shockwave spread into planet with heat equivalent to nuclear bomb.</li>
 <li><i>Ejecta</i> are thrown out of the crater, which fall like an <i>ejecta blanket</i> to fill the crater.</li>
 <li>Higher speed ejecta travel farther and can leave their own <i>secondary craters</i>.</li>
+
 </ol>
 
 <div class="figure">
 <p><img src="./Images/9_14.png" alt="9_14.png" />
 </p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Different features are visible based on the lighting angle!</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/9_16.png" alt="9_16.png" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-org2ac7aa6" class="outline-4">
-<h4 id="org2ac7aa6">Using Crater Counts</h4>
-<div class="outline-text-4" id="text-org2ac7aa6">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgc5a3d33">
+<h4 id="orgc5a3d33">Using Crater Counts</h4>
+<ul>
 <li>Recall that we can age planets using craters to see when the last smoothing activity took place.</li>
 <li>Can make inferences about craters based on craters on lunar maria or current number of projectiles (asteroids and comets)&#x2014;eg, for the Moon, a 1 km crater should be produced on average every 200 millenia, a 10 km crater every few million years, and one or two 100 km craters every billion years.</li>
 <li>This results in an estimate of several billion years for the craters in the maria, which matches Moon rock sample radioactive dating.</li>
 <li>Comparing crater rates on highlands and maria on the Moon tells us that comets formations took place at a much higher rate before 3.8 billion years ago: highlands are 4.2 billions years old but have 10 times as many craters.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Image/9_19.png" alt="9_19.png" />
 </p>
 </div>
-</div>
-</div>
-</div>
-<div id="outline-container-org1b4c04f" class="outline-3">
-<h3 id="org1b4c04f">The Origin of the Moon</h3>
-<div class="outline-text-3" id="text-org1b4c04f">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org39bbe2b">
+<h3 id="org39bbe2b">The Origin of the Moon</h3>
+<ul>
 <li>Earlier hypotheses for Moon origin:
-<ol class="org-ol">
+<ol>
 <li>Fission Theory: Moon was part of Earth but separated early on.</li>
 <li>Sister Theory: Moon formed together (but independently of Earth.</li>
 <li>Capture Theory: Moon formed elsewhere and was captured by Earth.</li>
+
 </ol></li>
 <li>Do they hold up?
-<ol class="org-ol">
+<ol>
 <li>No - Modern calculations show this sort of splitting to be impossible, and some chemical differences unexplained.</li>
 <li>Maybe.</li>
 <li>No - No way for the Moon to slow down enough after entering Solar System to orbit Earth, and the orbit would be more eccentric, and their compositions are too similar.</li>
+
 </ol></li>
+
 </ul>
-</div>
-<div id="outline-container-orgf2f7348" class="outline-4">
-<h4 id="orgf2f7348">The Giant Impact Hypothesis</h4>
-<div class="outline-text-4" id="text-orgf2f7348">
-<ol class="org-ol">
+</section>
+<section id="slide-sec-orgf4d56d1">
+<h4 id="orgf4d56d1">The Giant Impact Hypothesis</h4>
+<ol>
 <li><b>Giant Impact Hypothesis</b>: An Mars-sized object hit Earth, nearly breaking the planet apart, creating a dust cloud that condensed into the Moon&#x2014;there is increasing evidence of projectiles of planetary mass in inner Solar System during terrestrial planet formation.</li>
 <li>This explains the Moon's compositional similarity to Earth and its lack of metal, as well as the loss of volatile elements.</li>
+
 </ol>
+</section>
+<section id="slide-sec-org720a1e7">
+<h3 id="org720a1e7">Mercury</h3>
+<div class="outline-text-3" id="text-org720a1e7">
 </div>
-</div>
-</div>
-<div id="outline-container-orgb5f75cd" class="outline-3">
-<h3 id="orgb5f75cd">Mercury</h3>
-<div class="outline-text-3" id="text-orgb5f75cd">
-</div>
-<div id="outline-container-org2c09b46" class="outline-4">
-<h4 id="org2c09b46">Mercury's Orbit</h4>
-<div class="outline-text-4" id="text-org2c09b46">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgb40821f">
+<h4 id="orgb40821f">Mercury's Orbit</h4>
+<ul>
 <li>Nearest to the Sun, so fastest orbit by Kepler's 3<sup>rd</sup> Law (88 Earth-day period).</li>
 <li>Named for Roman messenger god.</li>
 <li>Too close to Sun to see, best seen as far from Sun as possible.</li>
 <li>Has a higher eccentricity of 0.206.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org8d1a050" class="outline-4">
-<h4 id="org8d1a050">Composition and Structure</h4>
-<div class="outline-text-4" id="text-org8d1a050">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org4d89798">
+<h4 id="org4d89798">Composition and Structure</h4>
+<ul>
 <li>Smallest planet (not counting dwarf planets) at 4878-km diameter.</li>
 <li>Density of 5.4 g/cm<sup>3</sup>, meaning it differs in composition from Moon.</li>
 <li>Must be composed of heavier metals, probably 60% iron-nickel core by mass and remainder in silicates, with a core of 3500 km and mantle of remaining 700 km.</li>
 <li>Does have a weak magnetic field, consistent with large metal core, part of which must be liquid.</li>
+
 </ul>
+</section>
+<section >
 
 <div class="figure">
 <p><img src="./Images/9_20.png" alt="9_20.png" />
 </p>
 </div>
-</div>
-</div>
-<div id="outline-container-org6078f68" class="outline-4">
-<h4 id="org6078f68">Mercury's Strange Rotation</h4>
-<div class="outline-text-4" id="text-org6078f68">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgb6ce53b">
+<h4 id="orgb6ce53b">Mercury's Strange Rotation</h4>
+<ul>
 <li>Thought to rotate so one side always faced the Sun (like the Moon orbits Earth).</li>
 <li>This was refuted in 1960s with Doppler radar results showing 2:3 relationship (59:88 days).</li>
+
 </ul>
 
 <div class="figure">
 <p><img src="./Images/9_21.png" alt="9_21.png" />
 </p>
 </div>
-<ul class="org-ul">
+</section>
+<section >
+<ul>
 <li>Long days and nights, temperatures range from 100&#x2013;700 K.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org3657c2b" class="outline-4">
-<h4 id="org3657c2b">The Surface of Mercury</h4>
-<div class="outline-text-4" id="text-org3657c2b">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-orgc085798">
+<h4 id="orgc085798">The Surface of Mercury</h4>
+<ul>
 <li>Lots of craters and basins up to 1300 km in diameter.</li>
 <li><i>Scarps</i> (cliffs) over a kilometer high and hundreds long, as well as ridges and plains, as measured by MESSENGER spacecraft, which also detected water ice in teh poles (like the Moon!).</li>
 <li>No evidence of plates, but the planet seems to have shrunk in its history, wrinkling the crust.</li>
+
 </ul>
-</div>
-</div>
-<div id="outline-container-org4fff08d" class="outline-4">
-<h4 id="org4fff08d">The Origin of Mercury</h4>
-<div class="outline-text-4" id="text-org4fff08d">
-<ul class="org-ul">
+</section>
+<section id="slide-sec-org6e6ff23">
+<h4 id="org6e6ff23">The Origin of Mercury</h4>
+<ul>
 <li>Composed mostly of metal, but astronomers think it should have formed with the same ratio of metal to silicate as Earth&#x2014;how did it lose so much rocky material?</li>
 <li>Probably also due to early giant impacts, leaving a body with an iron core.</li>
+
 </ul>
+</section>
+</section>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
 </body>
 </html>
