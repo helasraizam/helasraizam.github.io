@@ -1,28 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<meta charset="utf-8"/>
-<title>ASTR101 Ch 24-26</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 24-27</title>
+<meta name="generator" content="Org mode" />
 <style type="text/css">
-.underline { text-decoration: underline; }
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/sky.css" id="theme"/>
-
-<link rel="stylesheet" href="reveal.css"/>
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-</script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
 <link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
@@ -35,393 +190,425 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
-<div class="reveal">
-<div class="slides">
-<section id="sec-title-slide"><h1 class="title">ASTR101 Ch 24-26</h1>
-</section>
-<section>
-<section id="slide-sec-orgfddd4eb">
-<h2 id="orgfddd4eb">Ch 24 - Black Holes and Curved Spacetime</h2>
-<div class="outline-text-2" id="text-orgfddd4eb">
+<div id="content">
+<h1 class="title">ASTR101 Ch 24-27</h1>
+<div id="outline-container-org60fd3a1" class="outline-2">
+<h2 id="org60fd3a1">Ch 24 - Black Holes and Curved Spacetime</h2>
+<div class="outline-text-2" id="text-org60fd3a1">
 </div>
-</section>
-<section id="slide-sec-orgb85485d">
-<h3 id="orgb85485d">Introducing General Relativity</h3>
-<ul>
+<div id="outline-container-org088f5c1" class="outline-3">
+<h3 id="org088f5c1">Introducing General Relativity</h3>
+<div class="outline-text-3" id="text-org088f5c1">
+<ul class="org-ul">
 <li>Einstein's <i>Equivalence Principle</i> (EP) states that to an observer confined to a reference frame, gravity can't be distinguished from acceleration.</li>
-
 </ul>
-</section>
 
 <div class="figure">
 <p><img src="./Images/24_3.png" alt="24_3.png" />
 </p>
 </div>
-</section>
-<section id="slide-sec-orgb6b3612">
-<h4 id="orgb6b3612">Gravity or Acceleration?</h4>
-<ul>
+</div>
+<div id="outline-container-orgc838d80" class="outline-4">
+<h4 id="orgc838d80">Gravity or Acceleration?</h4>
+<div class="outline-text-4" id="text-orgc838d80">
+<ul class="org-ul">
 <li>You throw a ball to your friend horizontally, and it lands at their feet.  Are you in an accelerating reference frame, or is it gravity?</li>
-
 </ul>
 
 <div class="figure">
-<p><img src="./Images/24_4.png" alt="24_4.png" />
+<p><img src="./Images/24_4.png" alt="24_4.png" height="450px" />
 </p>
 </div>
-</section>
-<section id="slide-sec-orgeb7b2ff">
-<h4 id="orgeb7b2ff">The Paths of Light and Matter</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgfb668fb" class="outline-4">
+<h4 id="orgfb668fb">The Paths of Light and Matter</h4>
+<div class="outline-text-4" id="text-orgfb668fb">
+<ul class="org-ul">
 <li>The EP posits that there is no experiment that can discern a stationary frame in gravity from an accelerating frame.</li>
-<li>So the equivalence principle implies that light should curve in a gravitational field.  But light goes straight!</li>
-
+<li>But light goes straight across a spaceship in freefall, violating the EP!</li>
+<li>Light curves!</li>
 </ul>
 
 <div class="figure">
 <p><img src="./Images/24_6.png" alt="24_6.png" />
 </p>
 </div>
-</section>
-<section id="slide-sec-org0d57b66">
-<h3 id="org0d57b66">Spacetime and Gravity</h3>
-<div class="outline-text-3" id="text-org0d57b66">
 </div>
-</section>
-<section id="slide-sec-org9ac2509">
-<h4 id="org9ac2509">Linkages: Mass, Space, and Time</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org79d715f" class="outline-3">
+<h3 id="org79d715f">Spacetime and Gravity</h3>
+<div class="outline-text-3" id="text-org79d715f">
+</div>
+<div id="outline-container-orgf08220e" class="outline-4">
+<h4 id="orgf08220e">Linkages: Mass, Space, and Time</h4>
+<div class="outline-text-4" id="text-orgf08220e">
+<ul class="org-ul">
 <li>In Newtonian Physics, space and time were separated.  An event can be uniquely described by its space (\(x,y,z\)) and time \(t\).  That's four independent dimensions.</li>
 <li>Einstein combines space and time in <i>spacetime</i> and illustrates that they are interlinked!</li>
 <li>"Matter tells spacetime how to curve; spacetime tells matter how to move." -John Wheeler.</li>
-
 </ul>
-</section>
-<section id="slide-sec-orge91ca1e">
-<h4 id="orge91ca1e">Spacetime Examples</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orge588e09" class="outline-4">
+<h4 id="orge588e09">Spacetime Examples</h4>
+<div class="outline-text-4" id="text-orge588e09">
+<ul class="org-ul">
 <li>A biker travels eastward, his distance eastward is shown as a function of time.  The speed limit is 100 km/h.</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/24_7.png" alt="24_7.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>An ant walks along a rubber sheet.  Its path looks straight to us until we distort the rubber sheet with a paperweight, after which its path looks curved (the ant is going straight!).</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/24_8.png" alt="24_8.png" />
 </p>
 </div>
-</section>
-<section id="slide-sec-org9fe22bd">
-<h3 id="org9fe22bd">Tests of General Relativity</h3>
-<div class="outline-text-3" id="text-org9fe22bd">
 </div>
-</section>
-<section id="slide-sec-orga97cf76">
-<h4 id="orga97cf76">The Motion of Mercury</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgf1aecf3" class="outline-3">
+<h3 id="orgf1aecf3">Tests of General Relativity</h3>
+<div class="outline-text-3" id="text-orgf1aecf3">
+</div>
+<div id="outline-container-org34c576f" class="outline-4">
+<h4 id="org34c576f">The Motion of Mercury</h4>
+<div class="outline-text-4" id="text-org34c576f">
+<ul class="org-ul">
 <li>General relativity correctly predicts the unnaccounted for precession of Mercury's perihelion (Newtonian mechanics predicts 531 arcsec/century, we observed 574 arcsec/century).</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/24_9.png" alt="24_9.png" />
 </p>
 </div>
-</section>
-<section id="slide-sec-org2fbdc24">
-<h4 id="org2fbdc24">Gravitational Lensing</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org224736e" class="outline-4">
+<h4 id="org224736e">Gravitational Lensing</h4>
+<div class="outline-text-4" id="text-org224736e">
+<ul class="org-ul">
 <li>Light bends according to the curvature of spacetime, resulting in rings.</li>
-
 </ul>
 
+
 <div class="figure">
-<p><img src="https://en.wikipedia.org/wiki/Gravitational_lens#/media/File:A_Horseshoe_Einstein_Ring_from_Hubble.JPG" alt="File:A_Horseshoe_Einstein_Ring_from_Hubble.JPG" />
+<p><img src="./Images/24_lensing.jpg" alt="24_lensing.jpg" />
 </p>
 </div>
-</section>
-<section id="slide-sec-org7e9f87e">
-<h4 id="org7e9f87e">Gravity waves, LIGO</h4>
-</section>
-<section >
+</div>
+</div>
+<div id="outline-container-org37fcf76" class="outline-4">
+<h4 id="org37fcf76">Gravity waves, LIGO</h4>
+<div class="outline-text-4" id="text-org37fcf76">
 <p>
 <a href="https://gizmodo.com/how-to-make-your-own-gravitational-waves-1785524107">https://gizmodo.com/how-to-make-your-own-gravitational-waves-1785524107</a>
 </p>
-</section>
-<section id="slide-sec-orgcaf1a59">
-<h3 id="orgcaf1a59">Time in General Relativity</h3>
-<ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org1661b54" class="outline-3">
+<h3 id="org1661b54">Time in General Relativity</h3>
+<div class="outline-text-3" id="text-org1661b54">
+<ul class="org-ul">
 <li>The stronger the gravity, the slower the pace of time.  (Time moves more slowly near massive objects).</li>
 <li>This results in <i>gravitational redshift</i>.</li>
 <li>Einstein's theory confirmed to within .1\% when a Viking spacecraft on Mars went behind the Sun as viewed from Earth; its signal slowed according to within .1\% Einstein's theory of general relativity.</li>
 <li>Practical application: GPS, which yields your location based on the time it takes for radio signals to reach your position from different satellites, are so precise that they must take relativity into account.  Clocks on satellites tick more slowly than on Earth by 7 millionths of a second per day.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org8e4c701">
-<h3 id="org8e4c701">Black Holes</h3>
-<div class="outline-text-3" id="text-org8e4c701">
 </div>
-</section>
-<section id="slide-sec-orgf4a52c5">
-<h4 id="orgf4a52c5">Classical Collapse</h4>
-<ul>
+</div>
+<div id="outline-container-org70c4f6b" class="outline-3">
+<h3 id="org70c4f6b">Black Holes</h3>
+<div class="outline-text-3" id="text-org70c4f6b">
+</div>
+<div id="outline-container-org2f2954c" class="outline-4">
+<h4 id="org2f2954c">Classical Collapse</h4>
+<div class="outline-text-4" id="text-org2f2954c">
+<ul class="org-ul">
 <li>We observed that the smaller we shrink the diameter of a star, the tighter its gravitational grip at the surface (why is this the case?).</li>
 <li>So, the escape velocity increases as the star shrinks.  If it could shrink enough, the escape velocity would be faster than light and nothing could escape it; this is the definition of a <i>black hole</i>.</li>
 <li>Why is it called a black hole?</li>
-
 </ul>
-</section>
-<section id="slide-sec-org7dee870">
-<h4 id="org7dee870">Collapse with Relativity</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orga98c53f" class="outline-4">
+<h4 id="orga98c53f">Collapse with Relativity</h4>
+<div class="outline-text-4" id="text-orga98c53f">
+<ul class="org-ul">
 <li>General Relativity tells us gravity is really a curvature of spacetime.  What we perceive to be higher gravity is more curvature of spacetime.</li>
 <li>The <i>event horizon</i> or <i>Schwarzschild radius</i> is the radius around the black hole where light (and consequently, anything else) cannot escape.</li>
 <li>Keep in mind, the unique effects of black holes are local.  Far enough away, it's as if we had a star of that mass and a larger radius, which is not as big a deal.</li>
 <li>The current treatment of a star entering a black hole is that it will collapse into a <i>singularity</i> of zero volume, and infinite density.</li>
-
 </ul>
-</section>
-<section id="slide-sec-orgd035b7c">
-<h4 id="orgd035b7c">Requirements for a Black Hole</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgd282dde" class="outline-4">
+<h4 id="orgd282dde">Requirements for a Black Hole</h4>
+<div class="outline-text-4" id="text-orgd282dde">
+<ul class="org-ul">
 <li>We need to use Kepler's laws to detect black holes that are very massive and give off no light.</li>
 <li>Black holes can "eat" stars, which results in <i>accretion disks</i>.</li>
-
 </ul>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/24_16.png" alt="24_16.png" />
 </p>
 <p><span class="figure-number">Figure 8: </span>Artist's conception.</p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>As matter is sucked into a black hole's accretion disk, atoms clash violently in near-speed of light speeds as they approach the event horizon, heating the gas to 100 million K or more, resulting in X-ray emissions.</li>
-
 </ul>
-</section>
-</section>
-<section>
-<section id="slide-sec-orga57b68a">
-<h2 id="orga57b68a">Ch 25 - The Milky Way Galaxy</h2>
-<div class="outline-text-2" id="text-orga57b68a">
 </div>
-</section>
-<section id="slide-sec-org9029a90">
-<h3 id="org9029a90">The Architecture of the Galaxy</h3>
-<div class="outline-text-3" id="text-org9029a90">
 </div>
-</section>
-<section id="slide-sec-orgb4188d6">
-<h4 id="orgb4188d6">Herschel Measures the Galaxy</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org9685290" class="outline-2">
+<h2 id="org9685290">Ch 25 - The Milky Way Galaxy</h2>
+<div class="outline-text-2" id="text-org9685290">
+</div>
+<div id="outline-container-org7ac61ac" class="outline-3">
+<h3 id="org7ac61ac">The Architecture of the Galaxy</h3>
+<div class="outline-text-3" id="text-org7ac61ac">
+</div>
+<div id="outline-container-orged1e559" class="outline-4">
+<h4 id="orged1e559">Herschel Measures the Galaxy</h4>
+<div class="outline-text-4" id="text-orged1e559">
+<ul class="org-ul">
 <li>In 1785, William Herschel noticed that most of the stars he observed lay along a plane.</li>
 <li>He hypothesized that the Sun was near the middle of a disk-shaped system of stars.</li>
 <li>The shape was correct, but he thought we were at the center because of interstellar dust.</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/25_3.png" alt="25_3.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Harlow Shapley used RR Lyrae stars (using the period-luminosity relations) to map star clusters.</li>
 <li>He found them distributed in a spherical volume with its center far from the Sun in the direction of Sagittarius.</li>
-<li>This Thus the Sun is not the center of our Galaxy.</li>
-
+<li>Thus the Sun is not the center of our Galaxy.</li>
 </ul>
 
 <div class="figure">
 <p><img src="./Images/25_4.png" alt="25_4.png" />
 </p>
 </div>
-</section>
-<section id="slide-sec-orgac81a7c">
-<h4 id="orgac81a7c">Disks and Haloes</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgebb101b" class="outline-4">
+<h4 id="orgebb101b">Disks and Haloes</h4>
+<div class="outline-text-4" id="text-orgebb101b">
+<ul class="org-ul">
 <li>The main issue with mapping out our Galaxy is the interstellar dust which blocks out stars.</li>
 <li>Astronomers use radio and IR frequency ranges, which penetrate interstellar dust better.</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/25_5.png" alt="25_5.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Brightest part is 100,000 Ly in diameter, only 2000 Ly thick.</li>
 <li>Youngest stars and their dust within 100 Ly of the Galaxy.</li>
 <li>In the disk, stars are concentrated in a central <i>bar</i> composed of mostly old yellow-red stars.</li>
 <li>The Milky Way Galaxy and other spiral galaxies with bars are termed <i>barred spirals</i>.</li>
 <li>The sun is halfway between the galactic center and its edge, 70 Ly from the galactic plane.</li>
 <li>The two main arms, Scutum-Centaurus and Perseus, emerge from the bar.</li>
-
 </ul>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/25_6.png" alt="25_6.png" />
 </p>
 <p><span class="figure-number">Figure 12: </span>Unbarred (M74) and strongly barred spiral galaxies (NGC1365).</p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Near the center is of the Galaxy is the <i>central bulge</i> (or <i>nuclear bulge</i>).</li>
 <li>It's difficult to observe due to interstellar dust, so the first image was taken in infrared.</li>
 <li>The bulge is twice as long as it is wide, shaped like a peanut.</li>
 <li>At its center is a tremendous concentration of matter.</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/25_7.png" alt="25_7.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>The Galaxy consists of a thin disk, a thick disk, the nuclear bulge, and a spherical <i>halo</i> of very old, faint stars extending at least 150,000 from the galactic center, containing most globular clusters.</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/25_8.png" alt="25_8.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>The mass extends even farther out with <i>dark matter</i>, an invisible source of mass with unknown composition.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org3c13512">
-<h3 id="org3c13512">Spiral Structure</h3>
-<div class="outline-text-3" id="text-org3c13512">
 </div>
-</section>
-<section id="slide-sec-org4d24c88">
-<h4 id="org4d24c88">The Arms of the Milky Way</h4>
+</div>
+</div>
+<div id="outline-container-org83da134" class="outline-3">
+<h3 id="org83da134">Spiral Structure</h3>
+<div class="outline-text-3" id="text-org83da134">
+</div>
+<div id="outline-container-org4423e5f" class="outline-4">
+<h4 id="org4423e5f">The Arms of the Milky Way</h4>
+<div class="outline-text-4" id="text-org4423e5f">
 
 <div class="figure">
 <p><img src="./Images/25_MWarms.png" alt="25_MWarms.png" />
 </p>
 </div>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/25_10.png" alt="25_10.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Most stars are in the two main arms, Scutum-Centaurus and Perseus.</li>
 <li>The Sun is along a short arm, the Orion Spur, which is 10,000 Ly long.</li>
-
 </ul>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/25_11.png" alt="25_11.png" />
 </p>
 <p><span class="figure-number">Figure 17: </span>Features near Orion Spur</p>
 </div>
-</section>
-<section id="slide-sec-orgec2ee15">
-<h4 id="orgec2ee15">Formation of Spiral Structure</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org0a7bd29" class="outline-4">
+<h4 id="org0a7bd29">Formation of Spiral Structure</h4>
+<div class="outline-text-4" id="text-org0a7bd29">
+<ul class="org-ul">
 <li>Galaxies don't rotate all together, as expected from Kepler's law, P<sup>2</sup>&prop;a<sup>3</sup>.</li>
 <li>Instead, they have <i>differential galactic rotation</i>, where closer objects rotate with a higher period.</li>
 <li>Differential rotation turns features into spirals, which explains the <i>spiral arms</i> of the Galaxy.</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/25_12.png" alt="25_12.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Turns out that this differential rotation over the 13-billion-year age of the Galaxy would result in it spiralling so much, it loses its features.</li>
 <li>Hubble observations show galaxies of like age begin with bring, clumpy star-forming regions.</li>
 <li>Those that would become spiral galaxies then decreased in turbulence until rotation was the dominating motion.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Only at 3.6 billion years  old would well-defined spiral arms begin to form, and only well-defined arms would form.</li>
 <li>Finally, at around 8 billion years old, the galaxies could have multi-armed structures.</li>
 <li>Supercomputer simulations replicate spiral arms and demonstrate the importance of the gravitational influence of giant molecular clouds on the formation of spiral arms.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org498bc67">
-<h3 id="org498bc67">The Mass of the Galaxy</h3>
-<div class="outline-text-3" id="text-org498bc67">
 </div>
-</section>
-<section id="slide-sec-org53d4fcd">
-<h4 id="org53d4fcd">Kepler Helps Weigh the Galaxy</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org7cf4066" class="outline-3">
+<h3 id="org7cf4066">The Mass of the Galaxy</h3>
+<div class="outline-text-3" id="text-org7cf4066">
+</div>
+<div id="outline-container-org71dbd57" class="outline-4">
+<h4 id="org71dbd57">Kepler Helps Weigh the Galaxy</h4>
+<div class="outline-text-4" id="text-org71dbd57">
+<ul class="org-ul">
 <li>The Sun, like the rest of the stars in the Galaxy, orbits the Galactic center.</li>
 <li>The speed of this orbit is 200 kps (!), so that it takes us 225 million years to circle the galactic center.  This is called a <i>galactic year</i>, of which 20 have passed in Earth's entire lifetime.</li>
 <li>We can use this orbital period and Kepler's law to find the mass of the galaxy.</li>
-
 </ul>
-</section>
-<section >
-<ul>
-<li>We obtain the result that the mass inside the Sun's orbit (a radius of 30,000 Ly) is about a billion Solar masses.</li>
+<ul class="org-ul">
+<li>We obtain the result that the mass inside the Sun's orbit (a radius of 30,000 Ly) is about a hundred billion Solar masses.</li>
 <li>Astronomers supposed this is a good approximation for the mass of the Galaxy, since luminous matter and bright stars drop off dramatically beyond 30,000 Ly from the galactic center.</li>
 <li>This seems like a reasonable conclusion, right?</li>
-
 </ul>
-</section>
-<section id="slide-sec-org39f9882">
-<h4 id="org39f9882">A Galaxy of Mostly Invisible Matter</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgf492798" class="outline-4">
+<h4 id="orgf492798">A Galaxy of Mostly Invisible Matter</h4>
+<div class="outline-text-4" id="text-orgf492798">
+<ul class="org-ul">
 <li>Nope.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>A violation of Kepler's law consists of globular clusters and satellite galaxies outside of the luminous boundary of the Milky Way which don't rotate more slowly than the Sun.</li>
 <li>There are some globular clusters and RR Lyrae 30-150 kLy with orbital velocities greater than the Sun!</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Turns out most objects outside the Galaxy are moving faster than the Sun!</li>
-
 </ul>
 
 <div class="figure">
@@ -429,166 +616,149 @@
 </p>
 <p><span class="figure-number">Figure 19: </span>Orbital velocities CO/H gas as function of distance from Galactic Center (red), compared to orbital velocities if the matter were mostly contained within 50,000 Ly (blue).</p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>By comparing the period of the Sun to that of the matter outside of the Galaxy, we can find how much matter is between the Sun's orbital radius and the edge of the Galaxy.</li>
 <li>Remember, we can use Kepler's Law here because the orbits are <i>stable</i>; neither falling into the galactic center, nor flying out away from it.</li>
 <li>Astronomers calculate the total mass of the Galaxy to be at least 2&times;10<sup>12</sup> M<sub>Sun</sub>!</li>
 <li>This is 20 times greater than the amount of luminous matter.</li>
 <li>The <i>dark matter halo</i> which composes most of this matter extends to 200,000 Ly and is not quite spherical.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>What is dark matter (DM)?</li>
 <li>Can't be stars, since it's invisible.</li>
 <li>Can't be a gas, or we would have detected its emission and/or absorption spectra.</li>
 <li>Can't be interstellar dust, which would obscure galaxies noticeably.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Can't be black holes or neutron stars, which would produce more X-rays than are observed, and would have resulted in a lot more heavy elements in younger stars than we observe today.</li>
 <li>Can't be brown-dwarfs or Jupiter-like planets; gravitational lensing experiments of the dark matter conclude that they can't be made up of lots of small objects one millionth to one tenth the mass of the Sun.</li>
 <li>Perhaps DM is made of a subatomic particle we haven't detected yet on Earth!</li>
 <li>DM is an active area of research.</li>
-
 </ul>
-</section>
-<section id="slide-sec-orge5649e5">
-<h3 id="orge5649e5">The Center of the Galaxy</h3>
-<ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org4394a5c" class="outline-3">
+<h3 id="org4394a5c">The Center of the Galaxy</h3>
+<div class="outline-text-3" id="text-org4394a5c">
+<ul class="org-ul">
 <li>At the center of the galaxy is a black hole with the mass equivalent of 4.6 million Suns concentrated in a sphere of diameter smaller than Mercury's orbit.</li>
 <li>This is an example of a <i>supermassive black hole</i>, <i>Sagittarius A*</i>, a black hole much too large to have been created by the death of a single star.</li>
-
 </ul>
-</section>
-<section id="slide-sec-orgc0d101f">
-<h4 id="orgc0d101f">A Journey toward the Center</h4>
+</div>
+<div id="outline-container-org8b94e23" class="outline-4">
+<h4 id="org8b94e23">A Journey toward the Center</h4>
+<div class="outline-text-4" id="text-org8b94e23">
 
 <div class="figure">
 <p><img src="./Images/25_14.png" alt="25_14.png" />
 </p>
 <p><span class="figure-number">Figure 20: </span>Radio image of the galactic center region by the VLA in NM.</p>
 </div>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/25_16.png" alt="25_16.png" />
 </p>
 <p><span class="figure-number">Figure 21: </span>Sagittarius A and some hot ionized gas, taken by VLA radio telescopes.</p>
 </div>
-</section>
-<section id="slide-sec-orgd23722d">
-<h4 id="orgd23722d">Finding the Heart of the Galaxy</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orga67705f" class="outline-4">
+<h4 id="orga67705f">Finding the Heart of the Galaxy</h4>
+<div class="outline-text-4" id="text-orga67705f">
+<ul class="org-ul">
 <li>How can we tell that it's a black hole and not a dense cluster of stars at the center of the Galaxy?</li>
 <li>The event horizon of a <i>galactic black hole</i> of mass 4&times;10<sup>6</sup> M<sub>Sun</sub> is only 17 times the size of the Sun (the size of a single red giant).</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>We can observe the orbits around Sagittarius A* to find its mass by Kepler's law and get an upper limit of 17 Lh on its diameter.</li>
 <li>This upper limit is tightened through radio astronomy, in which the Very Long Baseline Array found the diameter to be no larger than .3 AU (the size of Mercury's orbit).</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/25_17.png" alt="25_17.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>If the central mass were made up of something other than a supermassive black hole, the objects are calculated to collapse and form a black hole within 100,000 years, which is very small compared to the Galaxy's 13 billion year lifespan.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org8cbd994">
-<h4 id="org8cbd994">Finding the Source</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org9eec29f" class="outline-4">
+<h4 id="org9eec29f">Finding the Source</h4>
+<div class="outline-text-4" id="text-org9eec29f">
+<ul class="org-ul">
 <li>Sagittarius A* may have formed from a large cloud of gas, then grown as it absorbed other objects, or it could have formed indirectly through the death of a star before growing.</li>
 <li>Sagittarius A* is not finished eating, and clouds are disappearing into it at a rate of 1 M<sub>Sun</sub>/thousand years.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Every 10,000 years (on average), it swallows a star that passes nearby for dessert, letting off a flare of radiation that briefly outshines all the stars in the Milky Way.</li>
 <li>In 2013, when the Chandra X-ray satellite detected a flare 400 times brighter than usual, but this is smaller than expected for a full star (probably a heating asteroid).</li>
-
 </ul>
-</section>
-<section id="slide-sec-orgc8a97be">
-<h3 id="orgc8a97be">Stellar Populations in the Galaxy</h3>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc35252e" class="outline-3">
+<h3 id="orgc35252e">Stellar Populations in the Galaxy</h3>
+<div class="outline-text-3" id="text-orgc35252e">
 
 <div class="figure">
 <p><img src="./Images/25_T25_1.png" alt="25_T25_1.png" />
 </p>
 <p><span class="figure-number">Figure 23: </span>Table 25.1</p>
 </div>
-</section>
-<section id="slide-sec-orgcbbb3df">
-<h4 id="orgcbbb3df">Two Kinds of Stars</h4>
-<ul>
+</div>
+<div id="outline-container-org5292044" class="outline-4">
+<h4 id="org5292044">Two Kinds of Stars</h4>
+<div class="outline-text-4" id="text-org5292044">
+<ul class="org-ul">
 <li>During WWII, Walter Baade of Germany discovered two types of stars using the Mt Wilson telescopes of Southern California.</li>
 <li>Examining Andromeda, he noticed that the reddish stars in its nuclear bulge resemble those in our globular clusters and halo, and distinguished these from the bluer stars near the spiral arms.</li>
 <li>He called the bright blue stars <i>population I</i> and the stars of the halo/globular cluster <i>population II</i>.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>We now know these have different chemical compositions, age, and orbital motions around the galactic center.</li>
 <li>Population I stars are found only in the disk and with eccentricities near zero, such as supergiants.  Interstellar matter and molecular clouds are found where Population I stars are found.</li>
 <li>Population II stars don't care about spiral arms, but occur throughout the galaxy, with eccentric elliptical orbits that can take them through the galactic disk.  These include RR Lyrae.  Stars in globular clusters are also classified as Population II.</li>
 <li>Population I has stars as old as 10 billion years and as new as today, while Population II consist of ancient stars 11-13 billion years old.</li>
-
 </ul>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/25_19.png" alt="25_19.png" />
 </p>
 <p><span class="figure-number">Figure 24: </span>Halo stars go through the galactic plane.</p>
 </div>
-</section>
-<section id="slide-sec-org89c59cf">
-<h3 id="org89c59cf">The Formation of the Galaxy</h3>
-<div class="outline-text-3" id="text-org89c59cf">
 </div>
-</section>
-<section id="slide-sec-org1e1a4bb">
-<h4 id="org1e1a4bb">The Protogalactic Cloud and the Monolithic Collapse Model</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org73c027c" class="outline-3">
+<h3 id="org73c027c">The Formation of the Galaxy</h3>
+<div class="outline-text-3" id="text-org73c027c">
+</div>
+<div id="outline-container-orgafef085" class="outline-4">
+<h4 id="orgafef085">The Protogalactic Cloud and the Monolithic Collapse Model</h4>
+<div class="outline-text-4" id="text-orgafef085">
+<ul class="org-ul">
 <li>We can use stellar surveys to analyze the formation of the Galaxy.</li>
 <li>For example, since the oldest stars in the halo and globular clusters are spherically distributed, the <i>protogalactic cloud</i> that birthed the Galaxy was probably roughly spherical.</li>
 <li>The oldest stars are 12-13 billion years old, so our Galaxy probably shares about that age.</li>
 <li>Just as with star formation, the protogalactic cloud collapsed to form a thin rotating disk.</li>
 <li>Stars born before the collapse didn't participate in it!</li>
-
 </ul>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/25_21.png" alt="25_21.png" />
 </p>
 <p><span class="figure-number">Figure 25: </span>Monolithic collapse model of Galaxy formation.</p>
 </div>
-</section>
-<section id="slide-sec-org3b7bec8">
-<h4 id="org3b7bec8">Collision Victims and the Multiple Merger Model</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgc810ae2" class="outline-4">
+<h4 id="orgc810ae2">Collision Victims and the Multiple Merger Model</h4>
+<div class="outline-text-4" id="text-orgc810ae2">
+<ul class="org-ul">
 <li>70 kLy from Earth and 50 kLy from the Galactic center is the closest known galaxy, the Sagittarius dwarf galaxy.</li>
 <li>It's on the other side of the galactic center, and its elongated shape indicates it's being torn by our galaxy's tides.</li>
-
 </ul>
 
 <div class="figure">
@@ -596,107 +766,89 @@
 </p>
 <p><span class="figure-number">Figure 26: </span>Sagittarius dwarf galaxy,</p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>There's evidence for more close encounters between our Galaxy and others.</li>
 <li>Such interactions with smaller galaxies result in the Milky Way stealing some of their stars due to its greater pull, which then orbit our Galaxy in eccentric halo orbits.</li>
 <li>Astronomers have identified streams originating from 12 small galaxies that came close to our galaxy, with six more streams associated with globular clusters.</li>
 <li>Globular cluster M54 is thought to be the nucleus of the Sagittarius dwarf which is currently merging with the Milky Way.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>There are more galactic collisions in store.  Long tidal tails have been stripped from the Canis Major dwarf galaxy and wrapped themselves around the Milky Way thrice; they are expected to merge in the next billion years.</li>
 <li>In 3 billion years, the Milky Way itself is expected to be swallowed by the Andromeda galaxy.</li>
-
 </ul>
-</section>
-<section >
 <iframe width="560" height="315" src="https://www.youtube.com/embed/D-0GaBQ494E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-</section>
-<section>
-<section id="slide-sec-org7838e6f">
-<h2 id="org7838e6f">Ch 26 - Galaxies</h2>
-<div class="outline-text-2" id="text-org7838e6f">
 </div>
-</section>
-<section id="slide-sec-org04dbaf4">
-<h3 id="org04dbaf4">The Discovery of Galaxies</h3>
-<div class="outline-text-3" id="text-org04dbaf4">
 </div>
-</section>
-<section id="slide-sec-org3437f73">
-<h4 id="org3437f73">Other Galaxies</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org9677b45" class="outline-2">
+<h2 id="org9677b45">Ch 26 - Galaxies</h2>
+<div class="outline-text-2" id="text-org9677b45">
+</div>
+<div id="outline-container-org205521c" class="outline-3">
+<h3 id="org205521c">The Discovery of Galaxies</h3>
+<div class="outline-text-3" id="text-org205521c">
+</div>
+<div id="outline-container-orgfb1cf74" class="outline-4">
+<h4 id="orgfb1cf74">Other Galaxies</h4>
+<div class="outline-text-4" id="text-orgfb1cf74">
+<ul class="org-ul">
 <li>The birth of <i>extragalactic astronomy</i> is cited as January 1, 1925, when Edwin Hubble read his paper on distances to nebulae.</li>
 <li>Prior, only closer nebulae could be properly classified.</li>
-<li>Farther nebulae might be clouds of gas or groups of stars within our galaxy if they were close, or stars systems of billions of stars if they were really far away.</li>
-
+<li>Farther nebulae might be classified as clouds of gas or groups of stars within our galaxy if they were close, or star systems of billions of stars if they were really far away.</li>
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Better telescopes were needed at the time, like the 2.5-m (100-inch) telescope in Southern California which Hubble used to analyze nebulae.</li>
 <li>In some, he found cepheids, allowing him to find accurate distances to the nebulae; for example locating the farthest distance measured until that point, the 900 kLy to the Andromeda galaxy.</li>
-
 </ul>
-</section>
-<section id="slide-sec-orgae26999">
-<h3 id="orgae26999">Types of Galaxies</h3>
-<div class="outline-text-3" id="text-orgae26999">
 </div>
-</section>
-<section id="slide-sec-orgb414872">
-<h4 id="orgb414872">Spiral Galaxies</h4>
+</div>
+</div>
+<div id="outline-container-org3b110f4" class="outline-3">
+<h3 id="org3b110f4">Types of Galaxies</h3>
+<div class="outline-text-3" id="text-org3b110f4">
+</div>
+<div id="outline-container-org43348f9" class="outline-4">
+<h4 id="org43348f9">Spiral Galaxies</h4>
+<div class="outline-text-4" id="text-org43348f9">
 
 <div class="figure">
 <p><img src="./Images/26_4.png" alt="26_4.png" />
 </p>
 </div>
-<ul>
+<ul class="org-ul">
 <li>Identified by their spiral arms, they are also composed of a central bulge, halo, and disk, like the Milky Way.  All spiral galaxies rotate.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>About 2/3 of spiral galaxies have boxy/peanut-shaped bars in their centers, termed <i>barred spirals</i>, and it may be that most galaxies form a bar during some point of evolution.</li>
 <li>Differences in sizes of arms, bulge, how defined the arms are, and how prevalent the bar is, Hubble has classified galaxies.</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/26_6.png" alt="26_6.png" />
 </p>
 </div>
-</section>
-<section id="slide-sec-org78b8b3c">
-<h4 id="org78b8b3c">Elliptical Galaxies</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org8ef8876" class="outline-4">
+<h4 id="org8ef8876">Elliptical Galaxies</h4>
+<div class="outline-text-4" id="text-org8ef8876">
+<ul class="org-ul">
 <li>These sphere- or ellipsoid-shaped galaxies consist almost entirely of old stars.</li>
 <li>Typically have no trace of spiral arms.</li>
 <li>Reddish in color (due to population II stars).</li>
 <li>Not very dusty.</li>
 <li>Can get larger than spiral galaxies.</li>
-
 </ul>
-</section>
-<section >
 
 <div class="figure">
 <p><img src="./Images/26_7.png" alt="26_7.png" />
 </p>
 <p><span class="figure-number">Figure 29: </span>Elliptical Galaxies</p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>While spherical in nature, they can exhibit various degrees of flatness.</li>
 <li>Galaxies are also categorized by size into giants and dwarfs.</li>
-
 </ul>
 
 <div class="figure">
@@ -704,105 +856,103 @@
 </p>
 <p><span class="figure-number">Figure 30: </span>M32, a dwarf elliptical galaxy.</p>
 </div>
-</section>
-<section id="slide-sec-orgcb58c9a">
-<h4 id="orgcb58c9a">Irregular Galaxies</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgdddcba4" class="outline-4">
+<h4 id="orgdddcba4">Irregular Galaxies</h4>
+<div class="outline-text-4" id="text-orgdddcba4">
+<ul class="org-ul">
 <li>Galaxies not matching a category are termed <i>irregular galaxies</i>.</li>
 <li>They typically have lower mass and luminosity than spiral galaxies.</li>
 <li>Contain both population I and population II stars.</li>
 <li>Some of our nearest neighbors are irregular galaxies, including the Large Magellanic Cloud and Small Magellanic Cloud.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org5a48926">
-<h4 id="org5a48926">Galaxy Evolution</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgdedf044" class="outline-4">
+<h4 id="orgdedf044">Galaxy Evolution</h4>
+<div class="outline-text-4" id="text-orgdedf044">
+<ul class="org-ul">
 <li>It's not the case that galaxies evolve from one type to another like stars did on the H-R diagram.</li>
 <li>Collisions and mergers can change spiral galaxies into elliptical.</li>
 <li>Even isolated spirals can change over time, losing definition in their arms as their gas is consumed by star formation.</li>
 <li>For stunning pictures of galaxies: <a href="http://hubblesite.org/categories/images">http://hubblesite.org/categories/images</a>.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org0b0bb06">
-<h3 id="org0b0bb06">Properties of Galaxies</h3>
-<div class="outline-text-3" id="text-org0b0bb06">
 </div>
-</section>
-<section id="slide-sec-orga4ee5bf">
-<h4 id="orga4ee5bf">Masses of Galaxies</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org27aca4d" class="outline-3">
+<h3 id="org27aca4d">Properties of Galaxies</h3>
+<div class="outline-text-3" id="text-org27aca4d">
+</div>
+<div id="outline-container-org48844c1" class="outline-4">
+<h4 id="org48844c1">Masses of Galaxies</h4>
+<div class="outline-text-4" id="text-org48844c1">
+<ul class="org-ul">
 <li>For <b>spiral galaxies</b>, we can observe the rate of rotation of a galaxy through its redshift.</li>
 <li>This rate can then deduce the galaxy's mass through Kepler's Law.</li>
 <li>We then add the dark matter beyond the galaxy's visible edge by analyzing its satellites, such as stars, star clusters and satellite galaxies.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>This method is not effective with <b>elliptical galaxies</b>, in which stars don't rotate together like in the spiral galaxies.</li>
 <li>Instead, we have to measure the various speeds of these stars and use the fact that the galaxy isn't breaking apart.</li>
 <li>We do this by measuring the Doppler broadening caused by some stars moving towards us and some stars moving away, which simultaneously redshift <i>and</i> blueshift our measurements.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org89c952a">
-<h4 id="org89c952a">Mass-to-Light Ratio</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgd07fb92" class="outline-4">
+<h4 id="orgd07fb92">Mass-to-Light Ratio</h4>
+<div class="outline-text-4" id="text-orgd07fb92">
+<ul class="org-ul">
 <li>Galaxies can be characterized by the ratio of their mass (in units of M<sub>Sun</sub>) to their light output (in units of L<sub>Sun</sub>).</li>
 <li>This <i>mass-to-light ratio</i> reveals what kinds of stars make up most of the galaxy and whether it contains a lot of dark matter.</li>
 <li>For example, a high mass-to-light ratio of 10-20 implies older stars which have completed their evolution and ceased to shine, while galaxies still undergoing star formation range a ratio of 1-10.</li>
 <li>Galaxies containing dark matter can have ratios as high as 100.</li>
-
 </ul>
-</section>
-<section id="slide-sec-orga9777c8">
-<h3 id="orga9777c8">The Extragalactic Distance Scale</h3>
-<div class="outline-text-3" id="text-orga9777c8">
 </div>
-</section>
-<section id="slide-sec-org39c59f2">
-<h4 id="org39c59f2">Variable Stars</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org890d568" class="outline-3">
+<h3 id="org890d568">The Extragalactic Distance Scale</h3>
+<div class="outline-text-3" id="text-org890d568">
+</div>
+<div id="outline-container-org5530dea" class="outline-4">
+<h4 id="org5530dea">Variable Stars</h4>
+<div class="outline-text-4" id="text-org5530dea">
+<ul class="org-ul">
 <li>Remember that cepheids divulge their luminosity in their periods of luminosity.</li>
 <li>Fun fact: Walter Baade showed that there were actually two kinds of cepheids in the early 1950s, resulting in calculated distances to all galaxies being doubled!</li>
 <li>While cepheids can help us locate stars up to 108 MLy away, the difficulty is that the telescope has to be good enough to see a single cepheid.</li>
 <li>Beyond a certain distance, we need an alternative method.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org445c6aa">
-<h4 id="org445c6aa">Standard Bulbs</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org52b81b5" class="outline-4">
+<h4 id="org52b81b5">Standard Bulbs</h4>
+<div class="outline-text-4" id="text-org52b81b5">
+<ul class="org-ul">
 <li>To measure distances, astronomers seeks <i>standard bulbs</i>; objects with the same intrinsic brightness.</li>
 <li>One particularly useful standard bulb is the <i>type Ia supernova</i> which we've discussed are the result of a white star's explosion in a binary system.</li>
 <li>At maximum light, they all reach about 4.9&times;10<sup>9</sup> L<sub>Sun</sub>.</li>
 <li>Supernovae are extremely bright explosions, so they can be observed from much further away, and have been measured up to 8 GLy away!</li>
 <li>Hence Type Ia supernovae are the most important standard bulbs when it comes to far distances.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org78f3b35">
-<h4 id="org78f3b35">Other Measurement Techniques</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-orgec86528" class="outline-4">
+<h4 id="orgec86528">Other Measurement Techniques</h4>
+<div class="outline-text-4" id="text-orgec86528">
+<ul class="org-ul">
 <li>Brent Tully and Richard Fisher found another technique for measuring galactic distances by observing that the luminosity of a spiral galaxy is related to its rotational velocity!</li>
 <li>This makes sense; the more massive the galaxy, the faster objects in its outer regions orbit it.</li>
 <li>So if mass-to-light ratios for various spiral galaxies are similar, we can estimate their luminosity from their mass, which we get from their rotational velocity!</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>In practice, Tully and Fisher observed the normally thin 21-cm line of cold hydrogen to measure Doppler broadening, from which they calculated the range of orbital velocities of the hydrogen gas.</li>
 <li>Observations of nearby galaxies show that this method works well, despite not accounting for dark matter.</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Some methods for estimating distances to galaxies:</li>
-
 </ul>
 
 <div class="figure">
@@ -810,124 +960,186 @@
 </p>
 <p><span class="figure-number">Figure 31: </span>Table 26.2.</p>
 </div>
-</section>
-<section id="slide-sec-org46e9461">
-<h3 id="org46e9461">The Expanding Universe</h3>
-<div class="outline-text-3" id="text-org46e9461">
 </div>
-</section>
-<section id="slide-sec-orgc241dd9">
-<h4 id="orgc241dd9">Slipher's Pioneering Observations</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org382e32a" class="outline-3">
+<h3 id="org382e32a">The Expanding Universe</h3>
+<div class="outline-text-3" id="text-org382e32a">
+</div>
+<div id="outline-container-orgb85b59b" class="outline-4">
+<h4 id="orgb85b59b">Slipher's Pioneering Observations</h4>
+<div class="outline-text-4" id="text-orgb85b59b">
+<ul class="org-ul">
 <li>In 1894, wealthy astronomer Percival Lowell established a Flagstaff, AZ observatory and asked one of the observatory's young astronomers, Vesto M. Slipher, to photograph spectra of spiral nebulae for spectral lines corresponding to newly forming planets.</li>
 <li>Despite technological hardships (the unsuitable telescope needed to be exposed 20-40 hours for a good spectrum), Slipher managed to to photograph 40 spiral nebulae from 1912-1932.</li>
 <li>He found an unexpected redshift in the spectra that showed the spirals were moving away at tremendous speeds up to 1800 km/s!</li>
 <li>Only close-by galaxies turned out to be approaching us, the rest were all racing away!</li>
-
 </ul>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Meanwhile, Hubble was observing galaxies with the largest then telescope (2.5 m, or 100 inches), with Milton Humason.</li>
 <li>Hubble found that the recession velocities of the galaxies were proportional to how far away they were; the farther a galaxy is from us, the faster it was moving away.</li>
 <li>The constant of proportionality is called the <i>Hubble constant</i> H<sub>o</sub>, and is included in <i>Hubble's Law</i>,</li>
-
 </ul>
 <p>
 \[v=H_{o}d\]
 where v is the velocity of the galaxy and d how far away it is!
 </p>
-<ul>
+<ul class="org-ul">
 <li>H<sub>o</sub>&asymp;22 km/s/MLy</li>
-
 </ul>
-</section>
-<section id="slide-sec-org258aa49">
-<h4 id="org258aa49">Hubble's Law and Distances</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org82e7dcb" class="outline-4">
+<h4 id="org82e7dcb">Hubble's Law and Distances</h4>
+<div class="outline-text-4" id="text-org82e7dcb">
+<ul class="org-ul">
 <li>Why does this law make any sense?</li>
 <li>Not only does the Hubble constant describe the redshift of galaxies based on how far they are, but it can help us find distances to galaxies based on the observed redshift!</li>
 <li>However, this result is only valid if the Hubble constant has always been constant&#x2014;if it hasn't, we'll notice it in far galaxies.</li>
 <li>And we did&#x2014;as we'll discuss regarding the Big Bang, it turns out the expansion of the universe is <i>accelerating</i> with time!  This needs to be taken into account to get distances to galaxies; especially for galaxies farther away.</li>
-
 </ul>
-</section>
-<section id="slide-sec-org8e4f5de">
-<h4 id="org8e4f5de">Models for an Expanding Universe</h4>
-<ul>
+</div>
+</div>
+<div id="outline-container-org9ddd1e1" class="outline-4">
+<h4 id="org9ddd1e1">Models for an Expanding Universe</h4>
+<div class="outline-text-4" id="text-org9ddd1e1">
+<ul class="org-ul">
 <li>Why are the galaxies moving away from us specifically?</li>
-
 </ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/NftuIbfii9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>They don't!  Galaxies are all moving apart from each other, because the universe itself is expanding.</li>
 <li>This also explains the increasing velocity with distance!</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/26_16.png" alt="26_16.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>A 3d example: raisins in expanding bread:</li>
-
 </ul>
 
 <div class="figure">
 <p><img src="./Images/26_17.png" alt="26_17.png" />
 </p>
 </div>
-</section>
-<section >
-<ul>
+<ul class="org-ul">
 <li>Unlike these models, the universe has no boundaries, edge, or center.</li>
 <li>However, the models accurately portray that neither the ants nor the raisins are themselves actively moving away; it's the space they're in that's stretching out.</li>
 <li>Also, neither the ants nor the raisins themselves are expanding, and this is also the case of galaxies in space.</li>
-
 </ul>
-</section>
-</section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+</div>
+</div>
 
-<script>
-// Full list of configuration options available here:
-// https://github.com/hakimel/reveal.js#configuration
-Reveal.initialize({
+<div id="outline-container-org88496ff" class="outline-2">
+<h2 id="org88496ff">Ch 27 - Active Galaxies, Quasars, and Supermassive Black Holes</h2>
+<div class="outline-text-2" id="text-org88496ff">
+</div>
+<div id="outline-container-org23721a3" class="outline-3">
+<h3 id="org23721a3">Quasars</h3>
+<div class="outline-text-3" id="text-org23721a3">
+</div>
+<div id="outline-container-orgdfbc43d" class="outline-4">
+<h4 id="orgdfbc43d">Redshifts: They Key to Quasars</h4>
+<div class="outline-text-4" id="text-orgdfbc43d">
+<ul class="org-ul">
+<li><i>Quasar</i> was short for "quasi-stellar radio sources".</li>
+<li>Discoveries of many point sources of radio emissions came from the same locations as faint blue "stars".</li>
+<li>They had emission lines that didn't match any known substance, in any known phase of matter.</li>
+<li>The spectral lines of 3C 273, for example resembled hydrogen Balmer lines.</li>
+<li>But the redshift would indicate a speed of 45,000 km/s, or 15% the speed of light!</li>
+<li>Note that in such cases we need to use the relativistic form of the doppler formula,</li>
+</ul>
+<p>
+\[\frac{v}{c}=\frac{(z+1)^2-1}{(z+1)^2+1},\qquad z=\frac{\Delta\lambda}{\lambda}.\]
+</p>
+<ul class="org-ul">
+<li>Other objects were also found to be redshifted known spectra, at even higher speeds.</li>
+<li>Such stars vastly exceed the escape velocity of our Galaxy, and thus must be extra-galactic.</li>
+<li>Astronomers later discovered other objects that appeared starlike, but had no radio emissions.</li>
+<li>Today we call such objects <i>quasi-stellar objects (QSOs)</i>; <i>quasars</i> for short.</li>
+<li>Millions have been discovered, all are redshifted (none blushifted).</li>
+<li>They look just like stars in a photo.</li>
+</ul>
 
-controls: true,
-progress: true,
-history: true,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
+<div class="figure">
+<p><img src="./Images/27_4.png" alt="27_4.png" height="500px" />
+</p>
+<p><span class="figure-number">Figure 34: </span>One of these bright objects is a star in the middle of our Galaxy, the other a quasar 9 GLy away.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org59dd22b" class="outline-4">
+<h4 id="org59dd22b">Quasars Obey the Hubble Law</h4>
+<div class="outline-text-4" id="text-org59dd22b">
+<ul class="org-ul">
+<li>The Hubble Law is a measure of the expansion of the universe discusssed in Ch 26, maintaining that the relative velocity of two galaxies is dependent on their distance from each other in the expansion of the universe, allowing us to draw inferences about the distance to such redshifted objects by the magnitude of the redshift.</li>
+<li>If quasars are contained in their galaxies, then they must obey the Hubble Law since they move with their galaxies which obey the law.</li>
+</ul>
+<ul class="org-ul">
+<li>So if we show that quasars have the same redshift as their host galaxy, that means quasars move away from us according to Hubble's law.</li>
+<li>Through observations by the Hubble Space Telescope, it's verified that quasars occur at the cores of galaxies, and that quasars do have the same redshift as their host galaxies.</li>
+<li>Quasars are also often involved in galactic collisions.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge8227a1" class="outline-4">
+<h4 id="orge8227a1">The Size of the Energy Source</h4>
+<div class="outline-text-4" id="text-orge8227a1">
+<ul class="org-ul">
+<li>Being so far away, quasars must be extremely luminous.  They also emit energy at X-ray, UV, and radio sources, for a combined luminosity as large as 10 trillion suns.  Surprisingly, their luminosity changes on timescales of months, weeks, even days, irregularly.</li>
+</ul>
+<ul class="org-ul">
+<li>Moreover, the region where the brightness varies can't be larger than how far light can travel in the timespan of variation, light-months.</li>
+</ul>
 
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'convex', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'default',
-multiplex: {
-    secret: '', // null if client
-    id: '', // id, obtained from socket.io server
-    url: '' // Location of socket.io server
-},
-
-// Optional libraries used to extend on reveal.js
-dependencies: [
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
-});
-</script>
+<div class="figure">
+<p><img src="./Images/27_6.png" alt="27_6.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Pluto (usually outside of the outer solar system) is about 5.5 Ly from us, so a light-month is very small for such a luminous object.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org69c6a95" class="outline-4">
+<h4 id="org69c6a95">Earlier Evidence</h4>
+<div class="outline-text-4" id="text-org69c6a95">
+<ul class="org-ul">
+<li>The plot thickens&#x2014;even in 1918, unexplained <i>jets</i> were seen coming from the <i>nucleus</i>, or center, of some galaxies; these are known as <i>active galaxies</i> or <i>active galactic nuclei (AGN)</i>.</li>
+<li>Astronomer Carl Seyfert found half a dozen with stellar nuclei and found spectroscopically that the nuclei contain gases moving 6 million mph (up to 2% the speed of light).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org64fab67" class="outline-3">
+<h3 id="org64fab67">Supermassive Black Holes: What Quasars Really Are</h3>
+<div class="outline-text-3" id="text-org64fab67">
+<ul class="org-ul">
+<li>To summarize,
+<ul class="org-ul">
+<li>Quasars emit more power than all stars in our Galaxy combined.</li>
+<li>They're about the size of our solar system (tiny!).</li>
+<li>Some are shooting out pairs of straight jets near the speed of light, emitting radio and gamma ray radiation.</li>
+<li>Quasars were more common when the universe was young, so they must have been able to form in the first billion years after the universe began to expand.</li>
+</ul></li>
+<li>Any guesses?</li>
+</ul>
+<ul class="org-ul">
+<li>That's right, quasars are actually supermassive black holes!  Quasars are typically even stroger than the supermassive black hole at the center of our Galaxy.</li>
+<li>Evidence shows that most (probably all) elliptical galaxies and spirals with nuclear bulges have black holes at their centers.</li>
+<li>The energy emitted depends on the mass of the black hole and the amount of matter falling into it.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
 </body>
 </html>
