@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 15-16</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ASTR101 Ch 15-16</h1>
+<div id="outline-container-orga251703" class="outline-2">
+<h2 id="orga251703">Ch 15 - The Sun: A Garden-Variety Star</h2>
+<div class="outline-text-2" id="text-orga251703">
+</div>
+<div id="outline-container-org6e38de7" class="outline-3">
+<h3 id="org6e38de7">The Structure and Composition of the Sun</h3>
+<div class="outline-text-3" id="text-org6e38de7">
+<ul class="org-ul">
+<li>Studying the Sun serves the dual purpose of understanding how our solar system changes due to it as well as serving as a template for understanding far-away stars.</li>
+<li>Sun is ball of hot gas that is mostly ionized, and is large enough to hold 1.3 million Earths.</li>
+<li>While the Sun is not solid, it does have layers.</li>
+</ul>
+</div>
+<div id="outline-container-org50efcf3" class="outline-4">
+<h4 id="org50efcf3">Composition of the Sun's Atmosphere</h4>
+<div class="outline-text-4" id="text-org50efcf3">
+<ul class="org-ul">
+<li>As discussed, Sun contains same elements of Earth but in different proportions; 73% Hydrogen, 25% Helium, 2% other elements.</li>
+<li>Stars shown to have similar composition to Sun of Hydrogen and Helium by first woman to get PhD in U.S., Cecilia Payne-Gaposchkin, in 1925.  At the time, it was thought the Sun would be made of elements in the same proportions as Earth&#x2013;the idea she proved was so revolutionary, she didn't even believe her conclusion!</li>
+<li>Proven beyond a doubt by other studies 3 years later.</li>
+</ul>
+<ul class="org-ul">
+<li>Sun contains mostly atoms (few molecules) and is so hot that every element is in the form of <i>plasma</i>, gaseous, and ionized.</li>
+<li>This ionization means the movements all moving particles in the Sun have an associated electromagnetic radiation.</li>
+<li>In the 19th century, scientists observed a spectral line at 530.3 nm, which they assigned to a new material they called "coronium"&#x2014;turns out it was just the emission of iron with 13 of its electrons stripped off!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org796e09d" class="outline-4">
+<h4 id="org796e09d">The Layers of the Sun Beneath the Visible Surface</h4>
+<div class="outline-text-4" id="text-org796e09d">
+
+<div class="figure">
+<p><img src="./Images/15_4.png" alt="15_4.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Sun has extremely dense <i>core</i> which provides its nuclear energy, has the highest temperature of 15 million K, and is 20% of the size of the solar interior.</li>
+<li>Then we have the <i>radiative zone</i>, through which energy is <i>radiated</i>, from 25-70% of the radius to the Sun's surface.  Light is transported through this zone very slowly because of its high density and low <i>mean free path</i>; the average length that a particle can go before colliding with another particle.</li>
+<li>The <i>convective zone</i> is the outermost layer of the solar interior.  It's 200,000 km deep and transports energy out of the radiative zone through convection movements of the plasma.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org317d2e1" class="outline-4">
+<h4 id="org317d2e1">The Solar Photosphere</h4>
+<div class="outline-text-4" id="text-org317d2e1">
+<ul class="org-ul">
+<li>The <i>photosphere</i> is a 400 km spherical shell beyond which photons don't reach our eyes.  The Solar atmosphere is see-through at the outside edge of this shell but totally opaque at the inside edge.</li>
+<li>The <i>photosphere</i> marks the distance in the Sun's atmosphere through which we can't see.</li>
+<li>So it represents the radius above which photons can escape (and hit our eyes, so we can see the Sun).</li>
+<li>Inside the photosphere, photons keep colliding with particles and don't reach our eye (due to the high density of the Sun).</li>
+<li>While Sun is very dense, solar atmosphere is 10% the pressure on Earth's surface.</li>
+</ul>
+<ul class="org-ul">
+<li>Solar surface appearance consists of granules (columns of hot rising gas); termed <i>granulation</i>.</li>
+<li>Granules are 700-1000 km in diameter (think Texas) and last 5-10 minutes, <i>supergranules</i> are 35,000 km across (think two Earths) and last 24 hours.</li>
+<li>Doppler analysis shows granule columns to rise at 2-3 km/s.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/15_6.png" alt="15_6.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Granulation pattern on Sun.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5d87455" class="outline-4">
+<h4 id="org5d87455">The Chromosphere</h4>
+<div class="outline-text-4" id="text-org5d87455">
+<ul class="org-ul">
+<li>Naturally, photosphere is difficult to observe because it's mostly transparent.</li>
+<li>Right above the photosphere is the <i>chromosphere</i>, which until this century was only visible when the photosphere was covered up (eg, by the Moon in a solar eclipse), during which red fringes can be seen around the covering Moon.</li>
+<li>chromo-sphere (<i>chromo</i> means colored in Greek).</li>
+<li>Observations made during eclipses show the chromosphere to be 2000-3000 km thick, composed of hot gases.  Red is Hydrogen's strong red spectral line!</li>
+<li>1868, a new element was found at a yellow emission line, termed "Helium" (after <i>helios</i>, Sun, in Greek).  We didn't discover Helium on Earth until 1895!</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgff5a1a0" class="outline-4">
+<h4 id="orgff5a1a0">The Transition Region</h4>
+<div class="outline-text-4" id="text-orgff5a1a0">
+<ul class="org-ul">
+<li>The chromosphere is a temperature of about 10,000 K.</li>
+<li>Above the chromosphere is the hottest part of the sun's atmosphere, the <i>corona</i>, where the temperature increases from 10,000 K to nearly 1,000,000 K.</li>
+<li>The part of the Sun where this transition in temperature occurs is called the <i>transition region</i>, which is only tens of kilometers thick.</li>
+<li>The corona is very low-density and thins out rapidly at greater heights.</li>
+<li>It extends far past Earth (we're technically in the Sun's corona).</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/15_8.png" alt="15_8.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0c753a3" class="outline-4">
+<h4 id="org0c753a3">The Corona</h4>
+<div class="outline-text-4" id="text-org0c753a3">
+<ul class="org-ul">
+<li>The corona extends millions of kilometers above the photosphere and emits half as much light as the full moon (not very bright, Sun-wise).</li>
+<li>The corona is best observed in a total solar eclipse, but can be viewed in space using an <i>occulting disk</i>, a circular material that covers up just the Sun, in a <i>coronagraph</i> instrument.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9bfe4ce" class="outline-4">
+<h4 id="org9bfe4ce">The Solar Wind</h4>
+<div class="outline-text-4" id="text-org9bfe4ce">
+<ul class="org-ul">
+<li>The Sun's atmosphere produces <i>solar winds</i>; streams of charged particles (mostly protons and electrons)</li>
+<li>They jet out of the Sun at speeds of 400 km/s (one million mph) due to the rapid rising of the very hot gases which escape the Sun's gravity.</li>
+<li>Discovered by observing its effects on comets's charged tails.</li>
+<li>10 million tons of material escape the Sun every year through solar winds, which is nothing to the Sun.</li>
+</ul>
+<ul class="org-ul">
+<li>Corona appears isotropic in the visible band, but shows spectacular patterns of light and dark in x-ray and UV regimes.</li>
+<li>Hot coronal gas is trapped (attracted) by magnetic fields, in the Sun's corona.</li>
+<li>Some regions are relatively cool and quiet, termed <i>coronal holes,</i> where gas can more easily escape unhindered by magnetic fields.</li>
+<li>Earth's magnetic field mostly shields us from the effects of solar winds.</li>
+<li>Charged particles accelerated by solar winds are guided by Earth's magnetic field to Earth's magnetic poles, where they strike air molecules causing them to glow in curtains of light called <i>auroras</i>.</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sBWPCvdv8Bk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org726b6b6" class="outline-2">
+<h2 id="org726b6b6">Ch 16 - The Sun: A Nuclear Powerhouse</h2>
+<div class="outline-text-2" id="text-org726b6b6">
+</div>
+<div id="outline-container-org64b1853" class="outline-3">
+<h3 id="org64b1853">Sources of Sunshine: Thermal and Gravitational Energy</h3>
+<div class="outline-text-3" id="text-org64b1853">
+<ul class="org-ul">
+<li>What is energy?</li>
+<li>When you push an object, you exert energy to move it.</li>
+<li>Energy can be <i>kinetic</i> (the energy of movement) or <i>potential</i> (no movement, but the energy is there and can be converted to movement).</li>
+<li>Examples: gravitational, elastic, chemical, electric, magnetic, heat, radiation, etc.</li>
+<li><i>Temperature</i> is the average kinetic energy of atoms in a material.</li>
+</ul>
+<ul class="org-ul">
+<li>In the 19th century, two forms of energy were known that could produce the Sun's energy radiation: gravitational and chemical.</li>
+<li>Turns out this doesn't account for the vast energy that the Sun has given off for billions of years.  (Specifically, as early as 4 billion years ago, when geological evidence suggests there was water on Earth, which requires the heat of the Sun to be in liquid form).</li>
+</ul>
+</div>
+<div id="outline-container-org4683e9f" class="outline-4">
+<h4 id="org4683e9f">Conservation of Energy</h4>
+<div class="outline-text-4" id="text-org4683e9f">
+<ul class="org-ul">
+<li><b>Law of Conservation of Energy: Energy cannot be created or destroyed, but it can be transformed from form to form.</b></li>
+<li>In nineteenth century, it was believed the Sun's heat might be caused by meteorites falling into it.  By conservation of energy, they found that the energy required means an entire Earth's worth of meteorites would have to hit the Sun every century, resulting in a  mass increase that would change the Earth's period of orbit by 2s/year, which we would easily notice.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org49d981c" class="outline-4">
+<h4 id="org49d981c">Gravitational Contraction as a Source of Energy</h4>
+<div class="outline-text-4" id="text-org49d981c">
+<ul class="org-ul">
+<li>British Physicist Lord Kelvin and German Scientist Hermann von Helmholtz suggested in mid-19th century that the Sun's outer layers might be falling inward due to gravity&#x2014;i.e., that the Sun might be shrinking in size, converting gravitational potential energy to radiative energy.</li>
+<li>This theory suggests the outer layer falling inward, increasing pressure and density, so that atom collisions occur much more frequently, resulting in a higher temperature for the Sun.</li>
+<li>They calculated the necessary contraction rate to be 40 m/year, which would be undetectable.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/16_2.png" alt="16_2.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Lord Kelvin (left) and Hermann von Helmholtz (right).</p>
+</div>
+<ul class="org-ul">
+<li>So is it true?</li>
+<li>We can calculate the amount of energy the Sun's given off in its contraction from a dilute gas cloud to its present diameter as 10<sup>42</sup> J.</li>
+<li>We know the present luminosity is 4&times;10<sup>26</sup> Watts (remember, Watt is a unit of power, or energy expended per second; 1 W = 1 J/s).</li>
+<li>How long would such a Sun keep shining at its present rate?</li>
+</ul>
+<ul class="org-ul">
+<li>19th century science didn't yet discover that Earth's history is much more than 100 million years.</li>
+<li>So contraction can't be the primary source of solar energy (though it is an important source for birthing stars).</li>
+<li>Charles Darwin's Theory of evolution required a longer time span than this 19th-century dating of the Sun, which worried him until his death in 1882!</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd9b487e" class="outline-3">
+<h3 id="orgd9b487e">Mass, Energy, and the Theory of Relativity</h3>
+<div class="outline-text-3" id="text-orgd9b487e">
+
+<div class="figure">
+<p><img src="./Images/16_3.png" alt="16_3.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Albert Einstein developed his theory of relativity.</li>
+<li>Mind-blowing.  Time is nonlinear, space has a "curvature", the relative speed of light is always the same regardless of how fast you go..</li>
+<li>Among these results is that matter can be converted into energy;</li>
+</ul>
+<p>
+\[ E=mc^2 \]
+where E is the energy, m the mass, and c the speed of light (3&times;10<sup>8</sup> m/s).
+</p>
+<ul class="org-ul">
+<li>This formula is a conversion formula.  Mass m is equivalent to energy E in the equation.</li>
+<li>c is a huge number, so a small mass is equivalent to a large energy.</li>
+</ul>
+</div>
+<div id="outline-container-orgecfb23e" class="outline-4">
+<h4 id="orgecfb23e">Elementary Particles</h4>
+<div class="outline-text-4" id="text-orgecfb23e">
+<ul class="org-ul">
+<li>We've studied protons, neutrons, and electrons.  But there are more fundamental particles.</li>
+<li>Each particle has a corresponding <i>anti-particle</i>.  If they hit each other, they <i>annihilate</i>; i.e., they disappear, and what's left is energy in the form of photons.  Their charges are opposites.</li>
+<li>Since the universe is mostly ordinary particles, anti-particles don't survive long before annihilating.</li>
+</ul>
+<ul class="org-ul">
+<li>However, individual antiparticles are found in <i>cosmic rays</i> (particles that arrive at the top of Earth's atmosphere from space) and can be created in laboratories, in <i>particle accelerators</i>.</li>
+<li>In such experiments in the early 20th century, some reactions of these elementary particles seemed to violate conservation of energy.</li>
+<li>In 1933, physicist Wolfgang Pauli suggested that perhaps there was a particle we had not yet detected because it was so neutral termed the <i>neutrino</i>, the "little neutral one", which would account for the missing energy.  He suggested like the photon that they had zero mass and moved at the speed of light.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/16_4.png" alt="16_4.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Turns out he was right, though we didn't detect a neutrino until 23 years later.</li>
+<li>They are difficult to find because they're so neutral, they react very weakly with electromagnetism, and since they have little to no mass, they don't interact much with gravity either.</li>
+<li>They can pass through a star or planet without being absorbed!</li>
+<li>There are three types of neutrinos; one of them may be massless.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org719f0e9" class="outline-4">
+<h4 id="org719f0e9">The Atomic Nucleus</h4>
+<div class="outline-text-4" id="text-org719f0e9">
+<ul class="org-ul">
+<li>Recall the four fundamental forces; gravitational, electromagnetic, strong nuclear force, and weak nuclear force.</li>
+<li>In the nucleus, particles are held together by the strong nuclear force, which is very short range (nucleus-sized) and very strong.</li>
+<li>When particles come together to form a nucleus, energy is released in an amount called the <i>binding energy</i> of that nucleus.  The resulting nucleus has less mass than the sum of the mass of the particles that made it up, corresponding to a small fraction of the mass of one proton, but corresponding to plenty of energy since E=mc<sup>2</sup>.</li>
+</ul>
+<ul class="org-ul">
+<li>The binding energy increases with increasing atomic number from hydrogen (1) to iron (58), and then decreases for heavier elements.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/16_BindingEnergy.jpg" alt="16_BindingEnergy.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>So, iron is the most stable element because it gives up the most energy when forming.</li>
+<li>Atoms can combine into larger (<i>fusion</i>) or break into smaller (<i>fission</i>) atoms.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/16_5.png" alt="16_5.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>So, energy is released in fusion of atoms with atomic number up to iron, or in fission breaking up atoms larger than iron.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87efe0d" class="outline-4">
+<h4 id="org87efe0d">Nuclear Attraction versus Electrical Repulsion</h4>
+<div class="outline-text-4" id="text-org87efe0d">
+<ul class="org-ul">
+<li>Nucleus particles usually kept apart by very strong electrical repulsion.</li>
+<li>But if they get close enough, they're held together by the much, much stronger strong foce.</li>
+<li>So how can nucleus particles every get close enough for the strong force to take over?</li>
+<li>Heat!</li>
+<li>Two protons fuse where T&gt;12 million K (average proton velocity of 1000 km/s, or 2,000,000 mph).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1419785" class="outline-4">
+<h4 id="org1419785">Nuclear Reactions in the Sun's Interior</h4>
+<div class="outline-text-4" id="text-org1419785">
+<ul class="org-ul">
+<li>We've covered that most of the Sun's energy arises from nuclear reactions.</li>
+<li>The specific reaction is a three-step process that fuses four hydrogen atoms into a single helium atom.</li>
+<li>The helium atom is slightly less massive than the sum of the masses of the four hydrogen atom, so a lot of energy is released (E=mc<sup>2</sup>).</li>
+</ul>
+<ul class="org-ul">
+<li>Three-step nuclear process:
+<img src="./Images/16_ppreaction.png" alt="16_ppreaction.png" /></li>
+</ul>
+<ul class="org-ul">
+<li>Two protons combine to form deuterium, a neutrino, and a positron.</li>
+<li>We care about the deuterium, but we'll care about the neutrino later, which exits the Sun unperturbed.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/16_6.png" alt="16_6.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The deuterium goes on to collide with a hydrogen, giving off light and 3-He.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/16_7.png" alt="16_7.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Finally, two 3-He collide to form the Helium, also emitting two hydrogen.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/16_8.png" alt="16_8.png" />
+</p>
+</div>
+
+<div class="figure">
+<p><img src="./Images/16_ppreaction2.png" alt="16_ppreaction2.png" />
+</p>
+<p><span class="figure-number">Figure 12: </span><a href="http://astro.unl.edu/classaction/animations/sunsolarenergy/fusion01.html">http://astro.unl.edu/classaction/animations/sunsolarenergy/fusion01.html</a></p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8d7a895" class="outline-4">
+<h4 id="org8d7a895">The Proton-Proton Chain</h4>
+<div class="outline-text-4" id="text-org8d7a895">
+<ul class="org-ul">
+<li>How much energy do these release?</li>
+<li>Keep in mind, proton is 1837 time heavier than electron and positron.</li>
+<li>Average isotope mass of hydrogen and helium atoms are 1.007825 and 4.00268 u, respectively.</li>
+<li><i>u</i>, atomic mass, is 1/12 mass of Carbon-12, and 1 u=1.660&times;10<sup>-27</sup> kg.</li>
+</ul>
+<ul class="org-ul">
+<li>As far as mass is concerned, we have 4 H -&gt; He.</li>
+<li>The mass lost in this reaction is 4m<sub>H</sub>-m<sub>He</sub>=4&times;1.007825-4.00268=.02862 u=4.75&times;10<sup>-28</sup> kg.</li>
+<li>E=mc<sup>2</sup>=(4.75&times;10<sup>-28</sup> kg)(3&times;10<sup>8</sup> m/s)<sup>2</sup>=4.27&times;10<sup>-11</sup> J.</li>
+<li>If the fusion occurs over 1 kg's worth of hydrogen atoms, how much energy is released?</li>
+<li>Note that the resulting Helium mass 4.00268 u is 99.29% of the initial mass of hydrogens.</li>
+<li>So however many hydrogen we use, we're left with 0.71% of the mass as energy.</li>
+<li>Then for 1 kg, we have .71&times;(1 kg)=.71 kg, so that E=mc<sup>2</sup>=(.71 kg)(3&times;10<sup>8</sup> m/s)<sup>2</sup>=6.39&times;10<sup>16</sup> J.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>

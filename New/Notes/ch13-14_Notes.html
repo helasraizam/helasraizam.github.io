@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 13-14</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ASTR101 Ch 13-14</h1>
+<div id="outline-container-org23a3d43" class="outline-2">
+<h2 id="org23a3d43">Ch 13 - Comets and Asteroids: Debris of the Solar System</h2>
+<div class="outline-text-2" id="text-org23a3d43">
+</div>
+<div id="outline-container-org6f54e6a" class="outline-3">
+<h3 id="org6f54e6a">Asteroids</h3>
+<div class="outline-text-3" id="text-org6f54e6a">
+</div>
+<div id="outline-container-org4ef8d93" class="outline-4">
+<h4 id="org4ef8d93">Discovery and Orbits of the Asteroids</h4>
+<div class="outline-text-4" id="text-org4ef8d93">
+<ul class="org-ul">
+<li>Asteroids are smaller than planets, up to nearly 1000 km in diameter.</li>
+<li>They have a number (in order of discovery) and a name.</li>
+<li>They revolve around the Sun in the same direction as planets, and most share the orbital plane of the Solar System.</li>
+<li>In 1918, Japanese astronomer Kiyotsugu Hirayama sorted some asteroids into <i>families</i> with similar orbits, whose members may have come from the same collision or were once parts of a larger body.</li>
+</ul>
+<ul class="org-ul">
+<li>Over 75% of known asteroids are in the asteroid belt between the inner and out planets.  Objects over 1 km in size are spaced several million kilometers in the asteroid belt.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/13_2.png" alt="13_2.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9171aca" class="outline-4">
+<h4 id="org9171aca">Composition and Classification</h4>
+<div class="outline-text-4" id="text-org9171aca">
+<ul class="org-ul">
+<li>Spectral analysis shows darker (&lt;4% reflective) asteroids are <i>primitive</i>, composed of silicates and organic compounds; they are called C-type (carbonaceous) asteroids.</li>
+<li>These darker asteroids make up the majority, and the outer edge of the asteroid belt consists of mostly C-type asteroids.</li>
+<li>The second most common asteroid family are S-type (silicate) asteroids, with stony bodies, which are more reflective.</li>
+</ul>
+<ul class="org-ul">
+<li>Third most numerous are the M-type (metallic) asteroids.  A single 1-km M-type asteroid could supply the Earth with metal for the foreseeable future!</li>
+<li>M-type asteroids come from cores of differentiated parents.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/13_3.png" alt="13_3.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga3be258" class="outline-4">
+<h4 id="orga3be258">Asteroids Up Close</h4>
+<div class="outline-text-4" id="text-orga3be258">
+<ul class="org-ul">
+<li>Recall that we can analyze the composition of an asteroid by looking at its spectrum and with radar measurements of reflectivity.</li>
+<li>One asteroid, Vesta, is not only differentiated but was even once volcanically active, despite its small size (500 km).</li>
+</ul>
+<ul class="org-ul">
+<li>We can date asteroid surfaces by analyzing crater counts.</li>
+<li>When we observe asteroids orbiting each other, we can deduce the mass through Kepler's third law.</li>
+<li>Meteors sometimes fall to Earth from Asteroids, and many missions have been carried out to analyze and bring back samples from asteroids, successfully.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org093f90a" class="outline-3">
+<h3 id="org093f90a">The "Long-Haired" Comets</h3>
+<div class="outline-text-3" id="text-org093f90a">
+</div>
+<div id="outline-container-orga1fbd8a" class="outline-4">
+<h4 id="orga1fbd8a">Appearances of Comets</h4>
+<div class="outline-text-4" id="text-orga1fbd8a">
+<ul class="org-ul">
+<li>Unlike an asteroid, a <i>comet</i> is a smaller chunk (a few kilometers in diameter) of ice which develops its own atmosphere as it approaches the Sun.</li>
+<li>Unlike a meteor (shooting star), which burns up in our atmosphere in a few seconds, a comet remains visible for a couple of weeks to several months.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org19f4c82" class="outline-4">
+<h4 id="org19f4c82">Comet Orbits</h4>
+<div class="outline-text-4" id="text-org19f4c82">
+<ul class="org-ul">
+<li>Newton is recorded as the first to suggest that comets orbit the Sun on large ecliptic orbitals.</li>
+<li>In 1705, Edmund Halley published calculations of 24 comet orbits, noting that comet appearances in 1531, 1607, and 1682 were similar enough to be the same comet making a 76-year orbit.</li>
+</ul>
+<ul class="org-ul">
+<li>He correctly predicted it would return in 1758; the comet, whose recent returns were in 1986 and next in 2061, was named after him.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/13_16.png" alt="13_16.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Comet Halley (like "valley"), composite of RGB taken at different times/angles.</p>
+</div>
+<ul class="org-ul">
+<li>Comets measurable in a lifetime are <i>short-period</i> comets, with periods less than a century; these are few.</li>
+<li>Most comets have periods of thousands of years, if they return at all.</li>
+<li><i>long-period</i> comets come from a different source than the Jupiter comets.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org83474d5" class="outline-4">
+<h4 id="org83474d5">The Comet's Nucleus</h4>
+<div class="outline-text-4" id="text-org83474d5">
+<ul class="org-ul">
+<li>When we see a comet, we typically see the illuminated gas atmosphere, called the head or <i>coma</i>.</li>
+<li>This atmosphere escapes all the time because of its weak gravity, replaced by the material in the solid <i>nucleus</i>, a few kilometers across (not to be confused with the atomic nucleus).</li>
+<li>The modern theory of the nucleus comes from Fred Whipple in 1950; the nucleus is a "dirty snowball", consisting of kilometers of water ice and other ices mixed with silicate grains and dust.</li>
+<li>The illuminated gas prevents us from seeing the nucleus, but dust samples give us some insight into their composition.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org027e67d" class="outline-4">
+<h4 id="org027e67d">The Comet's Atmosphere</h4>
+<div class="outline-text-4" id="text-org027e67d">
+<ul class="org-ul">
+<li>The comet being made of ice heats to 200 K typically when it reaches Mars, vaporizing and releasing the mixed dust.</li>
+<li>The diameter of this evaporated gas can be as big as Jupiter and up to nearly a million kilometers.</li>
+</ul>
+<ul class="org-ul">
+<li>The comet also has a tail, which points away from the Sun.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/13_22.png" alt="13_22.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Comets have two tails, a <i>dust tail</i>, and an <i>ion tail</i>.  The dust tail is brighter than the gas tail, which is straight and made of ionized gas.  The ionized tail is pushed outward from the Sun by Solar winds.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/13_23.png" alt="13_23.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org16f431d" class="outline-3">
+<h3 id="org16f431d">The Origin and Fate of Comets and Related Objects</h3>
+<div class="outline-text-3" id="text-org16f431d">
+</div>
+<div id="outline-container-orgf7cf2d8" class="outline-4">
+<h4 id="orgf7cf2d8">The Kuiper Belt and the Oort Cloud</h4>
+<div class="outline-text-4" id="text-orgf7cf2d8">
+<ul class="org-ul">
+<li>The <i>kuiper belt</i> is a large area beyond Neptune which is the source of short-period comets.</li>
+<li>The comets can be pulled into the solar system through gradual shifts in their orbit by Neptune.</li>
+<li>What about long-period comets?</li>
+</ul>
+<ul class="org-ul">
+<li>The gravitational <i>sphere of influence</i> of a star is the area where the gravity an object feels is mainly from that star.</li>
+<li>Within the gravitational field of influence of a star, the star can hold onto objects and keep them in its orbit.</li>
+<li>This sphere of influence extends out about a third of the distance to other stars&#x2014;for the Sun, about 50,000 AU (~1 Ly).</li>
+</ul>
+<ul class="org-ul">
+<li>Long-period comets, however, come from very great distances with approximate aphelions of 50,000 AU, in the Oort cloud, discovered by Dutch astronomer Jan Oort.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/13_27.png" alt="13_27.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Jan Oort suggested that new comets are objects on the edge of the Sun's gravitational field of influence which are pulled into the solar system by gravitational disturbances from other stars.</li>
+<li>This body of 10<sup>12</sup> comets at the edge of the Sun's sphere of influence is called the <i>Oort cloud</i>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org309fb7d" class="outline-4">
+<h4 id="org309fb7d">The Fate of Comets</h4>
+<div class="outline-text-4" id="text-org309fb7d">
+<ul class="org-ul">
+<li>Comets live out most of their lives in the Oort cloud or Kuiper belt at temperatures near 0 K.</li>
+<li>If the comet survives passing near the Sun, it could return to the orbit it came from.</li>
+<li>It could also collide with the Sun.</li>
+<li>Or it could interact with a planet, either hitting it (ending its life), stealing its gravity (flinging it out of the solar system entirely), or change into a shorter orbit.</li>
+</ul>
+<ul class="org-ul">
+<li>In the last case, it will keep losing its material on each approach near the Sun until its death.</li>
+<li>Some comets break apart, sometimes spontaneously.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0bdd313" class="outline-2">
+<h2 id="org0bdd313">Ch 14 - Cosmic Samples and the Origin of the Solar System</h2>
+<div class="outline-text-2" id="text-org0bdd313">
+</div>
+<div id="outline-container-org5dc2c6d" class="outline-3">
+<h3 id="org5dc2c6d">Meteors</h3>
+<div class="outline-text-3" id="text-org5dc2c6d">
+</div>
+<div id="outline-container-org73dcd0d" class="outline-4">
+<h4 id="org73dcd0d">Observing Meteors</h4>
+<div class="outline-text-4" id="text-org73dcd0d">
+<ul class="org-ul">
+<li><i>Meteors</i> are tiny solid particles that enter Earth's atmosphere from interplanetary space.</li>
+<li>Ices in comets evaporate close enough to the sun, sending tons of rocks that may enter Earth's atmosphere as meteors (colloquially known as shooting stars).</li>
+<li>Colliding asteroids also create a lot of rocks and debris which may enter Earth's atmosphere as a meteor.</li>
+<li>Air friction vaporizes meteors, usually at altitudes of 80-130 km, giving a flash of light.</li>
+</ul>
+<ul class="org-ul">
+<li>Typical meteors less than 1 gram (a pea), but their high velocities cause a giant streak of heated, glowing gas around them.</li>
+<li>A meteor the size of a golf ball produces a much brighter trail called a fireball.</li>
+<li>A bowling ball-sized meteor can even survive the atmosphere if it's going slow enough.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/14_2.png" alt="14_2.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Fireball</p>
+</div>
+<ul class="org-ul">
+<li>Visible meteors must be within altitude of 200 km.</li>
+<li>On a typical dark, moonless night, a <i>sporadic meteor</i>&#x2014;a meteor not associated with a meteor shower&#x2014;is visible on average every 10 minutes.</li>
+<li>25 meteors per day will light up the night sky each night somewhere on Earth.</li>
+<li>About 100 tons/day of meteoric material enters Earth's atmosphere!</li>
+<li>Observing meteors is an easy way to get into Astronomy&#x2014;no telescopes or fancy tools needed!  See p. 498 for some observing tips.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf08ebce" class="outline-4">
+<h4 id="orgf08ebce">Meteor Showers</h4>
+<div class="outline-text-4" id="text-orgf08ebce">
+<ul class="org-ul">
+<li>When a comet break apart, the result is tons of rocks and debris that can enter Earth's atmosphere as meteors.</li>
+<li>These meteors often take on the previous path of the comet!</li>
+<li>They move together but spread out over the orbital path.</li>
+<li>When Earth crosses such an orbital it results in a <i>meteor shower</i>, a collection of meteoric activity.</li>
+<li>Meteor showers usually last several hours.</li>
+</ul>
+<ul class="org-ul">
+<li>No shower meteor has ever survived the atmosphere for study, but we can learn some things about their flight paths.</li>
+<li>For example, they are light and porous with densities of 1.0 g/cm\up3, and would probably break apart if you put them on a table just from gravity.</li>
+</ul>
+<ul class="org-ul">
+<li>Since they're moving together, we observe them as coming from the same point, known as the <i>radiant</i> (just like railroad tracks seem to come from the same point)</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/14_3.png" alt="14_3.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org1a89dd0" class="outline-3">
+<h3 id="org1a89dd0">Meteorites: Stones from Heaven</h3>
+<div class="outline-text-3" id="text-org1a89dd0">
+<ul class="org-ul">
+<li>Any fragment of interplanetary debris surviving Earth's atmosphere is called a <i>meteorite</i>.</li>
+<li>Thousands of meteorites fall all over Earth each year, many in bunches as pieces of a larger object.</li>
+<li>Meteorites carry a remarkable record of the formation and early history of the Solar System.</li>
+</ul>
+</div>
+<div id="outline-container-org4d6c7f7" class="outline-4">
+<h4 id="org4d6c7f7">Extraterrestrial Origin of Meteorites</h4>
+<div class="outline-text-4" id="text-org4d6c7f7">
+<ul class="org-ul">
+<li>Until 19<sup>th</sup> century, meteorites not accepted to be from space!</li>
+<li>History of extraterrestrial rocks difficult to ascertain, difficult separating supernatural myth from fact.</li>
+<li>1803, well observed fall analyzed by French physicist Jean-Baptiste Biot resulted in acceptance of stones falling from sky.</li>
+<li>Meteorites sometimes fall in groups, or showers.</li>
+<li><b>A <i>meteorite shower</i> has nothing to do with a <i>meteor shower</i>;</b> the former is an object breaking in the atmosphere to cause many meteorites, the latter is a comet breaking in outer space resulting in a lot of meteors.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgececfac" class="outline-4">
+<h4 id="orgececfac">Meteorite Falls and Finds</h4>
+<div class="outline-text-4" id="text-orgececfac">
+<ul class="org-ul">
+<li>Meteorites can by found by their fireballs if they reach low enough altitudes.</li>
+<li><b>Meteorites most often do not cause fires on the ground;</b> they're ice-cold in space, and despite its fiery fall, most o fits interior remains cold after falling.  More likely to cause frost!</li>
+<li>Sometimes, people find weird rocks that are determined to be meteoritic, termed <i>meteoric finds</i>.</li>
+<li>Samples are sent to experts to be divided into <i>meteorites</i> and <i>meteorwrongs</i>.</li>
+<li>Yes, really.</li>
+</ul>
+<ul class="org-ul">
+<li>Meteorites found in Antarctica resulting from motion of ice.</li>
+<li>Meteorites get buried in ice and slowly carried to regions where ice is gradually worn away, where other meteors are found.</li>
+<li>This process concentrates the meteors in a spot on the surface.  Thanks Antarctica!</li>
+</ul>
+<ul class="org-ul">
+<li>Meteorites classified into <i>irons</i> (composed of nearly pure nickel-iron), <i>stones</i> (of silicates or rocks), and <i>stony-irons</i> (a mixture).</li>
+<li>Metallic meteorites are the easiest to recognize as iron doesn't occur in its pure form on Earth, usually being found as an oxide.  Most meteorites are stone, which requires lab analysis to identify.</li>
+<li>Meteorites also classified into <i>primitive</i> and <i>differential</i> meteorites, based on whether the parent bodies that broke up into multiple meteorites were molten before breaking up into multiple meteorites.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7b04531" class="outline-4">
+<h4 id="org7b04531">Ages and Compositions of Meteorites</h4>
+<div class="outline-text-4" id="text-org7b04531">
+<ul class="org-ul">
+<li>Meteorites aged by radioactive dating to be oldest and most primitive materials available on Earth.</li>
+<li>The most primitive meteorites are measured to be 4.56&plusmn;.01 billion years old, which is taken to represent the <i>age of the solar system</i>, the time since the first solids condensed into larger bodies.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org226e84e" class="outline-4">
+<h4 id="org226e84e">The Most Primitive Meteorites</h4>
+<div class="outline-text-4" id="text-org226e84e">
+<ul class="org-ul">
+<li>Spectral analysis suggests the parents of primitive meteorites to be asteroids.</li>
+<li>Some meteorites are <i>carbonaceous (C-type) meteorites</i>, meaning they contain carbon or other complex <i>organic</i> (carbon-based) <i>molecules</i>.  Some contain chemically bound water.</li>
+</ul>
+<ul class="org-ul">
+<li>The <i>Murchison meteorite</i> is a carbonaceous meteorite that fell in Australia in 1969 and was analyzed to have found organic molecules including 16 amino acids (the building blocks of proteins), 11 of which are rare on Earth, in equal parts of <i>left-</i> and <i>right-handed</i> molecular symmetry.  This ensures extraterrestrial origin as Earthly amino acids have evolved exclusively in the left-handed symmetry.</li>
+<li>Raises possibility of Earthly life being delivered to Earth from meteorites and comets.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf76df2b" class="outline-3">
+<h3 id="orgf76df2b">Formation of the Solar System</h3>
+<div class="outline-text-3" id="text-orgf76df2b">
+</div>
+<div id="outline-container-org64d449d" class="outline-4">
+<h4 id="org64d449d">Observational Constraints</h4>
+<div class="outline-text-4" id="text-org64d449d">
+<ul class="org-ul">
+<li>We now combine the observations of the planets as well as asteroids, comets, and meteorites to determine the formation of the Solar System.</li>
+<li>Observational constraints categorized into <i>motion constraints, chemical constraints,</i> and <i>age constraints</i>, that a theory of Solar System formation must meet.</li>
+<li>Jupiter and Saturn have large enough gravities to hold on to any gas when they formed, so the gases they compose are likely representative of original solar system material.</li>
+</ul>
+<ul class="org-ul">
+<li>Planetary composition starts with metals near the Sun, then rocks a little farther, and finally, the lightest ice-dominated outer planets, according to decreasing temperature from Sun.</li>
+<li>Then, ice brought to Mercury and Moon probably by comet impacts.</li>
+<li>Radioactive dating shows Earth rocks as old as 3.8 billion years, and Moon rocks around 4.4 billion years old, while primitive meteorites are all around 4.5 billion years old.  This suggests the formation of planets and cooling of their crusts within a timespan of at most tens of millions of years.</li>
+<li>Primitive meteorites are made primarily of material condensed or coagulated from a hot gas after the hot-vapor stage of 4.5 billion years ago.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org63ed429" class="outline-4">
+<h4 id="org63ed429">The Solar Nebula</h4>
+<div class="outline-text-4" id="text-org63ed429">
+<ul class="org-ul">
+<li>Observations are consistent with the Solar System forming from a rotating cloud of vapor and dust, the Solar Nebula, which collapsed and differentiated under its own gravity.</li>
+<li>This increases its orbital speed, according to conservation of angular momentum.  While the "poles" don't move much, the "equator" moves a lot with the spin of the cloud, causing it to collapse to a flat disk (the plane of the planets!).</li>
+<li>As the cloud cools, the central dense material forms a star which supplies its own energy, with the flat disk slowing down due to frictional forces&#x2014;some of it falling into the central star (the Sun), some of it continuing to rotate with the disk.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/14_11.png" alt="14_11.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The temperature is now hot in the center (where the star provides energy) and cold farther out.  Gases begin to interact chemically in this environment, producing compounds which condense into liquid or solid grains.</li>
+<li>Different compounds form depending on local temperatures.  Innermost planets, for example, never had low enough temperatures for ice and carbonaceous organic combounds to condense.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/14_12.png" alt="14_12.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org6239062" class="outline-4">
+<h4 id="org6239062">Formation of the Terrestrial Planets</h4>
+<div class="outline-text-4" id="text-org6239062">
+<ul class="org-ul">
+<li>The condensation continued into larger chunks a kilometer to tens of kilometers in diameter called planetesimals, some of which still survive as comets and asteroids.  Planetesimals are still much smaller than planets.</li>
+<li>Some planetesimals grew through <i>accretion</i>&#x2014;attracting other material such as planetesimals gravitationally to grow&#x2014;into <i>protoplanets</i>, which are not quite planets.</li>
+</ul>
+<ul class="org-ul">
+<li>As protoplanets continued accretion of planetesimals, they kept getting hit with projectiles that melted in the heat of the collision and caused some of the protoplanet to melt, until the entire protoplanet is heated above the melting temperature of rocks, resulting in differentiation.  This process robs the inner planets of some of their lighter gases.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org82627c8" class="outline-4">
+<h4 id="org82627c8">Formation of the Giant Planets</h4>
+<div class="outline-text-4" id="text-org82627c8">
+<ul class="org-ul">
+<li>Outer solar system protoplanets could gather available ices as well, and grew much larger than inner planets.  The outer protoplanets grew to have masses ten times larger than Earth's.</li>
+<li>Though they heated more than the inner solar system planets, the outer planets didn't accrue enough heat to sustain nuclear reactions that define stars.</li>
+<li>The end of this period of formation is marked by the planets having accrued most of the available nebula mass, with the solar winds throwing out the remaining.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org375df56" class="outline-4">
+<h4 id="org375df56">Further Evolution of the System</h4>
+<div class="outline-text-4" id="text-org375df56">
+<ul class="org-ul">
+<li>This entire process took place over a few million years, and we still have some evolution to cover.</li>
+<li>Planetesimals that didn't form planets became comets, many of which are in the Oort cloud, and some of which are in the Kuiper belt with their icy dwarf planet friends.  The latter may have been in orbit of Uranus and Neptune but ejected from their initial orbits by the giant planets' gravity.</li>
+<li>During this period of time, giant impacts stripped Mercury of part of its mantle and crust, reverse the rotation of Venus, and broke off part of the Earth to create the Moon.</li>
+</ul>
+<ul class="org-ul">
+<li>Giant planets stirred up the movements of material, resulting in lighter materials reaching and striking the terrestrial planets as well.  This results in the terrestrial bodies accumulating water and organic compounds.</li>
+<li>Two regions allowed stable orbits of planetesimals; the asteroid and Kuiper belts.  These are what we call asteroids and comets.</li>
+<li>This early evolution was thought to yield today's solar system until recent studies which suggest that more violent events caused Jupiter and Saturn to change orbits to control the distribution of asteroids from reaching the inner solar system; this may explain the period of heavy bombardment recorded in the oldest lunar craters.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc3bad3c" class="outline-3">
+<h3 id="orgc3bad3c">Comparison with Other Planetary Systems</h3>
+<div class="outline-text-3" id="text-orgc3bad3c">
+</div>
+<div id="outline-container-orga4ceb53" class="outline-4">
+<h4 id="orga4ceb53">Discovery of Other Planetary Systems</h4>
+<div class="outline-text-4" id="text-orga4ceb53">
+<ul class="org-ul">
+<li>Turns out our solar system is not typical!</li>
+<li>Half of the time, the nebula collapses into multiple <i>protostars</i>&#x2014;young stars still gathering mass from their molecular clouds&#x2014;forming a binary of multiple-star system.</li>
+<li>In all cases, angular momentum is conserved, and the result is a <i>circumstellar disk</i> such as the Orion nebula, shown without and with a filter of the nebula dust below:</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/14_14.png" alt="14_14.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>When we see gaps in the <i>protoplanetary disk</i>, this suggests the existence of protoplanets, though they are too small and faint to be directly seen, as innewborn star HL Tau shown below with its simulation:</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/14_15.png" alt="14_15.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org631b672" class="outline-4">
+<h4 id="org631b672">Discovering Exoplanets</h4>
+<div class="outline-text-4" id="text-org631b672">
+<ul class="org-ul">
+<li>Recall <i>exoplanets</i> are planets outside of the solar system.</li>
+<li>Exoplanets are very difficult to observe despite scientific advancements because they are dim and the stars they orbit are very bright.  The best techniques to detect exoplanets therefore focus on the star.</li>
+</ul>
+<ul class="org-ul">
+<li>We can detect the movement of stars towards or away from us, as well as their <i>radial velocity</i> using the Doppler Effect.  But we can also use this effect to detect tiny changes in the radial velocity star caused by the gravitational pull of very large planets.  This method can be used to detect entire planetary systems, as long as the planets are large enough and close enough to the Sun.</li>
+<li>The second method has to do with the planet <i>transiting</i>, or crossing the face of the star to an Earthly observer, from which we can measure the size and orbit of a planet.  This favors large planets with fast orbits.</li>
+</ul>
+<ul class="org-ul">
+<li>the Kepler space observatory's purpose is to star the night sky, monitoring the light of 150,000 stars in a single part of the sky to search for exoplanets.</li>
+<li>In two decades we went from no knowledge of exoplanets to a catalogue of thousands of exoplanets.  Most are larger or more massive than Earth, but this is <i>observational bias</i>, which when accounted for, indicate that smaller planets are less common.</li>
+<li>Also common are super Earths, which are 2-10 times Earth's mass.</li>
+<li>A quarter of stars seem to have exoplanet systems, implying 50 billion planets in our Galaxy alone.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/14_16.png" alt="14_16.png" />
+</p>
+<p><span class="figure-number">Figure 13: </span>Planets found using the transit method.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org628b16a" class="outline-4">
+<h4 id="org628b16a">The Configuration of Other Planetary Systems</h4>
+<div class="outline-text-4" id="text-org628b16a">
+
+<div class="figure">
+<p><img src="./Images/14_17.png" alt="14_17.png" />
+</p>
+<p><span class="figure-number">Figure 14: </span>Planet discovery by year based on mass.  Gray dots are radial velocity measurements, red dots are transit stars.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orge30a61f" class="outline-4">
+<h4 id="orge30a61f">Comparison Between Theory and Data</h4>
+<div class="outline-text-4" id="text-orge30a61f">
+<ul class="org-ul">
+<li>Sometimes data surprises us and we have to revise our theories.</li>
+<li>One example is "hot Jupiters", giant planets that are closer to their stars than Mercury's orbit!  We still need the condensation of water ice for such a massive planet, which can't occur so close to the Sun.  The accepted explanation is that planets can migrate within the protoplanetary disk, <i>planet migrations</i>.</li>
+<li>Another example is high eccentricities among exoplanets, further supporting that planets can change each others' orbits.</li>
+</ul>
+<ul class="org-ul">
+<li>One explanation for planetary migration is that the protoplanet is moving faster than the nebula dust, which slows it down, which decreases its orbital radius; though it's unclear how some stop before plunging into their star(s).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org0879043" class="outline-3">
+<h3 id="org0879043">Planetary Evolution</h3>
+<div class="outline-text-3" id="text-org0879043">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Past (Gy)</th>
+<th scope="col" class="org-left">Event(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">4.5</td>
+<td class="org-left">Solar System starts forming, giant impacts.</td>
+</tr>
+
+<tr>
+<td class="org-right">4.4</td>
+<td class="org-left">End of giant impacts, start of cooling.</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-left">Evolution calms down, remaining debris impacts. Planets begin their own evolutionary courses.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-orgd39b5d4" class="outline-4">
+<h4 id="orgd39b5d4">Geological Activity</h4>
+<div class="outline-text-4" id="text-orgd39b5d4">
+
+<div class="figure">
+<p><img src="./Images/14_18.png" alt="14_18.png" />
+</p>
+<p><span class="figure-number">Figure 15: </span>Stages of geological history of a terrestrial planet.</p>
+</div>
+<ul class="org-ul">
+<li>The Moon and Mercury likely died 3.3 billion years ago.</li>
+<li>Mars is a dying planet.</li>
+<li>Earth and Venus are the largest and most active.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0f3eea6" class="outline-4">
+<h4 id="org0f3eea6">Elevation Differences</h4>
+<div class="outline-text-4" id="text-org0f3eea6">
+<p>
+[Covered in previous chapters.]
+</p>
+</div>
+</div>
+<div id="outline-container-org705b292" class="outline-4">
+<h4 id="org705b292">Atmospheres</h4>
+<div class="outline-text-4" id="text-org705b292">
+<p>
+[Covered in previous chapters.]
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
