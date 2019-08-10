@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASTR101 Ch 26-27</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="org-html-themes/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ASTR101 Ch 26-27</h1>
+<div id="outline-container-orgad6ac11" class="outline-2">
+<h2 id="orgad6ac11">Ch 26 - Galaxies</h2>
+<div class="outline-text-2" id="text-orgad6ac11">
+</div>
+<div id="outline-container-orgd6dab7c" class="outline-3">
+<h3 id="orgd6dab7c">The Discovery of Galaxies</h3>
+<div class="outline-text-3" id="text-orgd6dab7c">
+</div>
+<div id="outline-container-org33ce182" class="outline-4">
+<h4 id="org33ce182">Other Galaxies</h4>
+<div class="outline-text-4" id="text-org33ce182">
+<ul class="org-ul">
+<li>The birth of <i>extragalactic astronomy</i> is cited as January 1, 1925, when Edwin Hubble read his paper on distances to nebulae.</li>
+<li>Prior, only closer nebulae could be properly classified.</li>
+<li>Farther nebulae might be classified as clouds of gas or groups of stars within our galaxy if they were close, or star systems of billions of stars if they were really far away.</li>
+</ul>
+<ul class="org-ul">
+<li>Better telescopes were needed at the time, like the 2.5-m (100-inch) telescope in Southern California which Hubble used to analyze nebulae.</li>
+<li>In some, he found cepheids, allowing him to find accurate distances to the nebulae; for example locating the farthest distance measured until that point, the 900 kLy to the Andromeda galaxy.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org3896dfd" class="outline-3">
+<h3 id="org3896dfd">Types of Galaxies</h3>
+<div class="outline-text-3" id="text-org3896dfd">
+</div>
+<div id="outline-container-orgd0d80fe" class="outline-4">
+<h4 id="orgd0d80fe">Spiral Galaxies</h4>
+<div class="outline-text-4" id="text-orgd0d80fe">
+
+<div class="figure">
+<p><img src="./Images/26_4.png" alt="26_4.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Identified by their spiral arms, they are also composed of a central bulge, halo, and disk, like the Milky Way.  All spiral galaxies rotate.</li>
+</ul>
+<ul class="org-ul">
+<li>About 2/3 of spiral galaxies have boxy/peanut-shaped bars in their centers, termed <i>barred spirals</i>, and it may be that most galaxies form a bar during some point of evolution.</li>
+<li>Differences in sizes of arms, bulge, how defined the arms are, and how prevalent the bar is, Hubble has classified galaxies.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/26_6.png" alt="26_6.png" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org5def6e4" class="outline-4">
+<h4 id="org5def6e4">Elliptical Galaxies</h4>
+<div class="outline-text-4" id="text-org5def6e4">
+<ul class="org-ul">
+<li>These sphere- or ellipsoid-shaped galaxies consist almost entirely of old stars.</li>
+<li>Typically have no trace of spiral arms.</li>
+<li>Reddish in color (due to population II stars).</li>
+<li>Not very dusty.</li>
+<li>Can get larger than spiral galaxies.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/26_7.png" alt="26_7.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Elliptical Galaxies</p>
+</div>
+<ul class="org-ul">
+<li>While spherical in nature, they can exhibit various degrees of flatness.</li>
+<li>Galaxies are also categorized by size into giants and dwarfs.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/26_8.png" alt="26_8.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>M32, a dwarf elliptical galaxy.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgff85541" class="outline-4">
+<h4 id="orgff85541">Irregular Galaxies</h4>
+<div class="outline-text-4" id="text-orgff85541">
+<ul class="org-ul">
+<li>Galaxies not matching a category are termed <i>irregular galaxies</i>.</li>
+<li>They typically have lower mass and luminosity than spiral galaxies.</li>
+<li>Contain both population I and population II stars.</li>
+<li>Some of our nearest neighbors are irregular galaxies, including the Large Magellanic Cloud and Small Magellanic Cloud.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org26c1195" class="outline-4">
+<h4 id="org26c1195">Galaxy Evolution</h4>
+<div class="outline-text-4" id="text-org26c1195">
+<ul class="org-ul">
+<li>It's not the case that galaxies evolve from one type to another like stars did on the H-R diagram.</li>
+<li>Collisions and mergers can change spiral galaxies into elliptical.</li>
+<li>Even isolated spirals can change over time, losing definition in their arms as their gas is consumed by star formation.</li>
+<li>For stunning pictures of galaxies: <a href="http://hubblesite.org/categories/images">http://hubblesite.org/categories/images</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org9a90e23" class="outline-3">
+<h3 id="org9a90e23">Properties of Galaxies</h3>
+<div class="outline-text-3" id="text-org9a90e23">
+</div>
+<div id="outline-container-org11b73bc" class="outline-4">
+<h4 id="org11b73bc">Masses of Galaxies</h4>
+<div class="outline-text-4" id="text-org11b73bc">
+<ul class="org-ul">
+<li>For <b>spiral galaxies</b>, we can observe the rate of rotation of a galaxy through its redshift.</li>
+<li>This rate can then deduce the galaxy's mass through Kepler's Law.</li>
+<li>We then add the dark matter beyond the galaxy's visible edge by analyzing its satellites, such as stars, star clusters and satellite galaxies.</li>
+</ul>
+<ul class="org-ul">
+<li>This method is not effective with <b>elliptical galaxies</b>, in which stars don't rotate together like in the spiral galaxies.</li>
+<li>Instead, we have to measure the various speeds of these stars and use the fact that the galaxy isn't breaking apart.</li>
+<li>We do this by measuring the Doppler broadening caused by some stars moving towards us and some stars moving away, which simultaneously redshift <i>and</i> blueshift our measurements.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org36a4fc4" class="outline-4">
+<h4 id="org36a4fc4">Mass-to-Light Ratio</h4>
+<div class="outline-text-4" id="text-org36a4fc4">
+<ul class="org-ul">
+<li>Galaxies can be characterized by the ratio of their mass (in units of M<sub>Sun</sub>) to their light output (in units of L<sub>Sun</sub>).</li>
+<li>This <i>mass-to-light ratio</i> reveals what kinds of stars make up most of the galaxy and whether it contains a lot of dark matter.</li>
+<li>For example, a high mass-to-light ratio of 10-20 implies older stars which have completed their evolution and ceased to shine, while galaxies still undergoing star formation range a ratio of 1-10.</li>
+<li>Galaxies containing dark matter can have ratios as high as 100.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org6f506b7" class="outline-3">
+<h3 id="org6f506b7">The Extragalactic Distance Scale</h3>
+<div class="outline-text-3" id="text-org6f506b7">
+</div>
+<div id="outline-container-org461101a" class="outline-4">
+<h4 id="org461101a">Variable Stars</h4>
+<div class="outline-text-4" id="text-org461101a">
+<ul class="org-ul">
+<li>Remember that cepheids divulge their luminosity in their periods of luminosity.</li>
+<li>Fun fact: Walter Baade showed that there were actually two kinds of cepheids in the early 1950s, resulting in calculated distances to all galaxies being doubled!</li>
+<li>While cepheids can help us locate stars up to 108 MLy away, the difficulty is that the telescope has to be good enough to see a single cepheid.</li>
+<li>Beyond a certain distance, we need an alternative method.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf8948ae" class="outline-4">
+<h4 id="orgf8948ae">Standard Bulbs</h4>
+<div class="outline-text-4" id="text-orgf8948ae">
+<ul class="org-ul">
+<li>To measure distances, astronomers seeks <i>standard bulbs</i>; objects with the same intrinsic brightness.</li>
+<li>One particularly useful standard bulb is the <i>type Ia supernova</i> which we've discussed are the result of a white star's explosion in a binary system.</li>
+<li>At maximum light, they all reach about 4.9&times;10<sup>9</sup> L<sub>Sun</sub>.</li>
+<li>Supernovae are extremely bright explosions, so they can be observed from much further away, and have been measured up to 8 GLy away!</li>
+<li>Hence Type Ia supernovae are the most important standard bulbs when it comes to far distances.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org274d157" class="outline-4">
+<h4 id="org274d157">Other Measurement Techniques</h4>
+<div class="outline-text-4" id="text-org274d157">
+<ul class="org-ul">
+<li>Brent Tully and Richard Fisher found another technique for measuring galactic distances by observing that the luminosity of a spiral galaxy is related to its rotational velocity!</li>
+<li>This makes sense; the more massive the galaxy, the faster objects in its outer regions orbit it.</li>
+<li>So if mass-to-light ratios for various spiral galaxies are similar, we can estimate their luminosity from their mass, which we get from their rotational velocity!</li>
+</ul>
+<ul class="org-ul">
+<li>In practice, Tully and Fisher observed the normally thin 21-cm line of cold hydrogen to measure Doppler broadening, from which they calculated the range of orbital velocities of the hydrogen gas.</li>
+<li>Observations of nearby galaxies show that this method works well, despite not accounting for dark matter.</li>
+</ul>
+<ul class="org-ul">
+<li>Some methods for estimating distances to galaxies:</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/26_Table_26_2.png" alt="26_Table_26_2.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>Table 26.2.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org71464d3" class="outline-3">
+<h3 id="org71464d3">The Expanding Universe</h3>
+<div class="outline-text-3" id="text-org71464d3">
+</div>
+<div id="outline-container-org39725b9" class="outline-4">
+<h4 id="org39725b9">Slipher's Pioneering Observations</h4>
+<div class="outline-text-4" id="text-org39725b9">
+<ul class="org-ul">
+<li>In 1894, wealthy astronomer Percival Lowell established a Flagstaff, AZ observatory and asked one of the observatory's young astronomers, Vesto M. Slipher, to photograph spectra of spiral nebulae for spectral lines corresponding to newly forming planets.</li>
+<li>Despite technological hardships (the unsuitable telescope needed to be exposed 20-40 hours for a good spectrum), Slipher managed to to photograph 40 spiral nebulae from 1912-1932.</li>
+<li>He found an unexpected redshift in the spectra that showed the spirals were moving away at tremendous speeds up to 1800 km/s!</li>
+<li>Only close-by galaxies turned out to be approaching us, the rest were all racing away!</li>
+</ul>
+<ul class="org-ul">
+<li>Meanwhile, Hubble was observing galaxies with the largest then telescope (2.5 m, or 100 inches), with Milton Humason.</li>
+<li>Hubble found that the recession velocities of the galaxies were proportional to how far away they were; the farther a galaxy is from us, the faster it was moving away.</li>
+<li>The constant of proportionality is called the <i>Hubble constant</i> H<sub>o</sub>, and is included in <i>Hubble's Law</i>,</li>
+</ul>
+<p>
+\[v=H_{o}d\]
+where v is the velocity of the galaxy and d how far away it is!
+</p>
+<ul class="org-ul">
+<li>H<sub>o</sub>&asymp;22 km/s/MLy</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org58b6aa2" class="outline-4">
+<h4 id="org58b6aa2">Hubble's Law and Distances</h4>
+<div class="outline-text-4" id="text-org58b6aa2">
+<ul class="org-ul">
+<li>Why does this law make any sense?</li>
+<li>Not only does the Hubble constant describe the redshift of galaxies based on how far they are, but it can help us find distances to galaxies based on the observed redshift!</li>
+<li>However, this result is only valid if the Hubble constant has always been constant&#x2014;if it hasn't, we'll notice it in far galaxies.</li>
+<li>And we did&#x2014;as we'll discuss regarding the Big Bang, it turns out the expansion of the universe is <i>accelerating</i> with time!  This needs to be taken into account to get distances to galaxies; especially for galaxies farther away.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6cd30ce" class="outline-4">
+<h4 id="org6cd30ce">Models for an Expanding Universe</h4>
+<div class="outline-text-4" id="text-org6cd30ce">
+<ul class="org-ul">
+<li>Why are the galaxies moving away from us specifically?</li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NftuIbfii9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ul class="org-ul">
+<li>They don't!  Galaxies are all moving apart from each other, because the universe itself is expanding.</li>
+<li>This also explains the increasing velocity with distance!</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/26_16.png" alt="26_16.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>A 3d example: raisins in expanding bread:</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/26_17.png" alt="26_17.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Unlike these models, the universe has no boundaries, edge, or center.</li>
+<li>However, the models accurately portray that neither the ants nor the raisins are themselves actively moving away; it's the space they're in that's stretching out.</li>
+<li>Also, neither the ants nor the raisins themselves are expanding, and this is also the case of galaxies in space.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7238cdc" class="outline-2">
+<h2 id="org7238cdc">Ch 27 - Active Galaxies, Quasars, and Supermassive Black Holes</h2>
+<div class="outline-text-2" id="text-org7238cdc">
+</div>
+<div id="outline-container-org7ba77a7" class="outline-3">
+<h3 id="org7ba77a7">Quasars</h3>
+<div class="outline-text-3" id="text-org7ba77a7">
+</div>
+<div id="outline-container-orga0fd27d" class="outline-4">
+<h4 id="orga0fd27d">Redshifts: They Key to Quasars</h4>
+<div class="outline-text-4" id="text-orga0fd27d">
+<ul class="org-ul">
+<li><i>Quasar</i> was short for "quasi-stellar radio sources".</li>
+<li>Discoveries of many point sources of radio emissions came from the same locations as faint blue "stars".</li>
+<li>They had emission lines that didn't match any known substance, in any known phase of matter.</li>
+<li>The spectral lines of 3C 273, for example resembled hydrogen Balmer lines.</li>
+<li>But the redshift would indicate a speed of 45,000 km/s, or 15% the speed of light!</li>
+<li>Note that in such cases we need to use the relativistic form of the doppler formula,</li>
+</ul>
+<p>
+\[\frac{v}{c}=\frac{(z+1)^2-1}{(z+1)^2+1},\qquad z=\frac{\Delta\lambda}{\lambda}.\]
+</p>
+<ul class="org-ul">
+<li>Other objects were also found to be redshifted known spectra, at even higher speeds.</li>
+<li>Such stars vastly exceed the escape velocity of our Galaxy, and thus must be extra-galactic.</li>
+<li>Astronomers later discovered other objects that appeared starlike, but had no radio emissions.</li>
+<li>Today we call such objects <i>quasi-stellar objects (QSOs)</i>; <i>quasars</i> for short.</li>
+<li>Millions have been discovered, all are redshifted (none blushifted).</li>
+<li>They look just like stars in a photo.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/27_4.png" alt="27_4.png" height="500px" />
+</p>
+<p><span class="figure-number">Figure 8: </span>One of these bright objects is a star in the middle of our Galaxy, the other a quasar 9 GLy away.</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org4057893" class="outline-4">
+<h4 id="org4057893">Quasars Obey the Hubble Law</h4>
+<div class="outline-text-4" id="text-org4057893">
+<ul class="org-ul">
+<li>The Hubble Law is a measure of the expansion of the universe discusssed in Ch 26, maintaining that the relative velocity of two galaxies is dependent on their distance from each other in the expansion of the universe, allowing us to draw inferences about the distance to such redshifted objects by the magnitude of the redshift.</li>
+<li>If quasars are contained in their galaxies, then they must obey the Hubble Law since they move with their galaxies which obey the law.</li>
+</ul>
+<ul class="org-ul">
+<li>So if we show that quasars have the same redshift as their host galaxy, that means quasars move away from us according to Hubble's law.</li>
+<li>Through observations by the Hubble Space Telescope, it's verified that quasars occur at the cores of galaxies, and that quasars do have the same redshift as their host galaxies.</li>
+<li>Quasars are also often involved in galactic collisions.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga2e8e12" class="outline-4">
+<h4 id="orga2e8e12">The Size of the Energy Source</h4>
+<div class="outline-text-4" id="text-orga2e8e12">
+<ul class="org-ul">
+<li>Being so far away, quasars must be extremely luminous.  They also emit energy at X-ray, UV, and radio sources, for a combined luminosity as large as 10 trillion suns.  Surprisingly, their luminosity changes on timescales of months, weeks, even days, irregularly.</li>
+</ul>
+<ul class="org-ul">
+<li>Moreover, the region where the brightness varies can't be larger than how far light can travel in the timespan of variation, light-months.</li>
+</ul>
+
+<div class="figure">
+<p><img src="./Images/27_6.png" alt="27_6.png" />
+</p>
+</div>
+<ul class="org-ul">
+<li>Pluto (usually outside of the outer solar system) is about 5.5 Ly from us, so a light-month is very small for such a luminous object.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5ee38ab" class="outline-4">
+<h4 id="org5ee38ab">Earlier Evidence</h4>
+<div class="outline-text-4" id="text-org5ee38ab">
+<ul class="org-ul">
+<li>The plot thickens&#x2014;even in 1918, unexplained <i>jets</i> were seen coming from the <i>nucleus</i>, or center, of some galaxies; these are known as <i>active galaxies</i> or <i>active galactic nuclei (AGN)</i>.</li>
+<li>Astronomer Carl Seyfert found half a dozen with stellar nuclei and found spectroscopically that the nuclei contain gases moving 6 million mph (up to 2% the speed of light).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org8c25101" class="outline-3">
+<h3 id="org8c25101">Supermassive Black Holes: What Quasars Really Are</h3>
+<div class="outline-text-3" id="text-org8c25101">
+<ul class="org-ul">
+<li>To summarize,
+<ul class="org-ul">
+<li>Quasars emit more power than all stars in our Galaxy combined.</li>
+<li>They're about the size of our solar system (tiny!).</li>
+<li>Some are shooting out pairs of straight jets near the speed of light, emitting radio and gamma ray radiation.</li>
+<li>Quasars were more common when the universe was young, so they must have been able to form in the first billion years after the universe began to expand.</li>
+</ul></li>
+<li>Any guesses?</li>
+</ul>
+<ul class="org-ul">
+<li>That's right, quasars are actually supermassive black holes!  Quasars are typically even stroger than the supermassive black hole at the center of our Galaxy.</li>
+<li>Evidence shows that most (probably all) elliptical galaxies and spirals with nuclear bulges have black holes at their centers.</li>
+<li>The energy emitted depends on the mass of the black hole and the amount of matter falling into it.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="validation"></p>
+</div>
+</body>
+</html>
